@@ -23,7 +23,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="255" VerticalAlignment="Top" Width="1585" Margin="0,10,0,0" Orientation="Horizontal" Grid.Row="1">
-            <TextBlock HorizontalAlignment="Left" Margin="115,10,0,0" TextWrapping="Wrap" Text="email" FontSize="65" Width="600"/>
+            <TextBlock HorizontalAlignment="Left" Margin="115,10,0,0" TextWrapping="Wrap" Text="Email" FontSize="65" Width="600"/>
             <TextBox FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="#6626EDDB" HorizontalAlignment="Center"  TextWrapping="Wrap" TextAlignment="Center" Text="" FontSize="65" Margin="0,10,0,120" Width="735"/>
 
         </StackPanel>
