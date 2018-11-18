@@ -26,10 +26,5 @@ namespace FranceVacance.View
         {
             this.InitializeComponent();
         }
-
-        private void ListView_ActualThemeChanged(FrameworkElement sender, object args)
-        {
-
-        }
     }
 }
