@@ -1,4 +1,4 @@
-<Page
+﻿<Page
     x:Class="FranceVacance.View.CreateAccountView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -53,6 +53,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
 
+                        HorizontalAlignment="Center" Margin="10" Command="{Binding CreateAccountCommand, Mode=TwoWay}" />
             </StackPanel>
         </StackPanel>
     </Grid>
