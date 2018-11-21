@@ -9,6 +9,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml.Media;
 using FranceVacance.Command;
 using FranceVacance.Model;
+using FranceVacance.View;
 using FranceVacance.Persistency;
 
 namespace FranceVacance.ViewModel
@@ -22,8 +23,10 @@ namespace FranceVacance.ViewModel
         private ObservableCollection<Account> _accountsCollection;
         private AccountCatalogSingleton _accountCatalogSingleton;
         public RelayCommand CreateAccountCommand { get; set; }
+        public RelayCommand GoLoginViewCommand { get; set; }
+        public FrameNavigate FrameNavigate { get; set; }
 
-    public string Fullname
+        public string Fullname
         {
             get { return _fullname; }
             set
@@ -62,7 +65,6 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("ConfirmPassword");
             }
         }
-
         public ObservableCollection<Account> AccountsCollection
         {
             get { return _accountsCollection; }
@@ -70,11 +72,13 @@ namespace FranceVacance.ViewModel
             {
                 _accountsCollection = value;
                 OnPropertyChanged("AccountsCollection");
-            } 
+            }
         }
 
         public CreateAccountViewModel()
         {
+            FrameNavigate = new FrameNavigate();
+            GoLoginViewCommand = new RelayCommand(GoLoginView);
             _accountCatalogSingleton = AccountCatalogSingleton.Instance;
             CreateAccountCommand = new RelayCommand(NewAccount);
             _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
@@ -91,6 +95,10 @@ namespace FranceVacance.ViewModel
                 MessageBox.Show("Passwords do not match.");
             }
         }
-
+        public void GoLoginView()
+        {
+            Type type = typeof(LoginView);
+            FrameNavigate.ActivateFrameNavigation(type);
+        }
     }
 }

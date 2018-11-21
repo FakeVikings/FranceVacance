@@ -20,7 +20,7 @@
             <TextBox Name="Password" Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine" Text=""/>
             <StackPanel Orientation="Horizontal">
                 <Button Name="Login" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" Margin="30,10,80,10" />
-                <Button Name="Registration" Content="Registration" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" Margin="10,10,30,10"/>
+                <Button Name="Registration" Command="{Binding GoCAVCommand }" Content="Registration" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" Margin="10,10,30,10"/>
             </StackPanel>
         </StackPanel>
     </Grid>

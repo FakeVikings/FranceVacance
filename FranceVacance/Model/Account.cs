@@ -6,10 +6,26 @@ using System.Threading.Tasks;
 
 namespace FranceVacance.Model
 {
-    class Account
+    public class Account
     {
         public string Fullname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+
+        public Account(string fullname,string email,string password)
+        {
+            Fullname = fullname;
+            Email = Email;
+            Password = password;
+        }
+        public Account()
+        {
+           
+        }
+        public override string ToString()
+        {
+            return Fullname;
+        }
+
     }
 }
