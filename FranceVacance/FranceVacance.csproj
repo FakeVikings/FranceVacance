@@ -122,7 +122,6 @@
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Navigate.cs" />
-    <Compile Include="Model\Singleton.cs" />
     <Compile Include="Persistency\AccountCatalogSingleton.cs" />
     <Compile Include="ViewModel\CreateAccountViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -173,9 +172,7 @@
       <Version>6.2.2</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

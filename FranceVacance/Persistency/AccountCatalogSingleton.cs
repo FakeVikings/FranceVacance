@@ -17,7 +17,7 @@ namespace FranceVacance.Persistency
 
         private AccountCatalogSingleton()
         {
-            AccountList = new List<Account>() {new Account {Email = "tomas@project.com", Fullname = "Tomas Vemola", Password = "verystrongpassword"}};
+            AccountList = new List<Account>() {new Account ("Tomas Vemola", "tomas@project.com", "verystrongpassword")};
         }
 
         public static AccountCatalogSingleton Instance
@@ -82,7 +82,7 @@ namespace FranceVacance.Persistency
         {
             if (VerifyAccount(fullname, email, password))
             {
-                Account account = new Account() {Fullname = fullname, Email = email, Password = password};
+                Account account = new Account( fullname,email, password);
                 AddAccount(account);
             }
         }

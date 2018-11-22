@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FranceVacance.Model;
 using FranceVacance.Command;
 using FranceVacance.View;
+using FranceVacance.Persistency;
 
 namespace FranceVacance.ViewModel
 {
@@ -13,15 +14,14 @@ namespace FranceVacance.ViewModel
     {
             public RelayCommand GoCAVCommand { get; set; }
             public FrameNavigate FrameNavigate { get; set; }
-            public Singleton Singleton;
+            public AccountCatalogSingleton Singleton;
             public string Fullname { get; set; }
             public string Email { get; set; }
             public LoginViewModel()
             {
                 FrameNavigate = new FrameNavigate();
                 GoCAVCommand = new RelayCommand(GoCAV);
-                Singleton = Singleton.GetInstance();
-                Fullname = Singleton.GetFullname();
+                Singleton = AccountCatalogSingleton.Instance;
 
             }
             public void GoCAV()

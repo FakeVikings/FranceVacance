@@ -52,8 +52,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
-                        HorizontalAlignment="Center" Margin="10" Command="{Binding CreateAccountCommand, Mode=TwoWay}" />
             </StackPanel>
         </StackPanel>
     </Grid>
