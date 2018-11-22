@@ -4,9 +4,9 @@ using Windows.UI.Xaml.Controls;
 
 namespace FranceVacance.Model
 {
-    class FrameNavigate
+    class Navigate
     {
-        public void ActivateFrameNavigation(Type type)
+        public static void ActivateFrameNavigation(Type type)
         {
             var frame = (Frame)Window.Current.Content;
             frame.Navigate(type);

@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="FranceVacance.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FranceVacance"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<<<<<<< HEAD
+    xmlns:viewModel="using:FranceVacance.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.DataContext>
+        <viewModel:CreateAccountViewModel></viewModel:CreateAccountViewModel>
+    </Page.DataContext>
+    
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Fullname" Margin="5"/>
+            <TextBox Name="Fullname" Margin="10" Width="300" Text="{Binding Fullname, Mode=TwoWay}"/>
+            <TextBlock Text="Email" Margin="5"/>
+            <TextBox Name="Email" Margin="10" Width="300" Text="{Binding Email, Mode=TwoWay}"/>
+            <TextBlock Text="Password" Margin="5"/>
+            <TextBox Name="Password" Margin="10" Width="300" Text="{Binding Password, Mode=TwoWay}"/>
+            <TextBlock Text="Confirm password" Margin="5"/>
+            <TextBox Name="ConfirmPassword" Margin="10" Width="300" Text="{Binding ConfirmPassword, Mode=TwoWay}"/>
+            <Button Name="CreateAccount" Content="Create Account" HorizontalAlignment="Center" Margin="10" Command="{Binding CreateAccountCommand, Mode=TwoWay}" />
+        </StackPanel>
+=======
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+>>>>>>> First commit
+    </Grid>
+</Page>

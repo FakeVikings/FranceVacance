@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using FranceVacance.View;
 using System;
+=======
+﻿using System;
+>>>>>>> First commit
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -57,7 +61,7 @@ namespace FranceVacance
                 }
 
                 // Place the frame in the current Window
-                Window.Current.Content = rootFrame; 
+                Window.Current.Content = rootFrame;
             }
 
             if (e.PrelaunchActivated == false)
@@ -67,7 +71,11 @@ namespace FranceVacance
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
+<<<<<<< HEAD
                     rootFrame.Navigate(typeof(CreateAccountView), e.Arguments);
+=======
+                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+>>>>>>> First commit
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

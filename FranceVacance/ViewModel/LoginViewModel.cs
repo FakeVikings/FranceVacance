@@ -13,13 +13,11 @@ namespace FranceVacance.ViewModel
     class LoginViewModel : NotifyViewModel
     {
             public RelayCommand GoCAVCommand { get; set; }
-            public FrameNavigate FrameNavigate { get; set; }
             public AccountCatalogSingleton Singleton;
             public string Fullname { get; set; }
             public string Email { get; set; }
             public LoginViewModel()
             {
-                FrameNavigate = new FrameNavigate();
                 GoCAVCommand = new RelayCommand(GoCAV);
                 Singleton = AccountCatalogSingleton.Instance;
 
@@ -27,7 +25,7 @@ namespace FranceVacance.ViewModel
             public void GoCAV()
             {
                 Type type = typeof(CreateAccountView);
-                FrameNavigate.ActivateFrameNavigation(type);
+                Navigate.ActivateFrameNavigation(type);
 
             }
     }

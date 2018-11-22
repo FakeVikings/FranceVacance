@@ -1,0 +1,83 @@
+﻿using System;
+using FranceVacance.Model;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+<<<<<<< HEAD
+namespace FranceVacance.Model
+{
+        public class Singleton
+        {
+            public static Account Account;
+            private static Singleton Instance { get; set; }
+
+            private Singleton()
+            {
+                Account = new Account();
+            }
+            public static Singleton GetInstance()
+            {
+                if (Instance == null)
+                {
+                    Instance = new Singleton();
+                }
+                return Instance;
+            }
+            public void SetAccount(Account account)
+            {
+            Account = account;
+            }
+            public string GetFullname()
+            {
+                return Account.Fullname;
+            }
+            public string GetEmail()
+            {
+                return Account.Email;
+            }
+            public string GetPassword()
+            {
+                return Account.Password;
+            }
+    }
+=======
+namespace FranceVacance.Model
+{
+        public class Singleton
+        {
+            public static Account Account;
+            private static Singleton Instance { get; set; }
+
+            private Singleton()
+            {
+                Account = new Account();
+            }
+            public static Singleton GetInstance()
+            {
+                if (Instance == null)
+                {
+                    Instance = new Singleton();
+                }
+                return Instance;
+            }
+            public void SetAccount(Account account)
+            {
+            Account = account;
+            }
+            public string GetFullname()
+            {
+                return Account.Fullname;
+            }
+            public string GetEmail()
+            {
+                return Account.Email;
+            }
+            public string GetPassword()
+            {
+                return Account.Password;
+            }
+    }
+>>>>>>> Add files via upload
+}

@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{AD8550CA-D0D0-4331-987B-EC264709C89A}</ProjectGuid>
+    <ProjectGuid>{DB0298E8-2840-437C-A480-84AB020912AE}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FranceVacance</RootNamespace>
     <AssemblyName>FranceVacance</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -121,19 +121,32 @@
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Model\Account.cs" />
+<<<<<<< HEAD
     <Compile Include="Model\Navigate.cs" />
+    <Compile Include="Model\Singleton.cs" />
     <Compile Include="Persistency\AccountCatalogSingleton.cs" />
     <Compile Include="ViewModel\CreateAccountViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MessageBox.cs" />
     <Compile Include="ViewModel\NotifyViewModel.cs" />
-    <Compile Include="View\CreateAccountView.xaml.cs">
-      <DependentUpon>CreateAccountView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CreateAccountView.xaml.cs">
+      <DependentUpon>CreateAccountView.xaml</DependentUpon>
+=======
+    <Compile Include="Persistency\AccountCatalogSingleton.cs" />
+    <Compile Include="ViewModel\CreateAccountViewModel.cs" />
+    <Compile Include="ViewModel\MessageBox.cs" />
+    <Compile Include="ViewModel\NotifyViewModel.cs" />
+    <Compile Include="View\CreateAccountView.xaml.cs">
+      <DependentUpon>CreateAccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+>>>>>>> Complete overhaul
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -157,14 +170,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+<<<<<<< HEAD
+    <Page Include="View\LoginView.xaml">
+=======
+    <Page Include="View\CreateAccountView.xaml">
+>>>>>>> Complete overhaul
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CreateAccountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\LoginView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -172,7 +189,9 @@
       <Version>6.2.2</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
