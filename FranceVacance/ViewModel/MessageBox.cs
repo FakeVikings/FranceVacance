@@ -9,14 +9,14 @@ namespace FranceVacance.ViewModel
 {
     static class MessageBox
     {
-        public static async void Show(string message)
+        public static async void Success(string message)
         {
             var dialog = new MessageDialog(message, " ");
             await dialog.ShowAsync();
         }
-        public static async void Show1(string message)
+        public static async void Fail(string message)
         {
-            var dialog = new MessageDialog(message, "An Error has occured");
+            var dialog = new MessageDialog(message,"An Error has occured");
             await dialog.ShowAsync();
         }
     }

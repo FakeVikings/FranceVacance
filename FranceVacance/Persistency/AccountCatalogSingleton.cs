@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using Windows.UI.Composition;
 using FranceVacance.Model;
 using FranceVacance.ViewModel;
+using FranceVacance.View;
 
 namespace FranceVacance.Persistency
 {
-    class AccountCatalogSingleton
+    public class AccountCatalogSingleton
     {
         public List<Account> AccountList { get; set; }
         private static AccountCatalogSingleton _instance;
@@ -36,7 +37,7 @@ namespace FranceVacance.Persistency
         public void AddAccount(Account account)
         {
             AccountList.Add(account);
-            MessageBox.Show("Account has been created.");
+            MessageBox.Success("Account has been created.");
         }
         public bool NullExeption(string fullname, string email, string password)
         {
@@ -45,7 +46,7 @@ namespace FranceVacance.Persistency
                 return true;
             }
             else{
-                MessageBox.Show1("Please fill in all the columns.");
+                MessageBox.Fail("Please fill in all the columns.");
                 return false;
             }
         }
@@ -53,17 +54,17 @@ namespace FranceVacance.Persistency
         {
             if (AccountList.Exists(a => a.Email == email))
             {
-                MessageBox.Show("This Email is already in use.");
+                MessageBox.Fail("This Email is already in use.");
                 return false;
             }
             if (fullname.Length < 3)
             {
-                MessageBox.Show1("Fullname must have more than 3 chars");
+                MessageBox.Fail("Fullname must have more than 3 chars");
                 return false;
             }
             if (!(email.Contains("@") && email.Contains(".")))
             {
-                MessageBox.Show1("Email is not valid");
+                MessageBox.Fail("Email is not valid");
                 return false;
             }
             if (password.Length < 8
@@ -72,7 +73,7 @@ namespace FranceVacance.Persistency
                 !(password.Any(char.IsLower)) ||
                 !(password.Any(char.IsDigit)))
             {
-                MessageBox.Show1("Password must have at least 8 characters, one uppercase letter, one lowercase letter and one number.");
+                MessageBox.Fail("Password must have at least 8 characters, one uppercase letter, one lowercase letter and one number.");
                 return false;
             }
             {
@@ -86,6 +87,55 @@ namespace FranceVacance.Persistency
                 Account account = new Account(fullname, email, password) { Fullname = fullname, Email = email, Password = password };
                 AddAccount(account);
             }
+        }
+        public bool NullExeption1(string email, string password)
+        {
+            if (email != null && password != null)
+            {
+                return true;
+            }
+            {
+                MessageBox.Fail("Please fill both columns");
+                return false;
+            }
+        }
+        public bool LoginVerification(string email, string password)
+        {
+            if (AccountList.Exists(a => a.Email != email))
+            {
+                MessageBox.Fail("You are not registered.");
+                return false;
+            }
+            if (!(email.Contains("@") && email.Contains(".")))
+            {
+                MessageBox.Fail("Email is not valid");
+                return false;
+            }
+            if (password.Length < 8
+                ||
+                !(password.Any(char.IsUpper)) ||
+                !(password.Any(char.IsLower)) ||
+                !(password.Any(char.IsDigit)) || (AccountList.Exists(p => p.Password != password)))
+            {
+                MessageBox.Fail("You have typed wrong password");
+                return false;
+            }
+            {
+                return true;
+            }
+        }
+        public void GainAccess(string email, string password)
+        {
+            if (NullExeption1(email,password) && LoginVerification(email, password))
+            {
+                LoginSuccessfull(email,password);
+            }
+        }
+        public void LoginSuccessfull(string email, string password)
+        {
+            MessageBox.Success("You have logged in succesfully");
+            Type type = typeof(MainPage);
+            Navigate.ActivateFrameNavigation(typeof(MainPage));
         }
     }
 }

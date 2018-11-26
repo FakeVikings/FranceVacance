@@ -26,5 +26,10 @@ namespace FranceVacance.View
         {
             this.InitializeComponent();
         }
+
+        private void Button_Drop(object sender, DragEventArgs e)
+        {
+
+        }
     }
 }

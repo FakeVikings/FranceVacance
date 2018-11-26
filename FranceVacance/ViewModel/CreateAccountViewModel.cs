@@ -25,6 +25,14 @@ namespace FranceVacance.ViewModel
         public RelayCommand CreateAccountCommand { get; set; }
         public RelayCommand GoLoginViewCommand { get; set; }
 
+        public CreateAccountViewModel()
+        {
+            GoLoginViewCommand = new RelayCommand(GoLoginView);
+            _accountCatalogSingleton = AccountCatalogSingleton.Instance;
+            CreateAccountCommand = new RelayCommand(NewAccount);
+            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
+        }
+
         public string Fullname
         {
             get { return _fullname; }
@@ -73,15 +81,6 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("AccountsCollection");
             }
         }
-
-        public CreateAccountViewModel()
-        {
-            GoLoginViewCommand = new RelayCommand(GoLoginView);
-            _accountCatalogSingleton = AccountCatalogSingleton.Instance;
-            CreateAccountCommand = new RelayCommand(NewAccount);
-            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
-        }
-
         private void NewAccount()
         {
             if (Password == ConfirmPassword)
@@ -90,7 +89,7 @@ namespace FranceVacance.ViewModel
             }
             else
             {
-                MessageBox.Show1("Passwords do not match.");
+                MessageBox.Fail("Passwords do not match.");
             }
         }
         public void GoLoginView()
