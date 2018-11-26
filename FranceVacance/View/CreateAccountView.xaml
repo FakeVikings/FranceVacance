@@ -34,24 +34,9 @@
                 <TextBlock HorizontalAlignment="Center" Text="Repeat Password" FontSize="45" Width="359" Height="70" Margin="0,0,0,0"/>
                 <PasswordBox HorizontalAlignment="Center"  Password="{Binding ConfirmPassword, Mode=TwoWay}" FontSize="32" Width="500" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="#6626ED2E" Height="75" VerticalAlignment="Stretch"/>
             </StackPanel>
-            <StackPanel  HorizontalAlignment="Left" Orientation="Horizontal" Height="129" Margin="0,5,0,0" Width="1425" VerticalAlignment="Stretch">
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Height="129" Margin="0,5,0,0" Width="1425" >
                 <Button Command="{Binding CreateAccountCommand, Mode=TwoWay}" Content="Register" FontSize="45" Height="81" Width="200" Margin="10,0,0,0" Background="WhiteSmoke" BorderBrush="Black" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 <Button Command="{Binding GoLoginViewCommand}" Content="Login" FontSize="45" Height="81" Width="200" Margin="20,0,0,0" Background="WhiteSmoke" BorderBrush="Black" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                <!--<ListView HorizontalAlignment="Left" Height="150" Margin="10,0,0,0" 
-                  VerticalAlignment="Top" Width="400" 
-                  ItemsSource="{Binding AccountsCollection , Mode=TwoWay}"--><!--
-                  Background="Aqua"   >
-                    <ListView.ItemTemplate>
-                        <DataTemplate  >
-                            <StackPanel >
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Fullname,Mode=TwoWay}" FontWeight="Bold"  />
-                                    <ListView Margin="50"  Width="100" Height="100" ItemsSource="{Binding Fullname , Mode=TwoWay}"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>-->
             </StackPanel>
         </StackPanel>
     </Grid>

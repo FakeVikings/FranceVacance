@@ -12,13 +12,13 @@ namespace FranceVacance.Model
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public Account(string fullname,string email,string password)
+        public Account(string fullname, string email, string password)
         {
             Fullname = fullname;
-            Email = Email;
+            Email = email;
             Password = password;
         }
-           
+
         public override string ToString()
         {
             return Fullname;
