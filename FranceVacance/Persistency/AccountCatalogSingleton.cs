@@ -42,7 +42,6 @@ namespace FranceVacance.Persistency
         {
             if (fullname != null && email != null && password != null)
             {
-                VerifyAccount(fullname, email, password);
                 return true;
             }
             else{
@@ -59,14 +58,14 @@ namespace FranceVacance.Persistency
             }
             if (fullname.Length < 3)
             {
-                    MessageBox.Show1("Fullname must have more than 3 chars");
-                    return false;
+                MessageBox.Show1("Fullname must have more than 3 chars");
+                return false;
             }
             if (!(email.Contains("@") && email.Contains(".")))
-                {
-                    MessageBox.Show1("Email is not valid");
-                    return false;
-                }
+            {
+                MessageBox.Show1("Email is not valid");
+                return false;
+            }
             if (password.Length < 8
                 ||
                 !(password.Any(char.IsUpper)) ||
@@ -78,15 +77,13 @@ namespace FranceVacance.Persistency
             }
             {
                 return true;
-
             }
         }
-
         public void CreateAccount(string fullname, string email, string password)
         {
-            if (NullExeption(fullname, email, password))
+            if (NullExeption(fullname, email, password) && VerifyAccount(fullname, email, password))
             {
-                Account account = new Account(fullname, email, password) { Fullname = fullname , Email= email,Password=password};
+                Account account = new Account(fullname, email, password) { Fullname = fullname, Email = email, Password = password };
                 AddAccount(account);
             }
         }
