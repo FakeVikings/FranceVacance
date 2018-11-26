@@ -43,8 +43,9 @@ namespace FranceVacance.Persistency
             if (fullname != null && email != null && password != null)
             {
                 VerifyAccount(fullname, email, password);
+                return true;
             }
-            {
+            else{
                 MessageBox.Show1("Please fill in all the columns.");
                 return false;
             }
