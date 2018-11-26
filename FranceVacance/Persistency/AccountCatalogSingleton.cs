@@ -82,7 +82,7 @@ namespace FranceVacance.Persistency
         {
             if (VerifyAccount(fullname, email, password))
             {
-                Account account = new Account( fullname,email, password);
+                Account account = new Account(fullname, email, password) { Fullname = fullname , Email= email,Password=password};
                 AddAccount(account);
             }
         }

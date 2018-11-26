@@ -14,8 +14,11 @@ namespace FranceVacance.ViewModel
     {
             public RelayCommand GoCAVCommand { get; set; }
             public AccountCatalogSingleton Singleton;
-            public string Fullname { get; set; }
             public string Email { get; set; }
+            public string Password {get; set; }
+
+
+            
             public LoginViewModel()
             {
                 GoCAVCommand = new RelayCommand(GoCAV);

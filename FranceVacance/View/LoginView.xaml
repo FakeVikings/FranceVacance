@@ -15,7 +15,7 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Login" FontStretch="Expanded" FontStyle="Italic" FontSize="30" TextAlignment="Center" Margin="5"/>
             <TextBlock Text="Email" Margin="5"/>
-            <TextBox Name="Email" Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine" Text=""/>
+            <TextBox Name="Email" Text="{Binding Email}"  Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine" />
             <TextBlock Text="Password" Margin="5"/>
             <TextBox Name="Password" Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine" Text=""/>
             <StackPanel Orientation="Horizontal">

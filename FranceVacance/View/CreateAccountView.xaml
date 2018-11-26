@@ -35,7 +35,7 @@
                 <PasswordBox HorizontalAlignment="Center"  Password="{Binding ConfirmPassword, Mode=TwoWay}" FontSize="32" Width="500" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="#6626ED2E" Height="75" VerticalAlignment="Stretch"/>
             </StackPanel>
             <StackPanel  HorizontalAlignment="Left" Orientation="Horizontal" Height="129" Margin="0,5,0,0" Width="1425" VerticalAlignment="Stretch">
-                <Button Content="Register" Command="{Binding CreateAccountCommand, Mode=TwoWay}" FontSize="45" Height="81" Width="200" Margin="10,0,0,0" Background="WhiteSmoke" BorderBrush="Black" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <Button Command="{Binding CreateAccountCommand, Mode=TwoWay}" Content="Register" FontSize="45" Height="81" Width="200" Margin="10,0,0,0" Background="WhiteSmoke" BorderBrush="Black" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 <Button Command="{Binding GoLoginViewCommand}" Content="Login" FontSize="45" Height="81" Width="200" Margin="20,0,0,0" Background="WhiteSmoke" BorderBrush="Black" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 <!--<ListView HorizontalAlignment="Left" Height="150" Margin="10,0,0,0" 
                   VerticalAlignment="Top" Width="400" 

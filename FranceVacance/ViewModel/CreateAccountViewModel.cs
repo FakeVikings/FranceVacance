@@ -90,7 +90,7 @@ namespace FranceVacance.ViewModel
             }
             else
             {
-                MessageBox.Show("Passwords do not match.");
+                MessageBox.Show1("Passwords do not match.");
             }
         }
         public void GoLoginView()
