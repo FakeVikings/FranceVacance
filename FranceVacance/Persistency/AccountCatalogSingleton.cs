@@ -102,7 +102,7 @@ namespace FranceVacance.Persistency
         }
         public bool LoginVerification(string email, string password)
         {
-            if (AccountList.Exists(acc => acc.Email != email))
+            if (AccountList.Exists(A => A.Email != email))
             {
                 MessageBox.Fail("You are not registered or it has mistake.");
                 return false;
@@ -126,7 +126,7 @@ namespace FranceVacance.Persistency
         }
         public void LoginSuccessfull(string email, string password)
         {
-            MessageBox.Success("You have logged in succesfully");
+            MessageBox.Success("You have logged in successfully");
             Type type = typeof(MainPage);
             Navigate.ActivateFrameNavigation(typeof(MainPage));
         }

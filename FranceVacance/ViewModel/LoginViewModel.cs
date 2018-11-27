@@ -67,11 +67,5 @@ namespace FranceVacance.ViewModel
         {
             _accountCatalogSingleton.GainAccess(Email, Password);
         }
-        //public void LoginSuccessfull(string email, string password)
-        //{
-        //    MessageBox.Success("You have logged in succesfully");
-        //    Type type = typeof(MainPage);
-        //    Navigate.ActivateFrameNavigation(typeof(MainPage));
-        //}
     }
 }
