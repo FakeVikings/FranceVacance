@@ -93,6 +93,7 @@ namespace FranceVacance.Persistency
             if (email != null && password != null)
             {
                 return true;
+
             }
             {
                 MessageBox.Fail("Please fill both columns");
@@ -101,25 +102,17 @@ namespace FranceVacance.Persistency
         }
         public bool LoginVerification(string email, string password)
         {
-            if (AccountList.Exists(a => a.Email != email))
+            if (AccountList.Exists(acc => acc.Email != email))
             {
-                MessageBox.Fail("You are not registered.");
+                MessageBox.Fail("You are not registered or it has mistake.");
                 return false;
             }
-            if (!(email.Contains("@") && email.Contains(".")))
-            {
-                MessageBox.Fail("Email is not valid");
-                return false;
-            }
-            if (password.Length < 8
-                ||
-                !(password.Any(char.IsUpper)) ||
-                !(password.Any(char.IsLower)) ||
-                !(password.Any(char.IsDigit)) || (AccountList.Exists(p => p.Password != password)))
+            if (AccountList.Exists(p => p.Password != password))
             {
                 MessageBox.Fail("You have typed wrong password");
                 return false;
             }
+            else
             {
                 return true;
             }

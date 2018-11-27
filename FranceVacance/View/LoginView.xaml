@@ -16,12 +16,12 @@
             <TextBlock Text="France Vacance" FontStretch="Expanded" FontStyle="Italic" FontSize="30" TextAlignment="Center" Margin="5"/>
             <TextBlock Text="Login" FontStretch="Expanded" FontStyle="Italic" FontSize="20" TextAlignment="Center"/>
             <TextBlock Text="Email" Margin="5"/>
-            <TextBox Name="Email" Text="{Binding Email}"  Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine" />
+            <TextBox Name="Email" Text="{Binding Email, Mode=TwoWay}"  Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine" />
             <TextBlock Text="Password" Margin="5"/>
-            <TextBox Name="Password" Text="{Binding Password}" Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine"/>
+            <TextBox Name="Password" Text="{Binding Password, Mode=TwoWay}" Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine"/>
             <StackPanel Orientation="Horizontal">
-                <Button Name="Login" Command="{Binding LoginCommand}" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" Margin="30,10,80,10" />
-                <Button Name="Registration" Command="{Binding GoCAVCommand }" Content="Registration" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" Margin="10,10,30,10"/>
+                <Button Name="Login" Command="{Binding LoginCommand, Mode=TwoWay}" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" Margin="30,10,80,10" />
+                <Button Name="Registration" Command="{Binding GoCAVCommand}" Content="Registration" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" Margin="10,10,30,10"/>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -39,6 +39,15 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("Password");
             }
         }
+        public ObservableCollection<Account> AccountsCollection
+        {
+            get { return _accountsCollection; }
+            set
+            {
+                _accountsCollection = value;
+                OnPropertyChanged("AccountsCollection");
+            }
+        }
         public LoginViewModel()
             {
             _accountCatalogSingleton = AccountCatalogSingleton.Instance;
@@ -54,7 +63,7 @@ namespace FranceVacance.ViewModel
             Navigate.ActivateFrameNavigation(type);
 
             }
-        public void Login()
+        private void Login()
         {
             _accountCatalogSingleton.GainAccess(Email, Password);
         }
