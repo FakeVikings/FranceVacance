@@ -6,19 +6,29 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1357.875">
 
     <Grid>
         <Grid.DataContext>
             <local:MainPageViewModel/>
         </Grid.DataContext>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <TextBlock Text="Welcome to France Vacance Main Page" TextAlignment="Center" FontSize="50"/>
-            <StackPanel Orientation="Vertical" Height="793" Margin="0,0,0,0"/>
-            <Button Name="Search" Content="" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" FontSize="25" Margin="30,10,80,10" />
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
-                <Button Name="Login" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" FontSize="25" Margin="30,10,80,10" />
-                <Button Name="Registration" Content="Registration" Command="{Binding GoCAVCommand }" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" FontSize="25" Margin="10,10,30,10"/>
+            <StackPanel Orientation="Horizontal" Height="93" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <TextBlock Text="France Vacance " TextAlignment="Center" FontSize="50" Margin="212,0,996.4,0" HorizontalAlignment="Stretch" Height="93" VerticalAlignment="Stretch"/>
+                <Button Content="Logout" HorizontalAlignment="Stretch" Margin="-334.4,0,198.4,0" VerticalAlignment="Stretch" Background="#33FF0000" Height="93"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Height="128" VerticalAlignment="Top" Width="966" Margin="0,208,0,0" Orientation="Horizontal">
+            <TextBox Margin="10,0,0,0" Text="TextBox" Width="800" Height="50"/>
+            <ToggleButton Content="ToggleButton" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Height="50" Width="134"/>
+        </StackPanel>
+        <StackPanel Margin="10,341,0,115">
+            <StackPanel Height="292" Margin="0,30,0,30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="Red"/>
+                <StackPanel  Height="292" Width="375" Margin="0,0,0,0" Background="#FFC5FF39"/>
+                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="Red"/>
+                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="#FFD0FF00"/>
+
             </StackPanel>
         </StackPanel>
     </Grid>
