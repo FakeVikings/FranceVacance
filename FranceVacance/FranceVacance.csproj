@@ -123,7 +123,6 @@
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Navigate.cs" />
     <Compile Include="Persistency\AccountCatalogSingleton.cs" />
-    <Compile Include="Persistency\LoginVerify.cs" />
     <Compile Include="ViewModel\CreateAccountViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
