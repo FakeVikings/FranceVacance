@@ -19,7 +19,7 @@
                     <GradientStop Color="#FFFF1F1F" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.FocusVisualSecondaryBrush>
-            <TextBlock Text="France Vacance" FontStretch="Expanded" FontStyle="Italic" FontSize="30" TextAlignment="Center" Margin="5"/>
+            <TextBlock Text="France Vacance" FontStretch="Expanded" FontStyle="Normal" FontSize="30" TextAlignment="Center" Margin="5" />
             <TextBlock Text="Login" FontStretch="Expanded" FontStyle="Italic" FontSize="20" TextAlignment="Center"/>
             <StackPanel Height="25" Margin="0,0,0,0" HorizontalAlignment="Center" Orientation="Horizontal" Width="300">
 

@@ -7,36 +7,37 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="#FF3AB3A8">
     <Page.DataContext>
         <viewModel:CreateAccountViewModel></viewModel:CreateAccountViewModel>
     </Page.DataContext>
-    <Grid HorizontalAlignment="Stretch" Margin="0,0,-50,0.2" VerticalAlignment="Stretch" >
+    <Grid HorizontalAlignment="Stretch" Margin="0,0,-50,0.2" VerticalAlignment="Stretch" FocusVisualPrimaryBrush="#FFC32F2F" >
         <Grid.RowDefinitions>
             <RowDefinition Height="172*"/>
             <RowDefinition Height="608*"/>
         </Grid.RowDefinitions>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="3">
-            <TextBlock FontStretch="Expanded" Text="France Vacance Registration Page" FontSize="30" TextAlignment="Center" FocusVisualPrimaryBrush="Black" />
-            <StackPanel  Height="Auto" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="0,10,0,0">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Margin="0,0,0,0" Width="628" Height="665" Background="White">
+            <TextBlock FontStretch="Expanded" Text="France Vacance " FontSize="30" Margin="0,20,0,0" TextAlignment="Center" FocusVisualPrimaryBrush="Black" FontWeight="Bold" />
+            <TextBlock FontStretch="Expanded" Text="Registration Page" FontSize="20" TextAlignment="Center" FocusVisualPrimaryBrush="Black" />
+            <StackPanel  Height="Auto" VerticalAlignment="Stretch" Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
                 <TextBlock HorizontalAlignment="Left" Text="Fullname" FontSize="20" Width="355" Height="Auto"/>
-                <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" TextAlignment="Justify" Text="{Binding Fullname, Mode=TwoWay}" FontSize="32" Width="400" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="#6626ED2E" Height="Auto" Margin="0,0,0,0"/>
+                <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" TextAlignment="Justify" Text="{Binding Fullname, Mode=TwoWay}" FontSize="32" Width="400" FocusVisualPrimaryBrush="AntiqueWhite" FocusVisualSecondaryBrush="#996E0202" Background="AntiqueWhite" Height="Auto" Margin="0,0,0,0"/>
             </StackPanel>
-            <StackPanel Height="Auto" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="0,10,0,0">
+            <StackPanel Height="Auto" VerticalAlignment="Center" Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
                 <TextBlock HorizontalAlignment="Left" Text="Email" FontSize="20" Width="355" Height="Auto"/>
-                <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" TextAlignment="Justify" Text="{Binding Email, Mode=TwoWay}" FontSize="32" Width="400" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="#6626ED2E" Height="Auto" Margin="0,0,0,0"/>
+                <TextBox HorizontalAlignment="Right" TextWrapping="Wrap" TextAlignment="Justify" Text="{Binding Email, Mode=TwoWay}" FontSize="32" Width="400" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="AntiqueWhite" Height="Auto" Margin="0,0,0,0"/>
             </StackPanel>
-            <StackPanel Height="Auto" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="0,10,0,0">
+            <StackPanel Height="Auto" VerticalAlignment="Center" Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
                 <TextBlock HorizontalAlignment="Left" Text="Password" FontSize="20" Width="355" Height="Auto"/>
-                <PasswordBox HorizontalAlignment="Right" Password="{Binding Password, Mode=TwoWay}" FontSize="32" Width="400" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="#6626ED2E" Height="Auto" Margin="0,0,0,0"/>
+                <PasswordBox HorizontalAlignment="Right" Password="{Binding Password, Mode=TwoWay}" FontSize="32" Width="400" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="AntiqueWhite" Height="Auto" Margin="0,0,0,0"/>
             </StackPanel>
-            <StackPanel Height="Auto" VerticalAlignment="Stretch" Orientation="Horizontal" Margin="0,10,0,0">
+            <StackPanel Height="Auto" VerticalAlignment="Stretch" Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
                 <TextBlock HorizontalAlignment="Left" Text="Repeat password" FontSize="20" Width="355" Height="Auto"/>
-                <PasswordBox HorizontalAlignment="Right" Password="{Binding ConfirmPassword, Mode=TwoWay}" FontSize="32" Width="400" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="#6626ED2E" Height="Auto" Margin="0,0,0,0"/>
+                <PasswordBox HorizontalAlignment="Right" Password="{Binding ConfirmPassword, Mode=TwoWay}" FontSize="32" Width="400" FocusVisualPrimaryBrush="#FF168BD3" FocusVisualSecondaryBrush="#996E0202" Background="AntiqueWhite" Height="Auto" Margin="0,0,0,0"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button FontStretch="Expanded" Command="{Binding CreateAccountCommand, Mode=TwoWay}" Content="Register" FontSize="25" Background="WhiteSmoke" BorderBrush="DarkGreen" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" />
-                <Button FontStretch="Expanded" Command="{Binding GoLoginViewCommand}" Content="Login" FontSize="25" Width="auto" Margin="20,0,0,0" Background="WhiteSmoke" BorderBrush="DarkGreen" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Margin="0,50,0,0">
+                <Button FontStretch="Expanded" Command="{Binding CreateAccountCommand, Mode=TwoWay}" Content="Create Account" FontSize="25" Background="WhiteSmoke" BorderBrush="DarkGreen" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" />
+                <Button FontStretch="Expanded" Command="{Binding GoLoginViewCommand}" Content="Login" FontSize="25" Width="110" Margin="0,20,0,0" Background="WhiteSmoke" BorderBrush="DarkGreen" FocusVisualPrimaryBrush="#FF147905" FocusVisualSecondaryBrush="#9900CA09" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </StackPanel>
         </StackPanel>
     </Grid>
