@@ -120,14 +120,19 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Model\Accomodation.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Navigate.cs" />
+    <Compile Include="Persistency\AccomodationCatalogSingleton.cs" />
     <Compile Include="Persistency\AccountCatalogSingleton.cs" />
     <Compile Include="ViewModel\CreateAccountViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\MessageBox.cs" />
     <Compile Include="ViewModel\NotifyViewModel.cs" />
+    <Compile Include="View\AccomodationPage.xaml.cs">
+      <DependentUpon>AccomodationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateAccountView.xaml.cs">
       <DependentUpon>CreateAccountView.xaml</DependentUpon>
     </Compile>
@@ -161,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AccomodationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CreateAccountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

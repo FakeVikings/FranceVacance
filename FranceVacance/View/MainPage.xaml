@@ -37,6 +37,7 @@
             <StackPanel Height="292" Margin="0,30,0,30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
                 <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="Red">
                     <TextBlock Text="Photo of location" Margin="0,0,0,0" FontSize="36" FontWeight="Bold"></TextBlock>
+                    
                 </StackPanel>
                 <StackPanel  Height="292" Width="575" Margin="0,0,0,0" Background="#FFC5FF39">
                     <TextBlock Text="Name of location" Margin="0,0,0,0" FontSize="36" FontWeight="Bold"></TextBlock>

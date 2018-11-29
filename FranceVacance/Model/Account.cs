@@ -18,7 +18,6 @@ namespace FranceVacance.Model
             Email = email;
             Password = password;
         }
-
         public override string ToString()
         {
             return Fullname;
