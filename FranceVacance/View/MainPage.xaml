@@ -13,21 +13,38 @@
             <local:MainPageViewModel/>
         </Grid.DataContext>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <StackPanel Orientation="Horizontal" Height="93" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal" Height="93" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0083FF">
                 <TextBlock Text="France Vacance " TextAlignment="Center" FontSize="50" Margin="212,0,996.4,0" HorizontalAlignment="Stretch" Height="93" VerticalAlignment="Stretch"/>
-                <Button Content="Logout" HorizontalAlignment="Stretch" Margin="-334.4,0,198.4,0" VerticalAlignment="Stretch" Background="#33FF0000" Height="93"/>
+                <Button Content="Logout" Command="{Binding GoLoginViewCommand}" HorizontalAlignment="Stretch" Margin="-334.4,0,198.4,0" VerticalAlignment="Stretch" Background="#33FF0000" Height="93"/>
             </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Height="128" VerticalAlignment="Top" Width="966" Margin="0,208,0,0" Orientation="Horizontal">
-            <TextBox Margin="10,0,0,0" Text="TextBox" Width="800" Height="50"/>
-            <ToggleButton Content="ToggleButton" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Height="50" Width="134"/>
+            <TextBox Margin="0,39,0,39" Text="" Width="800" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <ToggleButton Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Height="50" Width="134"/>
         </StackPanel>
-        <StackPanel Margin="10,341,0,115">
+        <StackPanel Margin="32,336,32,919" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel  Height="100" Width="450" Margin="0,0,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  BorderBrush="Black" Background="#FF0083FF">
+                <TextBlock Margin="30,10,0,0" Text="Arrival" FontSize="20"></TextBlock>
+            </StackPanel>
+            <StackPanel  Height="100" Width="450" Margin="0,0,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Black" Background="#FF0083FF">
+                <TextBlock Margin="30,10,0,0" Text="Departure" FontSize="20"></TextBlock>
+            </StackPanel>
+            <StackPanel  Height="100" Width="450" Margin="0,0,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Black" Background="#FF0083FF">
+                <TextBlock Margin="30,10,0,0" Text="Country" FontSize="20"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="10,443,0,0">
             <StackPanel Height="292" Margin="0,30,0,30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
-                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="Red"/>
-                <StackPanel  Height="292" Width="375" Margin="0,0,0,0" Background="#FFC5FF39"/>
-                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="Red"/>
-                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="#FFD0FF00"/>
+                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="Red">
+                    <TextBlock Text="Photo of location" Margin="0,0,0,0" FontSize="36" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel  Height="292" Width="575" Margin="0,0,0,0" Background="#FFC5FF39">
+                    <TextBlock Text="Name of location" Margin="0,0,0,0" FontSize="36" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel Height="292" Width="100" Margin="0,0,0,0" Background="Red"/>
+                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="#FFD0FF00">
+                    <TextBlock Text="Show accomodation" Margin="0,0,0,0" FontSize="36" FontWeight="Bold"></TextBlock>
+                </StackPanel>
 
             </StackPanel>
         </StackPanel>
