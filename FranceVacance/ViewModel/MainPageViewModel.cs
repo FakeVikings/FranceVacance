@@ -65,9 +65,9 @@ namespace FranceVacance.ViewModel
             GoLoginViewCommand = new RelayCommand(GoLoginView);
             _accountCatalogSingleton = AccountCatalogSingleton.Instance;
             _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
-            Country = Accomodation.GetCountry();
-            City = Accomodation.GetCity();
-            Image = Accomodation.GetImageUrl();
+            //Country = Accomodation.GetCountry();
+            //City = Accomodation.GetCity();
+            //Image = Accomodation.GetImageUrl();
         }
 
         public ObservableCollection<Account> AccountsCollection
