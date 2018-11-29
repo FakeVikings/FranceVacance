@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Email;
 using Windows.UI.Composition;
 using FranceVacance.Model;
 using FranceVacance.ViewModel;
@@ -100,31 +101,41 @@ namespace FranceVacance.Persistency
                 return false;
             }
         }
-        public bool LoginVerification(string email, string password)
+        public Account LoginVerification(string email, string password)
         {
-            if (AccountList.Exists(A => A.Email != email))
+            if (AccountList.Exists(a => a.Email == email))
             {
-                MessageBox.Fail("You are not registered or it has mistake.");
-                return false;
-            }
-            if (AccountList.Exists(p => p.Password != password))
-            {
-                MessageBox.Fail("You have typed wrong password");
-                return false;
+                return AccountList.Find(a => a.Email == email);
             }
             else
             {
-                return true;
+                return null;
             }
+
+            //if (AccountList.Exists(A => A.Email != email))
+            //{
+            //    MessageBox.Fail("You are not registered or it has mistake.");
+            //    return false;
+            //}
+            //if (AccountList.Exists(p => p.Password != password))
+            //{
+            //    MessageBox.Fail("You have typed wrong password");
+            //    return false;
+            //}
+            //return true;
         }
         public void GainAccess(string email, string password)
         {
-            if (NullExeption1(email,password) && LoginVerification(email, password))
+            if (LoginVerification(email, password) != null)
             {
-                LoginSuccessfull(email,password);
+                LoginSuccessfull();
+            }
+            else
+            {
+                MessageBox.Fail("Login failed.");
             }
         }
-        public void LoginSuccessfull(string email, string password)
+        public void LoginSuccessfull()
         {
             MessageBox.Success("You have logged in successfully");
             Type type = typeof(MainPage);
