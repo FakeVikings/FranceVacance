@@ -24,7 +24,7 @@ namespace FranceVacance.Persistency
             // create an object instance of your business class
             AccomodationList = new List<Accomodation>() { new Accomodation(country: "France", city: "Marseille", imageUrl: "Cottage.jpg"),
              new Accomodation(country: "France", city: "Paris", imageUrl: "Cottage.jpg"),
-             new Accomodation(country: "France", city: "Paris", imageUrl: "Cottage.jpg"), };
+             new Accomodation(country: "France", city: "Cannes", imageUrl: "Cottage.jpg"), };
         }
 
         // step 2:  this instance property check first if instance is not null ,
