@@ -42,6 +42,8 @@ namespace FranceVacance.Persistency
         {
             Accomodation = accomodation;
         }
+
+
         public void DoAddAccomodation()
         { }
         public void DoDeleteAccomodation()
