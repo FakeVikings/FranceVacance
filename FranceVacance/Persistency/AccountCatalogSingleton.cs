@@ -105,37 +105,30 @@ namespace FranceVacance.Persistency
         {
             if (AccountList.Exists(a => a.Email == email))
             {
-                return AccountList.Find(a => a.Email == email); 
-            }
-            else
-            {
+                var accountToLogIn = AccountList.Find(a => a.Email == email);
+                if (accountToLogIn.Password == password)
+                {
+                    return accountToLogIn;
+                }
+
                 return null;
             }
 
-            //if (AccountList.Exists(A => A.Email != email))
-            //{
-            //    MessageBox.Fail("You are not registered or it has mistake.");
-            //    return false;
-            //}
-            //if (AccountList.Exists(p => p.Password != password))
-            //{
-            //    MessageBox.Fail("You have typed wrong password");
-            //    return false;
-            //}
-            //return true;
+            return null;
         }
+    
         public void GainAccess(string email, string password)
         {
             if (LoginVerification(email, password) != null)
             {
-                LoginSuccessfull();
+                LoginSuccessful();
             }
             else
             {
                 MessageBox.Fail("Login failed.");
             }
         }
-        public void LoginSuccessfull()
+        public void LoginSuccessful()
         {
             MessageBox.Success("You have logged in successfully");
             Type type = typeof(MainPage);
