@@ -11,12 +11,13 @@ namespace FranceVacance.ViewModel
     {
         public static async void Success(string message)
         {
-            var dialog = new MessageDialog(message, " ");
+            var dialog = new MessageDialog(message, "Good news!");
             await dialog.ShowAsync();
         }
+
         public static async void Fail(string message)
         {
-            var dialog = new MessageDialog(message,"An Error has occured");
+            var dialog = new MessageDialog(message,"An error has occured.");
             await dialog.ShowAsync();
         }
     }
