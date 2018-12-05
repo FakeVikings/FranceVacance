@@ -42,47 +42,7 @@ namespace FranceVacance.Persistency
             AccountList.Add(account);
             MessageBox.Success("Account has been created.");
         }
-        //public bool NullExeption(string fullname, string email, string password)
-        //{
-        //    if (fullname != null && email != null && password != null)
-        //    {
-        //        return true;
-        //    }
-        //    else{
-        //        MessageBox.Fail("Please fill in all the columns.");
-        //        return false;
-        //    }
-        //}
-        //public bool VerifyAccount(string fullname, string email, string password)
-        //{
-        //    if (AccountList.Exists(a => a.Email == email))
-        //    {
-        //        MessageBox.Fail("This Email is already in use.");
-        //        return false;
-        //    }
-        //    if (fullname.Length < 3)
-        //    {
-        //        MessageBox.Fail("Fullname must have more than 3 chars");
-        //        return false;
-        //    }
-        //    if (!(email.Contains("@") && email.Contains(".")))
-        //    {
-        //        MessageBox.Fail("Email is not valid");
-        //        return false;
-        //    }
-        //    if (password.Length < 8
-        //        ||
-        //        !(password.Any(char.IsUpper)) ||
-        //        !(password.Any(char.IsLower)) ||
-        //        !(password.Any(char.IsDigit)))
-        //    {
-        //        MessageBox.Fail("Password must have at least 8 characters, one uppercase letter, one lowercase letter and one number.");
-        //        return false;
-        //    }
-        //    {
-        //        return true;
-        //    }
-        //}
+
         public void CreateAccount(string fullname, string email, string password)
         {
             if (_verifyAccount.VerifyNewAccount(fullname, email, password, AccountList))
@@ -91,50 +51,18 @@ namespace FranceVacance.Persistency
                 AddAccount(account);
             }
         }
-        //public bool NullExeption1(string email, string password)
-        //{
-        //    if (email != null && password != null)
-        //    {
-        //        return true;
-
-        //    }
-        //    {
-        //        MessageBox.Fail("Please fill both columns");
-        //        return false;
-        //    }
-        //}
-        //public Account LoginVerification(string email, string password)
-        //{
-        //    if (AccountList.Exists(a => a.Email == email))
-        //    {
-        //        var accountToLogIn = AccountList.Find(a => a.Email == email);
-        //        if (accountToLogIn.Password == password)
-        //        {
-        //            return accountToLogIn;
-        //        }
-
-        //        return null;
-        //    }
-
-        //    return null;
-        //}
     
-        public void GainAccess(string email, string password)
+        public void LogIn(string email, string password)
         {
             if (_verifyAccount.VerifyExistingAccount(email, password, AccountList) != null)
             {
-                LoginSuccessful();
+                MessageBox.Success("You have logged-in successfully.");
+                Navigate.ActivateFrameNavigation(typeof(MainPage));
             }
             else
             {
-                MessageBox.Fail("Login failed.");
+                MessageBox.Fail("Log-in failed.");
             }
-        }
-        public void LoginSuccessful()
-        {
-            MessageBox.Success("You have logged in successfully");
-            Type type = typeof(MainPage);
-            Navigate.ActivateFrameNavigation(typeof(MainPage));
         }
     }
 }

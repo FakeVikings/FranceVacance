@@ -68,7 +68,7 @@ namespace FranceVacance.ViewModel
         private void Login()
         {
             
-          _accountCatalogSingleton.GainAccess(Email, Password);
+          _accountCatalogSingleton.LogIn(Email, Password);
         }
     }
 }

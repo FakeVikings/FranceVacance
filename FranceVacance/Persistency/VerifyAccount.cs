@@ -17,7 +17,7 @@ namespace FranceVacance.Persistency
 
         public bool VerifyNewAccount(string fullname, string email, string password, List<Account> accountList)
         {
-            if (IsInputEmpty(fullname, email, password) == true)
+            if (IsInputEmpty(fullname, email, password))
             {
                 MessageBox.Fail("Please fill in all boxes.");
                 return false;
