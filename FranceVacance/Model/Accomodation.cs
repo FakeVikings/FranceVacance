@@ -11,31 +11,17 @@ namespace FranceVacance.Model
 
         public string Country { get; set; }
         public string City { get; set; }
+        public int Price { get; set; }
         public string ImageUrl { get; set; }
 
-        public Accomodation(string country, string city, string imageUrl)
+        public Accomodation(string country, string city, int price, string imageUrl)
         {
             Country = country;
             City = city;
+            Price = price;
             ImageUrl = imageUrl;
+            
         }
-
-        public Accomodation()
-        {
-        }
-
-        public string GetCountry()
-        {
-            return Country;
-        }
-        public string GetCity()
-        {
-            return City;
-        }
-        public string GetImageUrl()
-        {
-            return ImageUrl;
-
-        }
+        public Accomodation() { }
     }
 }

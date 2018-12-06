@@ -15,11 +15,18 @@ namespace FranceVacance.ViewModel
 {
     class MainPageViewModel : NotifyViewModel
     {
-        private ObservableCollection<Account> _accountsCollection;
-        public ObservableCollection<Accomodation> AccomodationList { get; set; }
-        public AccountCatalogSingleton Singleton { get; }
 
-        // Image property
+        public int SelectedIndex { get; } = 0; // 0 index
+        public ObservableCollection<Accomodation> AccomodationList { get; set; }
+        public RelayCommand AddAccomodationCommand { get; set; }
+        public RelayCommand UpdateAccomodationCommand { get; set; }
+        public RelayCommand DeleteAccomodationCommand { get; set; }
+        public RelayCommand RefreshAccomodationCommand { get; set; }
+        public RelayCommand GoApCommand { get; set; }
+
+        // Add Accomodation
+        public Accomodation AddAccomodation { get; set; }
+
 
 
 
@@ -29,14 +36,13 @@ namespace FranceVacance.ViewModel
 
         public string Country { get; set; }
         public string City { get; set; }
-
         public string Image { get; set; }
 
-        public readonly AccomodationCatalogSingleton UserSingleton;
+
+        
+        // public readonly AccomodationCatalogSingleton AccomodationSingleton;
         private Accomodation _selectedItemAccomodation;
-        public Accomodation AddAccomodation { get; set; }
         public RelayCommand GoLoginViewCommand { get; set; }
-        public RelayCommand GoCAVCommand { get; set; }
         public RelayCommand GoAPCommand { get; set; }
 
         public Accomodation SelectedItemAccomodation
@@ -48,71 +54,73 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged(nameof(SelectedItemAccomodation));
             }
         }
-        public readonly Navigate FrameNavigate;
+       // public readonly Navigate FrameNavigate;
+
+        private JsonFile _filePersistency;
+
+
         public MainPageViewModel()
         {
-            // Relay Command 
-            GoCAVCommand = new RelayCommand(GoCAV);
-            Singleton = AccountCatalogSingleton.Instance;
-            GoLoginViewCommand = new RelayCommand(GoLoginView);
-            _accountCatalogSingleton = AccountCatalogSingleton.Instance;
-            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
-            //Country = Accomodation.GetCountry();
-            //City = Accomodation.GetCity();
-            //Image = Accomodation.GetImageUrl();
+            // Data Persistency 
+            _filePersistency = new JsonFile();
+            AddAccomodationCommand = new RelayCommand(DoAddAccomodation);
+            UpdateAccomodationCommand = new RelayCommand(DoUpdateAccomodation);
+            DeleteAccomodationCommand = new RelayCommand(DoDeleteAccomodation);
+            RefreshAccomodationCommand = new RelayCommand(DoRefreshAccomodation);
+            AddAccomodation = new Accomodation();
+            AccomodationList = new ObservableCollection<Accomodation>();
         }
 
-        public ObservableCollection<Account> AccountsCollection
+        public async void DoAddAccomodation()
         {
-            get { return _accountsCollection; }
-            set
-            {
-                _accountsCollection = value;
-                OnPropertyChanged("AccountsCollection");
-            }
-        }
-        public void DoAddAccomodation()
-        {
-            // add the name of image in URL path
-            string img = "../Assets/" + AddAccomodation.ImageUrl + ".jpg";
-            AddAccomodation.ImageUrl = img;
+            //string img = "../Assets/" + AddAccomodation.ImageUrl + ".jpg";
+            //AddAccomodation.ImageUrl = img;
             AccomodationList.Add(AddAccomodation);
+            await SaveAsyncMethod(AccomodationList);
+
         }
+
         public void DoUpdateAccomodation()
         {
-            AccomodationList = new ObservableCollection<Accomodation>()
-            {
-                new Accomodation(SelectedItemAccomodation.Country, SelectedItemAccomodation.City,SelectedItemAccomodation.ImageUrl)
-            };
         }
+
         public void DoDeleteAccomodation()
         {
-            AccomodationList.Remove(SelectedItemAccomodation);
         }
+
         public void DoRefreshAccomodation()
         {
-            AccomodationList = new ObservableCollection<Accomodation>() { new Accomodation(country: "France", city: "Marseille", imageUrl: "Cottage.jpg"),
-                new Accomodation(country: "France", city: "Paris", imageUrl: "Cottage.jpg"),
-                new Accomodation(country: "France", city: "Paris", imageUrl: "Cottage.jpg"), };
-            OnPropertyChanged(nameof(AccomodationList));
         }
+
 
         public void GoLoginView()
         {
             Type type = typeof(LoginView);
             Navigate.ActivateFrameNavigation(typeof(LoginView));
         }
-        public void GoCAV()
-        {
-            Type type = typeof(CreateAccountView);
-            Navigate.ActivateFrameNavigation(typeof(CreateAccountView));
-        }
+        
         public void GoAP()
         {
-            UserSingleton.SetAccomodation(SelectedItemAccomodation);
+           // UserSingleton.SetAccomodation(SelectedItemAccomodation);
 
             Type type = typeof(AccomodationPage);
             Navigate.ActivateFrameNavigation(type);
+        }
+
+        public async void RunAsyncLoadData()
+        {
+            AccomodationList = await _filePersistency.LoadAsync();
+        }
+        // Load data from file
+        public async Task<ObservableCollection<Accomodation>> LoadAsyncMethod()
+        {
+            return await _filePersistency.LoadAsync();
+        }
+
+        // Save data into file 
+        public async Task SaveAsyncMethod(ObservableCollection<Accomodation> accomodations)
+        {
+            await _filePersistency.SaveAsync(accomodations);
         }
     }
 }

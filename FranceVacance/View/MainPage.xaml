@@ -14,13 +14,50 @@
         </Grid.DataContext>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <StackPanel Orientation="Horizontal" Height="60" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0083FF">
-                <TextBlock Text="France Vacance " TextAlignment="Center" FontSize="50" Margin="212,0,996.4,0" HorizontalAlignment="Stretch" Height="93" VerticalAlignment="Stretch"/>
+                <TextBlock Text="France Vacance " TextAlignment="Center" FontSize="50" Margin="100,0,996.4,0" Height="56"/>
                 <Button Content="Logout" Command="{Binding GoLoginViewCommand}" HorizontalAlignment="Stretch" Margin="-334.4,0,198.4,0" VerticalAlignment="Stretch" Background="#33FF0000" Height="50"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" Height="128" VerticalAlignment="Top" Width="966" Margin="0,150,0,0" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" Height="128" VerticalAlignment="Top" Width="966" Margin="0,75,0,0" Orientation="Horizontal">
             <TextBox Margin="0,39,0,39" Text="" Width="800" Height="50"/>
             <ToggleButton Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Height="50" Width="134"/>
+        </StackPanel>
+
+
+        <StackPanel HorizontalAlignment="Left" Height="124" VerticalAlignment="Top" Width="644" Margin="220,180,0,0">
+            <StackPanel Grid.Row="0" Grid.Column="0" Background="AntiqueWhite">
+                <TextBlock Text="Create New student profile :" FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Accomodation City:"/>
+                    <TextBox    Text="{Binding AddAccomodation.City, Mode=TwoWay}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Country:"/>
+                    <TextBox    Text="{Binding AddAccomodation.Country, Mode=TwoWay}" />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0"
+                        Orientation="Horizontal" BorderBrush="Black" BorderThickness="2,2,2,0">
+
+                <!--Create button-->
+                <Button Content="Create" 
+                        Command="{Binding AddAccomodationCommand}"/>
+
+
+                <!--Update button-->
+                <Button Content="Update" 
+                        Command="{Binding UpdateAccomodationCommand}" />
+
+                <!--Delete button-->
+                <Button Content="Delete" 
+                        Command="{Binding DeleteAccomodationCommand}"/>
+                <!--Refresh button-->
+                <Button Content="Refresh List" 
+                        Command="{Binding RefreshAccomodationCommand }"/>
+
+            </StackPanel>
+
         </StackPanel>
         <StackPanel Margin="32,336,32,919" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel  Height="100" Width="450" Margin="0,0,20,0" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="Black" Background="#FF0083FF" Orientation="Vertical">
@@ -33,35 +70,44 @@
             </StackPanel>
             <StackPanel  Height="100" Width="450" Margin="0,0,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Black" Background="#FF0083FF">
                 <TextBlock Margin="30,10,0,0" Text="City" FontSize="20"></TextBlock>
-                <ComboBox HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
-                    <x:String>Paris</x:String>
-                    <x:String>Cannes</x:String>
-                    <x:String>Lyon</x:String>
-                </ComboBox>
+
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="10,443,0,0">
-            <StackPanel Height="292" Margin="0,30,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" BorderBrush="Black"  BorderThickness="1"
+        <ListView Margin="10,443,0,0" ItemsSource="{Binding AccomodationList}"
+                  SelectedItem="{Binding SelectedItemAccomodation, Mode=TwoWay}"
+                  SelectedIndex="{Binding SelectedIndex}">
+
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate  >
+                    <StackPanel Height="292" Margin="0,30,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" BorderBrush="Black"  BorderThickness="1"
 >
-                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="#FF0083FF">
-                    <Image Source = "..\Assets\Cottage.jpg"   Height="290" Margin="0,0,0.2,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </StackPanel>
-                <StackPanel  Height="292" Width="575" Margin="0,0,0,0" Background="AntiqueWhite">
-                    <TextBlock Text="Paris, France" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
-                    <StackPanel HorizontalAlignment="Stretch" Height="5" Margin="0,30,0,0" VerticalAlignment="Stretch" Background="Black"/>
-                    <TextBlock Margin="0,30,0,0" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." TextWrapping="Wrap" HorizontalAlignment="Center" Height="186" VerticalAlignment="Stretch" />
+                        <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="#FF0083FF">
+                            <Image Source = "..\Assets\Cottage.jpg"   Height="290" Margin="0,0,0.2,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel  Height="292" Width="575" Margin="0,0,0,0" Background="AntiqueWhite">
+                            <TextBlock Text="Paris, France" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                            <StackPanel HorizontalAlignment="Stretch" Height="5" Margin="0,30,0,0" VerticalAlignment="Stretch" Background="Black"/>
+                            <TextBlock Margin="0,30,0,0" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." TextWrapping="Wrap" HorizontalAlignment="Center" Height="186" VerticalAlignment="Stretch" />
+                        </StackPanel>
+                        <StackPanel Height="292" Width="20" Margin="0,0,0,0" Background="#FF0083FF"/>
+                        <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="AntiqueWhite" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                            <TextBlock Text="Price: 500DKK" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                            <Button Content="Show accomodation" HorizontalAlignment="Stretch" Margin="0,120,0,0" FontSize="36" FontWeight="Bold" VerticalAlignment="Stretch"/>
 
-                </StackPanel>
-                <StackPanel Height="292" Width="20" Margin="0,0,0,0" Background="#FF0083FF"/>
-                <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="AntiqueWhite" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                    <TextBlock Text="Price: 500DKK" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
-                    <Button Content="Show accomodation" HorizontalAlignment="Stretch" Margin="0,120,0,0" FontSize="36" FontWeight="Bold" VerticalAlignment="Stretch"/>
+
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
 
-                </StackPanel>
 
-            </StackPanel>
 
-        </StackPanel>
+
+
+
+        </ListView>
     </Grid>
 </Page>

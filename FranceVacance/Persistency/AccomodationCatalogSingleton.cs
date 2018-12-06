@@ -1,30 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Email;
+using Windows.Storage;
 using Windows.UI.Composition;
+using Windows.UI.Popups;
 using FranceVacance.Model;
 using FranceVacance.ViewModel;
 using FranceVacance.View;
+using Newtonsoft.Json;
 
 namespace FranceVacance.Persistency
 {
     public class AccomodationCatalogSingleton
     {
+     
+        public static Accomodation Accomodation;
+
         // step 1 : declare the object instance of class Singleton 
         private static AccomodationCatalogSingleton Instance { get; set; }
-        internal List<Accomodation> AccomodationList { get; private set; }
-        public Accomodation Accomodation { get; set; }
 
         private AccomodationCatalogSingleton()
         {
             // create an object instance of your business class
-            AccomodationList = new List<Accomodation>() { new Accomodation(country: "France", city: "Marseille", imageUrl: "Cottage.jpg"),
-             new Accomodation(country: "France", city: "Paris", imageUrl: "Cottage.jpg"),
-             new Accomodation(country: "France", city: "Cannes", imageUrl: "Cottage.jpg"), };
+            Accomodation = new Accomodation("Paris", "France", 50, "sdsdad");
         }
 
         // step 2:  this instance property check first if instance is not null ,
@@ -38,18 +41,14 @@ namespace FranceVacance.Persistency
             }
             return Instance;
         }
-        public void SetAccomodation(Accomodation accomodation)
+        // Create method based upon your business logic 
+
+        public void SetStudent(Accomodation accomodation)
         {
             Accomodation = accomodation;
         }
 
 
-        public void DoAddAccomodation()
-        { }
-        public void DoDeleteAccomodation()
-        { }
-        public void DoRefreshAccomodation()
-        { }
     }
 }
 
