@@ -6,8 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Graphics.Printing3D;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -15,6 +17,11 @@ namespace FranceVacance.ViewModel
 {
     class MainPageViewModel : NotifyViewModel
     {
+
+        private string _country;
+        private string _city;
+        private int _price;
+        private string _imageUrl;
 
         public int SelectedIndex { get; } = 0; // 0 index
         public ObservableCollection<Accomodation> AccomodationList { get; set; }
@@ -28,18 +35,46 @@ namespace FranceVacance.ViewModel
         public Accomodation AddAccomodation { get; set; }
 
 
+        public string Country
+        {
+            get { return _country; }
+            set
+            {
+                _country = value;
+                OnPropertyChanged("Country");
+            }
+        }
+
+        public string City
+        {
+            get { return _city; }
+            set
+            {
+                _city = value;
+                OnPropertyChanged("City");
+            }
+        }
+
+        public int Price
+        {
+            get { return _price; }
+            set
+            {
+                _price = value;
+                OnPropertyChanged("Price");
+            }
+        }
+        public string ImageUrl
+        {
+            get { return _imageUrl; }
+            set
+            {
+                _imageUrl = value;
+                OnPropertyChanged("ImageUrl");
+            }
+        }
 
 
-
-
-        private AccountCatalogSingleton _accountCatalogSingleton;
-
-        public string Country { get; set; }
-        public string City { get; set; }
-        public string Image { get; set; }
-
-
-        
         // public readonly AccomodationCatalogSingleton AccomodationSingleton;
         private Accomodation _selectedItemAccomodation;
         public RelayCommand GoLoginViewCommand { get; set; }
@@ -73,11 +108,11 @@ namespace FranceVacance.ViewModel
 
         public async void DoAddAccomodation()
         {
-            //string img = "../Assets/" + AddAccomodation.ImageUrl + ".jpg";
-            //AddAccomodation.ImageUrl = img;
-            AccomodationList.Add(AddAccomodation);
-            await SaveAsyncMethod(AccomodationList);
-
+                string img = "../Assets/" + AddAccomodation.ImageUrl + ".jpg";
+                AddAccomodation.ImageUrl = img;
+                AccomodationList.Add(AddAccomodation);
+                await SaveAsyncMethod(AccomodationList);
+           
         }
 
         public void DoUpdateAccomodation()
@@ -86,6 +121,8 @@ namespace FranceVacance.ViewModel
 
         public void DoDeleteAccomodation()
         {
+            AccomodationList.Remove(SelectedItemAccomodation);
+
         }
 
         public void DoRefreshAccomodation()
@@ -122,5 +159,9 @@ namespace FranceVacance.ViewModel
         {
             await _filePersistency.SaveAsync(accomodations);
         }
+
+        // Handling problems
+
+        
     }
 }

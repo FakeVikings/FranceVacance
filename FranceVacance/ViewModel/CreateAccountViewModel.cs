@@ -32,7 +32,7 @@ namespace FranceVacance.ViewModel
             CreateAccountCommand = new RelayCommand(NewAccount);
             _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
         }
-
+        
         public string Fullname
         {
             get { return _fullname; }

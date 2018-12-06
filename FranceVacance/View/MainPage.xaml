@@ -24,20 +24,28 @@
         </StackPanel>
 
 
-        <StackPanel HorizontalAlignment="Left" Height="124" VerticalAlignment="Top" Width="644" Margin="220,180,0,0">
+        <StackPanel HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="644" Margin="220,180,0,0">
             <StackPanel Grid.Row="0" Grid.Column="0" Background="AntiqueWhite">
-                <TextBlock Text="Create New student profile :" FontWeight="Bold" />
+                <TextBlock Text="Create a new accomodation  :" FontWeight="Bold" />
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="Accomodation City:"/>
+                    <TextBlock  Text="City:"/>
                     <TextBox    Text="{Binding AddAccomodation.City, Mode=TwoWay}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="Country:"/>
                     <TextBox    Text="{Binding AddAccomodation.Country, Mode=TwoWay}" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Image:"/>
+                    <TextBox    Text="{Binding AddAccomodation.ImageUrl, Mode=TwoWay}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Price:"/>
+                    <TextBox    Text="{Binding AddAccomodation.Price, Mode=TwoWay}" />
+                </StackPanel>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Grid.Column="0"
+            <StackPanel Margin="0,0,0,0" Grid.Row="1" Grid.Column="0"
                         Orientation="Horizontal" BorderBrush="Black" BorderThickness="2,2,2,0">
 
                 <!--Create button-->
@@ -60,22 +68,22 @@
 
         </StackPanel>
         <StackPanel Margin="32,336,32,919" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel  Height="100" Width="450" Margin="0,0,20,0" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="Black" Background="#FF0083FF" Orientation="Vertical">
+            <StackPanel  Height="70" Width="450" Margin="0,30,20,0" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderBrush="Black" Background="#FF0083FF" Orientation="Vertical">
                 <TextBlock Margin="30,10,0,0" Text="Arrival" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="420"></TextBlock>
                 <CalendarDatePicker HorizontalAlignment="Stretch" Margin="0,0,0.4,0" VerticalAlignment="Stretch" Height="44"/>
             </StackPanel>
-            <StackPanel  Height="100" Width="450" Margin="0,0,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Black" Background="#FF0083FF">
+            <StackPanel  Height="70" Width="450" Margin="0,30,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Black" Background="#FF0083FF">
                 <TextBlock Margin="30,10,0,0" Text="Departure" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="420"></TextBlock>
                 <CalendarDatePicker HorizontalAlignment="Stretch" Margin="0,0,0.4,0" VerticalAlignment="Stretch" Height="44"/>
             </StackPanel>
-            <StackPanel  Height="100" Width="450" Margin="0,0,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Black" Background="#FF0083FF">
+            <StackPanel  Height="70" Width="450" Margin="0,30,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Black" Background="#FF0083FF">
                 <TextBlock Margin="30,10,0,0" Text="City" FontSize="20"></TextBlock>
 
             </StackPanel>
         </StackPanel>
-        <ListView Margin="10,443,0,0" ItemsSource="{Binding AccomodationList}"
+        <ListView Margin="10,449,0,-6" ItemsSource="{Binding AccomodationList}"
                   SelectedItem="{Binding SelectedItemAccomodation, Mode=TwoWay}"
-                  SelectedIndex="{Binding SelectedIndex}">
+                  SelectedIndex="{Binding SelectedIndex}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
 
 
@@ -84,16 +92,17 @@
                     <StackPanel Height="292" Margin="0,30,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" BorderBrush="Black"  BorderThickness="1"
 >
                         <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="#FF0083FF">
-                            <Image Source = "..\Assets\Cottage.jpg"   Height="290" Margin="0,0,0.2,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Image Source = "{Binding ImageUrl}"   Height="290" Margin="0,0,0.2,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </StackPanel>
                         <StackPanel  Height="292" Width="575" Margin="0,0,0,0" Background="AntiqueWhite">
-                            <TextBlock Text="Paris, France" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding City}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding Country}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+
                             <StackPanel HorizontalAlignment="Stretch" Height="5" Margin="0,30,0,0" VerticalAlignment="Stretch" Background="Black"/>
-                            <TextBlock Margin="0,30,0,0" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." TextWrapping="Wrap" HorizontalAlignment="Center" Height="186" VerticalAlignment="Stretch" />
                         </StackPanel>
                         <StackPanel Height="292" Width="20" Margin="0,0,0,0" Background="#FF0083FF"/>
                         <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="AntiqueWhite" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                            <TextBlock Text="Price: 500DKK" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding Price}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
                             <Button Content="Show accomodation" HorizontalAlignment="Stretch" Margin="0,120,0,0" FontSize="36" FontWeight="Bold" VerticalAlignment="Stretch"/>
 
 
