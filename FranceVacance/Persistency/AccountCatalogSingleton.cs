@@ -16,12 +16,10 @@ namespace FranceVacance.Persistency
     {
         public List<Account> AccountsList { get; set; }
         private static AccountCatalogSingleton _instance;
-        private VerifyAccount _verifyAccount;
 
         private AccountCatalogSingleton()
         {
             AccountsList = new List<Account>() {new Account (fullname:"Tomas Vemola",email:"tomas@project.com",password:"Verystrongpassword1")};
-            _verifyAccount = new VerifyAccount();
         }
 
         public static AccountCatalogSingleton Instance
@@ -45,7 +43,7 @@ namespace FranceVacance.Persistency
 
         public void CreateAccount(string fullname, string email, string password)
         {
-            if (_verifyAccount.VerifyNewAccount(fullname, email, password, AccountsList))
+            if (VerifyAccount.VerifyNewAccount(fullname, email, password, AccountsList))
             {
                 Account account = new Account(fullname, email, password) { Fullname = fullname, Email = email, Password = password };
                 AddAccount(account);
@@ -54,7 +52,7 @@ namespace FranceVacance.Persistency
     
         public void LogIn(string email, string password)
         {
-            if (_verifyAccount.VerifyExistingAccount(email, password, AccountsList) != null)
+            if (VerifyAccount.VerifyExistingAccount(email, password, AccountsList) != null)
             {
                 MessageBox.Success("You have logged-in successfully.");
                 Navigate.ActivateFrameNavigation(typeof(MainPage));

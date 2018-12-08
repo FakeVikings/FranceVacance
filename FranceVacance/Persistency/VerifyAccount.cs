@@ -8,14 +8,14 @@ using FranceVacance.ViewModel;
 
 namespace FranceVacance.Persistency
 {
-    class VerifyAccount
+    public static class VerifyAccount
     {
-        private bool IsInputEmpty(string fullname, string email, string password)
+        private static bool IsInputEmpty(string fullname, string email, string password)
         {
             return fullname == null || email == null || password == null;
         }
 
-        public bool VerifyNewAccount(string fullname, string email, string password, List<Account> accountsList)
+        public static bool VerifyNewAccount(string fullname, string email, string password, List<Account> accountsList)
         {
             if (IsInputEmpty(fullname, email, password))
             {
@@ -54,7 +54,7 @@ namespace FranceVacance.Persistency
             return true;
         }
 
-        public Account VerifyExistingAccount(string email, string password, List<Account> accountsList)
+        public static Account VerifyExistingAccount(string email, string password, List<Account> accountsList)
         {
             if (accountsList.Exists(a => a.Email == email))
             {
