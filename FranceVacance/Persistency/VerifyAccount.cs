@@ -54,11 +54,11 @@ namespace FranceVacance.Persistency
             return true;
         }
 
-        public Account VerifyExistingAccount(string email, string password, List<Account> accountList)
+        public Account VerifyExistingAccount(string email, string password, List<Account> accountsList)
         {
-            if (accountList.Exists(a => a.Email == email))
+            if (accountsList.Exists(a => a.Email == email))
             {
-                var accountToLogIn = accountList.Find(a => a.Email == email);
+                var accountToLogIn = accountsList.Find(a => a.Email == email);
                 if (accountToLogIn.Password == password)
                 {
                     return accountToLogIn;
