@@ -30,7 +30,7 @@ namespace FranceVacance.ViewModel
             GoLoginViewCommand = new RelayCommand(GoLoginView);
             _accountCatalogSingleton = AccountCatalogSingleton.Instance;
             CreateAccountCommand = new RelayCommand(NewAccount);
-            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
+            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountsList);
         }
         
         public string Fullname

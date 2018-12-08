@@ -53,7 +53,7 @@ namespace FranceVacance.ViewModel
 
 
             _accountCatalogSingleton = AccountCatalogSingleton.Instance;
-            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
+            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountsList);
             GoCAVCommand = new RelayCommand(GoCAV);
             Singleton = AccountCatalogSingleton.Instance;
             LoginCommand = new RelayCommand(Login);
