@@ -72,6 +72,7 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("ConfirmPassword");
             }
         }
+
         public ObservableCollection<Account> AccountsCollection
         {
             get { return _accountsCollection; }
@@ -81,6 +82,7 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("AccountsCollection");
             }
         }
+
         private void NewAccount()
         {
             if (Password == ConfirmPassword)
@@ -92,6 +94,7 @@ namespace FranceVacance.ViewModel
                 MessageBox.Fail("Passwords do not match.");
             }
         }
+
         public void GoLoginView()
         {
             Type type = typeof(LoginView);
