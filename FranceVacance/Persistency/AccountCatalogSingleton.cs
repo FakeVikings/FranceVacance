@@ -37,7 +37,7 @@ namespace FranceVacance.Persistency
             }
         }
 
-        public void AddAccount(Account account)
+        private void AddAccount(Account account)
         {
             AccountsList.Add(account);
             MessageBox.Success("Account has been created.");
