@@ -15,14 +15,14 @@ namespace FranceVacance.Persistency
             return fullname == null || email == null || password == null;
         }
 
-        public bool VerifyNewAccount(string fullname, string email, string password, List<Account> accountList)
+        public bool VerifyNewAccount(string fullname, string email, string password, List<Account> accountsList)
         {
             if (IsInputEmpty(fullname, email, password))
             {
                 MessageBox.Fail("Please fill in all boxes.");
                 return false;
             }
-            if (accountList.Exists(a => a.Email == email))
+            if (accountsList.Exists(a => a.Email == email))
             {
                 MessageBox.Fail("This email is already in use.");
                 return false;
