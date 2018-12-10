@@ -8,21 +8,26 @@ using FranceVacance.ViewModel;
 
 namespace FranceVacance.Persistency
 {
-    class VerifyAccount
+    public static class VerifyAccount
     {
-        private bool IsInputEmpty(string fullname, string email, string password)
+        private static bool IsInputEmpty(string fullname, string email, string password)
         {
             return fullname == null || email == null || password == null;
         }
 
-        public bool VerifyNewAccount(string fullname, string email, string password, List<Account> accountList)
+        private static bool IsInputEmpty(string email, string password)
+        {
+            return email == null || password == null;
+        }
+
+        public static bool VerifyNewAccount(string fullname, string email, string password, List<Account> accountsList)
         {
             if (IsInputEmpty(fullname, email, password))
             {
                 MessageBox.Fail("Please fill in all boxes.");
                 return false;
             }
-            if (accountList.Exists(a => a.Email == email))
+            if (accountsList.Exists(a => a.Email == email))
             {
                 MessageBox.Fail("This email is already in use.");
                 return false;
@@ -54,19 +59,27 @@ namespace FranceVacance.Persistency
             return true;
         }
 
-        public Account VerifyExistingAccount(string email, string password, List<Account> accountList)
+        public static Account VerifyExistingAccount(string email, string password, List<Account> accountsList)
         {
-            if (accountList.Exists(a => a.Email == email))
+            if (IsInputEmpty(email, password))
             {
-                var accountToLogIn = accountList.Find(a => a.Email == email);
-                if (accountToLogIn.Password == password)
-                {
-                    return accountToLogIn;
-                }
-
+                MessageBox.Fail("Please fill in all boxes.");
                 return null;
             }
 
+            if (accountsList.Exists(a => a.Email == email))
+            {
+                var accountToLogIn = accountsList.Find(a => a.Email == email);
+                if (accountToLogIn.Password == password)
+                {
+                    MessageBox.Success("You have logged in successfully.");
+                    return accountToLogIn;
+                }
+                MessageBox.Fail("The password is incorrect.");
+                return null;
+            }
+
+            MessageBox.Fail("Email was not found.");
             return null;
         }
     }

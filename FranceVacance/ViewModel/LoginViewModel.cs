@@ -13,13 +13,14 @@ namespace FranceVacance.ViewModel
 {
     class LoginViewModel : NotifyViewModel
     {
-        public RelayCommand GoCAVCommand { get; set; }
-        public AccountCatalogSingleton Singleton;
+        private string _email;
+        private string _password;
         private ObservableCollection<Account> _accountsCollection;
         private AccountCatalogSingleton _accountCatalogSingleton;
         public RelayCommand LoginCommand{ get; set; }
-        private string _email;
-        private string _password;
+        public RelayCommand GoCreateAccountViewModelCommand { get; set; }
+
+
         public string Email
         {
             get { return _email; }
@@ -39,6 +40,7 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("Password");
             }
         }
+
         public ObservableCollection<Account> AccountsCollection
         {
             get { return _accountsCollection; }
@@ -48,27 +50,24 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("AccountsCollection");
             }
         }
+
         public LoginViewModel()
-            {
-
-
+        {
             _accountCatalogSingleton = AccountCatalogSingleton.Instance;
-            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountList);
-            GoCAVCommand = new RelayCommand(GoCAV);
-            Singleton = AccountCatalogSingleton.Instance;
+            _accountsCollection = new ObservableCollection<Account>(_accountCatalogSingleton.AccountsList);
+            GoCreateAccountViewModelCommand = new RelayCommand(GoCreateAccountViewModel);
             LoginCommand = new RelayCommand(Login);
+        }
 
-            }
-        public void GoCAV()
+        public void GoCreateAccountViewModel()
             {
-            Type type = typeof(CreateAccountView);
-            Navigate.ActivateFrameNavigation(type);
-
+                Type type = typeof(CreateAccountView);
+                Navigate.ActivateFrameNavigation(type);
             }
+
         private void Login()
         {
-            
-          _accountCatalogSingleton.LogIn(Email, Password);
+            _accountCatalogSingleton.LogIn(Email, Password);
         }
     }
 }
