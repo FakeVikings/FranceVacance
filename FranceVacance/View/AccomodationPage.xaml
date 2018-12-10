@@ -21,7 +21,7 @@
             <TextBlock Margin="0,0,0,50" Text="{Binding City}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
             <TextBlock Margin="0,0,0,50" Text="{Binding Price}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
             <TextBlock Margin="0,0,0,50" Text="" TextWrapping="Wrap" HorizontalAlignment="Center"/>
-            <Button Content="Return to Main Page" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="310"/>
+            <Button Command="{Binding GoMainPageCommand}" Content="Return to Main Page" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="310"/>
         </StackPanel>
     </Grid>
 </Page>
