@@ -8,6 +8,25 @@
     mc:Ignorable="d">
 
     <Grid>
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" BorderBrush="Black"  BorderThickness="2"
+>
+                <StackPanel Background="#FF0083FF">
+
+                    <TextBlock Text="Paris, France" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Image Source = "..\Assets\Cottage.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Height="441" Width="897" Margin="20,10"/>
+                </StackPanel>
+                <StackPanel  Height="292" Width="575" Margin="0,0,0,0" Background="AntiqueWhite">
+                    <TextBlock Margin="0,30,0,0" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." TextWrapping="Wrap" HorizontalAlignment="Center" Height="186" VerticalAlignment="Stretch" />
+
+                </StackPanel>
+                <StackPanel Height="292" Width="20" Margin="0,0,0,0" Background="#FF0083FF"/>
+                <StackPanel Height="292" Width="375" Background="AntiqueWhite" Orientation="Vertical" VerticalAlignment="Top">
+                    <TextBlock Text="Price: 500DKK" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Button Content="Show accomodation" HorizontalAlignment="Stretch" Margin="0,120,0,0" FontSize="36" FontWeight="Bold" VerticalAlignment="Stretch"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
 
     </Grid>
 </Page>

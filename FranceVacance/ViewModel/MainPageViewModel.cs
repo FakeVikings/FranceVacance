@@ -97,7 +97,7 @@ namespace FranceVacance.ViewModel
         public MainPageViewModel()
         {
             // Data Persistency 
-            AccomodationList= DataCollectionClass.AccomodationList();
+            AccomodationList = DataCollectionClass.AccomodationList();
 
             RunAsyncLoadData();
 
@@ -108,6 +108,7 @@ namespace FranceVacance.ViewModel
             DeleteAccomodationCommand = new RelayCommand(DoDeleteAccomodation);
             RefreshAccomodationCommand = new RelayCommand(DoRefreshAccomodation);
             AddAccomodation = new Accomodation();
+            GoLoginViewCommand = new RelayCommand(GoLoginView);
 
             AccomodationCatalogSingleton = AccomodationCatalogSingleton.GetInstance();
         }

@@ -81,7 +81,7 @@
 
             </StackPanel>
         </StackPanel>
-        <ListView Margin="10,449,0,-6" ItemsSource="{Binding AccomodationList}"
+        <ListView VerticalContentAlignment="Stretch" Margin="10,449,0,-6" ItemsSource="{Binding AccomodationList}"
                   SelectedItem="{Binding SelectedItemAccomodation, Mode=TwoWay}"
                   SelectedIndex="{Binding SelectedIndex}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 

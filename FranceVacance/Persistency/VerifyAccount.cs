@@ -38,6 +38,12 @@ namespace FranceVacance.Persistency
                 MessageBox.Fail("Fullname must have more than 3 characters.");
                 return false;
             }
+            if ( (fullname.Any(char.IsSeparator)) || !(fullname.Any(char.IsWhiteSpace)))
+            {
+                MessageBox.Fail("Your Fullname is not valid");
+                return false;
+            }
+
 
             if (!(email.Contains("@") && email.Contains(".")))
             {
