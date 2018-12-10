@@ -61,8 +61,8 @@
                 <Button Content="Delete" 
                         Command="{Binding DeleteAccomodationCommand}"/>
                 <!--Refresh button-->
-                <Button Content="Refresh List" 
-                        Command="{Binding RefreshAccomodationCommand }"/>
+                <Button Content="Go next page" 
+                        Command="{Binding GoAccomodationViewCommand }"/>
 
             </StackPanel>
 
@@ -103,7 +103,7 @@
                         <StackPanel Height="292" Width="20" Margin="0,0,0,0" Background="#FF0083FF"/>
                         <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="AntiqueWhite" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center">
                             <TextBlock Text="{Binding Price}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
-                            <Button Content="Show accomodation" HorizontalAlignment="Stretch" Margin="0,120,0,0" FontSize="36" FontWeight="Bold" VerticalAlignment="Stretch"/>
+                            <Button Content="Logout" Command="{Binding GoLoginViewCommand}" HorizontalAlignment="Stretch" Margin="-334.4,0,198.4,0" VerticalAlignment="Stretch" Background="#33FF0000" Height="50"/>
 
 
                         </StackPanel>

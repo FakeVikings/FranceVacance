@@ -29,7 +29,7 @@ namespace FranceVacance.ViewModel
         public RelayCommand UpdateAccomodationCommand { get; set; }
         public RelayCommand DeleteAccomodationCommand { get; set; }
         public RelayCommand RefreshAccomodationCommand { get; set; }
-        public RelayCommand GoApCommand { get; set; }
+        public RelayCommand GoAccomodationViewCommand { get; set; }
 
         // Add Accomodation
         public Accomodation AddAccomodation { get; set; }
@@ -107,10 +107,14 @@ namespace FranceVacance.ViewModel
             UpdateAccomodationCommand = new RelayCommand(DoUpdateAccomodation);
             DeleteAccomodationCommand = new RelayCommand(DoDeleteAccomodation);
             RefreshAccomodationCommand = new RelayCommand(DoRefreshAccomodation);
+            GoAccomodationViewCommand = new RelayCommand(GoAccomodationView);
+
             AddAccomodation = new Accomodation();
             GoLoginViewCommand = new RelayCommand(GoLoginView);
 
             AccomodationCatalogSingleton = AccomodationCatalogSingleton.GetInstance();
+
+
         }
 
         public async void DoAddAccomodation()
@@ -145,12 +149,12 @@ namespace FranceVacance.ViewModel
             Navigate.ActivateFrameNavigation(typeof(LoginView));
         }
         
-        public void GoAP()
+        public void GoAccomodationView()
         {
-           // UserSingleton.SetAccomodation(SelectedItemAccomodation);
+            // UserSingleton.SetAccomodation(SelectedItemAccomodation);
 
             Type type = typeof(AccomodationPage);
-            Navigate.ActivateFrameNavigation(type);
+            Navigate.ActivateFrameNavigation(typeof(AccomodationPage));
         }
 
         public async void RunAsyncLoadData()

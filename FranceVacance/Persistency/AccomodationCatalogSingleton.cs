@@ -48,6 +48,23 @@ namespace FranceVacance.Persistency
             Accomodation = accomodation;
         }
 
+      
+        public string GetCity()
+        {
+            return Accomodation.City;
+        }
+        public string GetCountry()
+        {
+            return Accomodation.Country;
+        }
+        public int GetPrice()
+        {
+            return Accomodation.Price;
+        }
+        public string GetImageUrl()
+        {
+            return Accomodation.ImageUrl;
+        }
 
     }
 }
