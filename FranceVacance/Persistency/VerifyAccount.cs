@@ -15,6 +15,11 @@ namespace FranceVacance.Persistency
             return fullname == null || email == null || password == null;
         }
 
+        private static bool IsInputEmpty(string email, string password)
+        {
+            return email == null || password == null;
+        }
+
         public static bool VerifyNewAccount(string fullname, string email, string password, List<Account> accountsList)
         {
             if (IsInputEmpty(fullname, email, password))
@@ -56,17 +61,25 @@ namespace FranceVacance.Persistency
 
         public static Account VerifyExistingAccount(string email, string password, List<Account> accountsList)
         {
+            if (IsInputEmpty(email, password))
+            {
+                MessageBox.Fail("Please fill in all boxes.");
+                return null;
+            }
+
             if (accountsList.Exists(a => a.Email == email))
             {
                 var accountToLogIn = accountsList.Find(a => a.Email == email);
                 if (accountToLogIn.Password == password)
                 {
+                    MessageBox.Success("You have logged in successfully.");
                     return accountToLogIn;
                 }
-
+                MessageBox.Fail("The password is incorrect.");
                 return null;
             }
 
+            MessageBox.Fail("Email was not found.");
             return null;
         }
     }

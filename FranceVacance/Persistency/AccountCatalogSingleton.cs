@@ -54,12 +54,12 @@ namespace FranceVacance.Persistency
         {
             if (VerifyAccount.VerifyExistingAccount(email, password, AccountsList) != null)
             {
-                MessageBox.Success("You have logged-in successfully.");
+               // MessageBox.Success("You have logged in successfully.");
                 Navigate.ActivateFrameNavigation(typeof(MainPage));
             }
             else
             {
-                MessageBox.Fail("Log-in failed.");
+              //  MessageBox.Fail("Login failed.");
             }
         }
     }
