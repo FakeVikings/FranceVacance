@@ -5,28 +5,23 @@
     xmlns:local="using:FranceVacance.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:viewModel="using:FranceVacance.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" BorderBrush="Black"  BorderThickness="2"
->
-                <StackPanel Background="#FF0083FF">
-
-                    <TextBlock Text="Paris, France" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"/>
-                    <Image Source = "..\Assets\Cottage.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Height="441" Width="897" Margin="20,10"/>
-                </StackPanel>
-                <StackPanel  Height="292" Width="575" Margin="0,0,0,0" Background="AntiqueWhite">
-                    <TextBlock Margin="0,30,0,0" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." TextWrapping="Wrap" HorizontalAlignment="Center" Height="186" VerticalAlignment="Stretch" />
-
-                </StackPanel>
-                <StackPanel Height="292" Width="20" Margin="0,0,0,0" Background="#FF0083FF"/>
-                <StackPanel Height="292" Width="375" Background="AntiqueWhite" Orientation="Vertical" VerticalAlignment="Top">
-                    <TextBlock Text="Price: 500DKK" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"/>
-                    <Button Content="Show accomodation" HorizontalAlignment="Stretch" Margin="0,120,0,0" FontSize="36" FontWeight="Bold" VerticalAlignment="Stretch"/>
-                </StackPanel>
-            </StackPanel>
+        <Grid.DataContext>
+            <viewModel:AccomodationViewModel/>
+        </Grid.DataContext>
+        <StackPanel HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="1490">
+            <Image Height="400" Margin="198,0,198.4,0"/>
         </StackPanel>
-
+        <StackPanel HorizontalAlignment="Left" Height="490" VerticalAlignment="Top" Width="1490" Margin="0,500,0,0">
+            <TextBlock Margin="0,50,0,50" Text="" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+            <TextBlock Margin="0,0,0,50" Text="" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+            <TextBlock Margin="0,0,0,50" Text="" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+            <TextBlock Margin="0,0,0,50" Text="" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+            <Button Content="Return to Main Page" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="310"/>
+        </StackPanel>
     </Grid>
 </Page>
