@@ -23,5 +23,10 @@ namespace FranceVacance.Model
             
         }
         public Accomodation() { }
+
+        public override string ToString()
+        {
+            return Country;
+        }
     }
 }

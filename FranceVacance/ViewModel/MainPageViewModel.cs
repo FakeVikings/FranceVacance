@@ -75,7 +75,7 @@ namespace FranceVacance.ViewModel
         }
 
 
-        // public readonly AccomodationCatalogSingleton AccomodationSingleton;
+        public readonly AccomodationCatalogSingleton AccomodationCatalogSingleton;
         private Accomodation _selectedItemAccomodation;
         public RelayCommand GoLoginViewCommand { get; set; }
         public RelayCommand GoAPCommand { get; set; }
@@ -89,30 +89,39 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged(nameof(SelectedItemAccomodation));
             }
         }
-       // public readonly Navigate FrameNavigate;
+        // public readonly Navigate FrameNavigate;
 
-        private JsonFile _filePersistency;
+        private JsonFile<Accomodation> _filePersistency;
 
 
         public MainPageViewModel()
         {
             // Data Persistency 
-            _filePersistency = new JsonFile();
+            AccomodationList= DataCollectionClass.AccomodationList();
+
+            RunAsyncLoadData();
+
+
+            _filePersistency = new JsonFile<Accomodation>();
             AddAccomodationCommand = new RelayCommand(DoAddAccomodation);
             UpdateAccomodationCommand = new RelayCommand(DoUpdateAccomodation);
             DeleteAccomodationCommand = new RelayCommand(DoDeleteAccomodation);
             RefreshAccomodationCommand = new RelayCommand(DoRefreshAccomodation);
             AddAccomodation = new Accomodation();
-            AccomodationList = new ObservableCollection<Accomodation>();
+
+            AccomodationCatalogSingleton = AccomodationCatalogSingleton.GetInstance();
         }
 
         public async void DoAddAccomodation()
         {
+          
                 string img = "../Assets/" + AddAccomodation.ImageUrl + ".jpg";
                 AddAccomodation.ImageUrl = img;
                 AccomodationList.Add(AddAccomodation);
                 await SaveAsyncMethod(AccomodationList);
+            
            
+
         }
 
         public void DoUpdateAccomodation()
@@ -122,7 +131,6 @@ namespace FranceVacance.ViewModel
         public void DoDeleteAccomodation()
         {
             AccomodationList.Remove(SelectedItemAccomodation);
-
         }
 
         public void DoRefreshAccomodation()
@@ -146,7 +154,7 @@ namespace FranceVacance.ViewModel
 
         public async void RunAsyncLoadData()
         {
-            AccomodationList = await _filePersistency.LoadAsync();
+           // AccomodationList = await _filePersistency.LoadAsync();
         }
         // Load data from file
         public async Task<ObservableCollection<Accomodation>> LoadAsyncMethod()

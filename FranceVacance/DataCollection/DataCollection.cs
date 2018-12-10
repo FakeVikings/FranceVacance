@@ -14,9 +14,8 @@ namespace FranceVacance
         {
             return new ObservableCollection<Accomodation>()
             {
-                new Accomodation("Paris", "France", 60, "../Assets/paris.jpg"),
-                new Accomodation("Paris", "France", 60, "../Assets/paris.jpg"),
-               };
+                new Accomodation("Paris", "France", 60, "../Assets/cottage.jpg"),
+            };
         }
     }
 }
