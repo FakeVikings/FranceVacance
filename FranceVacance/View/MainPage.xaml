@@ -19,8 +19,8 @@
             </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Height="128" VerticalAlignment="Top" Width="966" Margin="0,75,0,0" Orientation="Horizontal">
-            <TextBox Margin="0,39,0,39" Text="" Width="800" Height="50"/>
-            <ToggleButton Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Height="50" Width="134"/>
+            <TextBox Name ="TxtSearch"  Margin="0,39,0,39" Text="" Width="800" Height="50" TextChanged="TextBox_TextChanged"/>
+            <ToggleButton Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" Height="50" Width="134" Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=TxtSearch, Path=Text}" />
         </StackPanel>
 
 
@@ -50,7 +50,7 @@
 
                 <!--Create button-->
                 <Button Content="Create" 
-                        Command="{Binding AddAccomodationCommand}"/>
+                        Command="{Binding AddAccomodationCommand }"/>
 
 
                 <!--Update button-->
@@ -81,7 +81,7 @@
 
             </StackPanel>
         </StackPanel>
-        <ListView VerticalContentAlignment="Stretch" Margin="10,449,0,-6" ItemsSource="{Binding AccomodationList}"
+        <ListView Name="ListView" VerticalContentAlignment="Stretch" Margin="44,473,63,-6" ItemsSource="{Binding AccomodationList , Mode=TwoWay}"
                   SelectedItem="{Binding SelectedItemAccomodation, Mode=TwoWay}"
                   SelectedIndex="{Binding SelectedIndex}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
@@ -89,7 +89,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate  >
-                    <StackPanel Height="292" Margin="0,30,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" BorderBrush="Black"  BorderThickness="1"
+                    <StackPanel Height="250" Margin="0,30,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" BorderBrush="Black"  BorderThickness="1"
 >
                         <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="#FF0083FF">
                             <Image Source = "{Binding ImageUrl}"   Height="290" Margin="0,0,0.2,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>

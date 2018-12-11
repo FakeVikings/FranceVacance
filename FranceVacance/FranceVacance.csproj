@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Command\RelayCommandArg.cs" />
     <Compile Include="DataCollection\DataCollection.cs" />
     <Compile Include="Model\Accomodation.cs" />
     <Compile Include="Model\Account.cs" />

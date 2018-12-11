@@ -28,6 +28,8 @@ namespace FranceVacance.Persistency
         {
             // create an object instance of your business class
             Accomodation = new Accomodation("Paris", "France", 50, "../Assets/cottage.jpg");
+            Accomodation = new Accomodation("Prague", "belgium", 50, "../Assets/cottage.jpg");
+            Accomodation = new Accomodation("Stockholm", "sweden", 50, "../Assets/cottage.jpg");
         }
 
         // step 2:  this instance property check first if instance is not null ,

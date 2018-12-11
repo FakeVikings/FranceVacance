@@ -9,6 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Graphics.Printing3D;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
@@ -23,13 +25,28 @@ namespace FranceVacance.ViewModel
         private int _price;
         private string _imageUrl;
 
+
+
         public int SelectedIndex { get; } = 0; // 0 index
-        public ObservableCollection<Accomodation> AccomodationList { get; set; }
+        private ObservableCollection<Accomodation> _accomodationsList;
+
+        public ObservableCollection<Accomodation> AccomodationList
+        {
+            get { return _accomodationsList; }
+            set
+            {
+                _accomodationsList = value;
+                OnPropertyChanged(nameof(AccomodationList));
+            }
+        }
+
         public RelayCommand AddAccomodationCommand { get; set; }
         public RelayCommand UpdateAccomodationCommand { get; set; }
         public RelayCommand DeleteAccomodationCommand { get; set; }
         public RelayCommand RefreshAccomodationCommand { get; set; }
         public RelayCommand GoAccomodationViewCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
+
 
         // Add Accomodation
         public Accomodation AddAccomodation { get; set; }
@@ -108,6 +125,7 @@ namespace FranceVacance.ViewModel
             DeleteAccomodationCommand = new RelayCommand(DoDeleteAccomodation);
             RefreshAccomodationCommand = new RelayCommand(DoRefreshAccomodation);
             GoAccomodationViewCommand = new RelayCommand(GoAccomodationView);
+            SearchCommand = new RelayCommandArg(SearchData);
 
             AddAccomodation = new Accomodation();
             GoLoginViewCommand = new RelayCommand(GoLoginView);
@@ -175,6 +193,25 @@ namespace FranceVacance.ViewModel
 
         // Handling problems
 
+        private ObservableCollection<Accomodation> _searchAccomodationList;
+        // search system 
+        public void SearchData(object city)
+        {
+            var searchCity = city as string;
+            foreach (var se in AccomodationList)
+            {
+                if (se.City == searchCity)
+                {
+                    _searchAccomodationList = new ObservableCollection<Accomodation>()
+                    {
+                        new Accomodation(se.Country , se.City,se.Price,se.ImageUrl)
+                    };
+                }
+            }
+
+            AccomodationList = _searchAccomodationList;
+            OnPropertyChanged(nameof(AccomodationList));
+        }
         
     }
 }
