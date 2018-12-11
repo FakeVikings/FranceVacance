@@ -158,6 +158,7 @@ namespace FranceVacance.ViewModel
 
         public void DoRefreshAccomodation()
         {
+            AccomodationList = DataCollectionClass.AccomodationList();
         }
 
 

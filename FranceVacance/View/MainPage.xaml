@@ -54,8 +54,8 @@
 
 
                 <!--Update button-->
-                <Button Content="Update" 
-                        Command="{Binding UpdateAccomodationCommand}" />
+                <Button Content="Refresh" 
+                        Command="{Binding RefreshAccomodationCommand}" />
 
                 <!--Delete button-->
                 <Button Content="Delete" 
