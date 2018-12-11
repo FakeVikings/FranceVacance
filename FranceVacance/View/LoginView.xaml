@@ -38,7 +38,7 @@
                 <TextBlock Text="Password" Margin="6,0,5.2,0" Height="25" Foreground="Black"/>
             </StackPanel>
             <PasswordBox x:Name="Password" Password="{Binding Password, Mode=TwoWay}" Margin="10" Width="300" Background="AntiqueWhite" SelectionHighlightColor="Aquamarine"/>
-            <CheckBox ContextCanceled="CheckBox_ContextCanceled" HorizontalAlignment="center" VerticalAlignment="Center" Foreground="#FF228B22" FocusVisualPrimaryBrush="#FF228B22" BorderBrush="#FF228B22" Background="#FF228B22" FocusVisualSecondaryBrush="#FF228B22" Content="{ThemeResource BackgroundImageDefaultTemplate}"/>
+            <CheckBox ContextCanceled="CheckBox_ContextCanceled" HorizontalAlignment="center" VerticalAlignment="Center" Foreground="#FF228B22" FocusVisualPrimaryBrush="#FF228B22" BorderBrush="#FF228B22" Background="#FF228B22" FocusVisualSecondaryBrush="#FF228B22" Content="Remember Me"/>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="Login" Command="{Binding LoginCommand, Mode=TwoWay}" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="ForestGreen" Margin="0,20,0,20" Height="46" Width="458" />
             </StackPanel>

@@ -178,9 +178,9 @@ namespace FranceVacance.ViewModel
 
         public async void RunAsyncLoadData()
         {
-           // AccomodationList = await _filePersistency.LoadAsync();
+            // AccomodationList = await _filePersistency.LoadAsync();
         }
-        // Load data from file
+        //Load data from file
         public async Task<ObservableCollection<Accomodation>> LoadAsyncMethod()
         {
             return await _filePersistency.LoadAsync();
