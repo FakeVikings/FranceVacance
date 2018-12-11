@@ -16,7 +16,7 @@ namespace FranceVacance.ViewModel
         public string City { get; set; }
         public int Price { get; set; }
         public string ImageUrl { get; set; }
-        public RelayCommand GoMainPageView { get; set; }
+        public RelayCommand GoMainPageCommand { get; set; }
 
 
         public AccomodationCatalogSingleton Singleton;
@@ -29,7 +29,7 @@ namespace FranceVacance.ViewModel
             City = Singleton.GetCity();
             ImageUrl = Singleton.GetImageUrl();
             Price = Singleton.GetPrice();
-            GoMainPageView = new RelayCommand(GoMainPage);
+            GoMainPageCommand = new RelayCommand(GoMainPage);
 
         }
 

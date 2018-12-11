@@ -27,9 +27,7 @@ namespace FranceVacance.Persistency
         private AccomodationCatalogSingleton()
         {
             // create an object instance of your business class
-            Accomodation = new Accomodation("Paris", "France", 50, "../Assets/cottage.jpg");
-            Accomodation = new Accomodation("Prague", "belgium", 50, "../Assets/cottage.jpg");
-            Accomodation = new Accomodation("Stockholm", "sweden", 50, "../Assets/cottage.jpg");
+            Accomodation = new Accomodation();
         }
 
         // step 2:  this instance property check first if instance is not null ,
@@ -45,7 +43,7 @@ namespace FranceVacance.Persistency
         }
         // Create method based upon your business logic 
 
-        public void SetStudent(Accomodation accomodation)
+        public void SetAccomodation(Accomodation accomodation)
         {
             Accomodation = accomodation;
         }

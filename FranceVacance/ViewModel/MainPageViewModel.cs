@@ -169,7 +169,7 @@ namespace FranceVacance.ViewModel
         
         public void GoAccomodationView()
         {
-            // UserSingleton.SetAccomodation(SelectedItemAccomodation);
+            AccomodationCatalogSingleton.SetAccomodation(SelectedItemAccomodation);
 
             Type type = typeof(AccomodationPage);
             Navigate.ActivateFrameNavigation(typeof(AccomodationPage));
