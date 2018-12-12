@@ -27,7 +27,7 @@ namespace FranceVacance.ViewModel
 
 
 
-        public int SelectedIndex { get; } = 0; // 0 index
+        public int SelectedIndex { get; } = 0;
         private ObservableCollection<Accomodation> _accomodationsList;
 
         public ObservableCollection<Accomodation> AccomodationList
@@ -46,9 +46,6 @@ namespace FranceVacance.ViewModel
         public RelayCommand RefreshAccomodationCommand { get; set; }
         public RelayCommand GoAccomodationViewCommand { get; set; }
         public ICommand SearchCommand { get; set; }
-
-
-        // Add Accomodation
         public Accomodation AddAccomodation { get; set; }
 
 
@@ -106,14 +103,12 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged(nameof(SelectedItemAccomodation));
             }
         }
-        // public readonly Navigate FrameNavigate;
 
         private JsonFile<Accomodation> _filePersistency;
 
 
         public MainPageViewModel()
         {
-            // Data Persistency 
             AccomodationList = DataCollectionClass.AccomodationList();
 
             RunAsyncLoadData();
