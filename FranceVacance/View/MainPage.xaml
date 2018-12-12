@@ -28,7 +28,7 @@
             <Button Content="Refresh page" Command="{Binding RefreshAccomodationCommand}" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Stretch" Width="171" />
         </StackPanel>
 
-        <StackPanel Name="AdminStack" Visibility="{Binding Visibility}"  HorizontalAlignment="Right" Height="auto" VerticalAlignment="Top" Width="Auto" Margin="200,0,0,0">
+        <StackPanel Name="AdminStack" Visibility="{Binding AdminStackVisibility, Mode=TwoWay}"  HorizontalAlignment="Right" Height="auto" VerticalAlignment="Top" Width="Auto" Margin="200,0,0,0">
             <StackPanel Visibility="Visible" Grid.Row="0" Grid.Column="0" Background="AntiqueWhite">
                 <TextBlock Text="Create a new accomodation  :" FontWeight="Bold" />
                 <StackPanel Orientation="Horizontal">

@@ -25,11 +25,15 @@ namespace FranceVacance.ViewModel
         private string _city;
         private int _price;
         private string _imageUrl;
+        private bool _admin;
+        private Visibility _adminStackVisibility;
+
 
 
 
         public int SelectedIndex { get; } = 0; // 0 index
         private ObservableCollection<Accomodation> _accomodationsList;
+
 
         public ObservableCollection<Accomodation> AccomodationList
         {
@@ -47,7 +51,7 @@ namespace FranceVacance.ViewModel
         public RelayCommand RefreshAccomodationCommand { get; set; }
         public RelayCommand GoAccomodationViewCommand { get; set; }
         public ICommand SearchCommand { get; set; }
-
+        
 
         // Add Accomodation
         public Accomodation AddAccomodation { get; set; }
@@ -92,6 +96,16 @@ namespace FranceVacance.ViewModel
             }
         }
 
+        public bool Admin
+        {
+            get { return _admin; }
+            set
+            {
+                _admin = value;
+                OnPropertyChanged("Admin");
+            }
+        }
+
 
         public readonly AccommodationCatalogSingleton AccommodationCatalogSingleton;
         private Accomodation _selectedItemAccomodation;
@@ -111,6 +125,9 @@ namespace FranceVacance.ViewModel
 
         private JsonFile<Accomodation> _filePersistency;
 
+
+
+        
 
         public MainPageViewModel()
         {
@@ -133,6 +150,8 @@ namespace FranceVacance.ViewModel
 
             AccommodationCatalogSingleton = AccommodationCatalogSingleton.GetInstance();
 
+            AdminStackVisibility = Visibility.Visible;
+            
 
         }
 
@@ -215,25 +234,21 @@ namespace FranceVacance.ViewModel
             OnPropertyChanged(nameof(AccomodationList));
         }
 
-        private ObservableCollection<Account> fllnm;
-        private Visibility visibility;
 
-        public Visibility Visibility
+        // Visibility 
+
+
+        public Visibility AdminStackVisibility
         {
-
-            get
-            {
-                return visibility;
-            }
+         
+            get => _adminStackVisibility;
             set
             {
-
-                //
+                OnPropertyChanged(nameof(AdminStackVisibility));
+                _adminStackVisibility = value;
             }
-
-
         }
 
 
     }
-}
+    }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FranceVacance.ViewModel
 {
-    class NotifyViewModel : INotifyPropertyChanged
+    public class NotifyViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
