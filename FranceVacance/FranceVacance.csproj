@@ -126,7 +126,7 @@
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\JsonFile.cs" />
     <Compile Include="Model\Navigate.cs" />
-    <Compile Include="Persistency\AccomodationCatalogSingleton.cs" />
+    <Compile Include="Persistency\AccommodationCatalogSingleton.cs" />
     <Compile Include="Persistency\AccountCatalogSingleton.cs" />
     <Compile Include="Persistency\VerifyAccount.cs" />
     <Compile Include="ViewModel\AccomodationViewModel.cs" />

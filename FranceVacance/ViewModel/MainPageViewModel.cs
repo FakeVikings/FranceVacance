@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Graphics.Printing3D;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -24,11 +25,15 @@ namespace FranceVacance.ViewModel
         private string _city;
         private int _price;
         private string _imageUrl;
+        private bool _admin;
+        private Visibility _adminStackVisibility;
 
 
 
-        public int SelectedIndex { get; } = 0;
+
+        public int SelectedIndex { get; } = 0; // 0 index
         private ObservableCollection<Accomodation> _accomodationsList;
+
 
         public ObservableCollection<Accomodation> AccomodationList
         {
@@ -46,6 +51,9 @@ namespace FranceVacance.ViewModel
         public RelayCommand RefreshAccomodationCommand { get; set; }
         public RelayCommand GoAccomodationViewCommand { get; set; }
         public ICommand SearchCommand { get; set; }
+        
+
+        // Add Accomodation
         public Accomodation AddAccomodation { get; set; }
 
 
@@ -88,8 +96,18 @@ namespace FranceVacance.ViewModel
             }
         }
 
+        public bool Admin
+        {
+            get { return _admin; }
+            set
+            {
+                _admin = value;
+                OnPropertyChanged("Admin");
+            }
+        }
 
-        public readonly AccomodationCatalogSingleton AccomodationCatalogSingleton;
+
+        public readonly AccommodationCatalogSingleton AccommodationCatalogSingleton;
         private Accomodation _selectedItemAccomodation;
         public RelayCommand GoLoginViewCommand { get; set; }
         public RelayCommand GoAPCommand { get; set; }
@@ -103,12 +121,17 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged(nameof(SelectedItemAccomodation));
             }
         }
+        // public readonly Navigate FrameNavigate;
 
         private JsonFile<Accomodation> _filePersistency;
 
 
+
+        
+
         public MainPageViewModel()
         {
+            // Data Persistency 
             AccomodationList = DataCollectionClass.AccomodationList();
 
             RunAsyncLoadData();
@@ -125,8 +148,10 @@ namespace FranceVacance.ViewModel
             AddAccomodation = new Accomodation();
             GoLoginViewCommand = new RelayCommand(GoLoginView);
 
-            AccomodationCatalogSingleton = AccomodationCatalogSingleton.GetInstance();
+            AccommodationCatalogSingleton = AccommodationCatalogSingleton.GetInstance();
 
+            AdminStackVisibility = Visibility.Visible;
+            
 
         }
 
@@ -165,7 +190,7 @@ namespace FranceVacance.ViewModel
         
         public void GoAccomodationView()
         {
-            AccomodationCatalogSingleton.SetAccomodation(SelectedItemAccomodation);
+            AccommodationCatalogSingleton.SetAccomodation(SelectedItemAccomodation);
 
             Type type = typeof(AccomodationPage);
             Navigate.ActivateFrameNavigation(typeof(AccomodationPage));
@@ -208,6 +233,22 @@ namespace FranceVacance.ViewModel
             AccomodationList = _searchAccomodationList;
             OnPropertyChanged(nameof(AccomodationList));
         }
-        
+
+
+        // Visibility 
+
+
+        public Visibility AdminStackVisibility
+        {
+         
+            get => _adminStackVisibility;
+            set
+            {
+                OnPropertyChanged(nameof(AdminStackVisibility));
+                _adminStackVisibility = value;
+            }
+        }
+
+
     }
-}
+    }

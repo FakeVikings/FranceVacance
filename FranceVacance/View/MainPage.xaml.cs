@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -16,6 +18,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using FranceVacance.Command;
 using FranceVacance.Model;
 using FranceVacance.Persistency;
 using FranceVacance.ViewModel;
@@ -30,17 +33,17 @@ namespace FranceVacance.View
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private DataCollectionClass Data;
 
+        public ObservableCollection<Account> fllnm;
+        
 
         public MainPage()
         {
-
             this.InitializeComponent();
+            fllnm = new ObservableCollection<Account>();
         }
 
-
-
+    
 
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

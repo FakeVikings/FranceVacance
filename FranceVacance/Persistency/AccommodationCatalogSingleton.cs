@@ -16,15 +16,15 @@ using Newtonsoft.Json;
 
 namespace FranceVacance.Persistency
 {
-    public class AccomodationCatalogSingleton
+    public class AccommodationCatalogSingleton
     {
      
         public static Accomodation Accomodation;
 
         // step 1 : declare the object instance of class Singleton 
-        private static AccomodationCatalogSingleton Instance { get; set; }
+        private static AccommodationCatalogSingleton Instance { get; set; }
 
-        private AccomodationCatalogSingleton()
+        private AccommodationCatalogSingleton()
         {
             // create an object instance of your business class
             Accomodation = new Accomodation();
@@ -33,11 +33,11 @@ namespace FranceVacance.Persistency
         // step 2:  this instance property check first if instance is not null ,
         // if its null then create an object instance otherwise return current instance 
 
-        public static AccomodationCatalogSingleton GetInstance()
+        public static AccommodationCatalogSingleton GetInstance()
         {
             if (Instance == null)
             {
-                Instance = new AccomodationCatalogSingleton();
+                Instance = new AccommodationCatalogSingleton();
             }
             return Instance;
         }
