@@ -30,8 +30,6 @@ namespace FranceVacance.View
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private DataCollectionClass Data;
-        private bool stackVisible = false;
 
 
         public MainPage()
