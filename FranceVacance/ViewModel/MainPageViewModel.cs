@@ -92,7 +92,7 @@ namespace FranceVacance.ViewModel
         }
 
 
-        public readonly AccomodationCatalogSingleton AccomodationCatalogSingleton;
+        public readonly AccommodationCatalogSingleton AccommodationCatalogSingleton;
         private Accomodation _selectedItemAccomodation;
         public RelayCommand GoLoginViewCommand { get; set; }
         public RelayCommand GoAPCommand { get; set; }
@@ -130,7 +130,7 @@ namespace FranceVacance.ViewModel
             AddAccomodation = new Accomodation();
             GoLoginViewCommand = new RelayCommand(GoLoginView);
 
-            AccomodationCatalogSingleton = AccomodationCatalogSingleton.GetInstance();
+            AccommodationCatalogSingleton = AccommodationCatalogSingleton.GetInstance();
 
 
         }
@@ -170,7 +170,7 @@ namespace FranceVacance.ViewModel
         
         public void GoAccomodationView()
         {
-            AccomodationCatalogSingleton.SetAccomodation(SelectedItemAccomodation);
+            AccommodationCatalogSingleton.SetAccomodation(SelectedItemAccomodation);
 
             Type type = typeof(AccomodationPage);
             Navigate.ActivateFrameNavigation(typeof(AccomodationPage));

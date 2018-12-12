@@ -19,11 +19,11 @@ namespace FranceVacance.ViewModel
         public RelayCommand GoMainPageCommand { get; set; }
 
 
-        public AccomodationCatalogSingleton Singleton;
+        public AccommodationCatalogSingleton Singleton;
 
         public AccomodationViewModel()
         {
-            Singleton = AccomodationCatalogSingleton.GetInstance();
+            Singleton = AccommodationCatalogSingleton.GetInstance();
             //Retrieve the object instance from the Global Instance
             Country = Singleton.GetCountry();
             City = Singleton.GetCity();
