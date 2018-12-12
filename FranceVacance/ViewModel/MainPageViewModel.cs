@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Graphics.Printing3D;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -213,6 +214,26 @@ namespace FranceVacance.ViewModel
             AccomodationList = _searchAccomodationList;
             OnPropertyChanged(nameof(AccomodationList));
         }
-        
+
+        private ObservableCollection<Account> fllnm;
+        private Visibility visibility;
+
+        public Visibility Visibility
+        {
+
+            get
+            {
+                return visibility;
+            }
+            set
+            {
+
+                //
+            }
+
+
+        }
+
+
     }
 }

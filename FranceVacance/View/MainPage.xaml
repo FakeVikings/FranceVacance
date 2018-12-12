@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="Auto">
 
+
     <Grid>
         <Grid.DataContext>
             <local:MainPageViewModel/>
@@ -23,10 +24,11 @@
             <ToggleButton Content="Search" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Center"  Height="50" Width="134" Command="{Binding SearchCommand, Mode=TwoWay}" CommandParameter="{Binding ElementName=TxtSearch, Path=Text}" />
         </StackPanel>
         <StackPanel>
-            <Button Content="See the Accomodation" Command="{Binding GoAccomodationViewCommand}" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Stretch" />
+            <Button Content="See the Accomodation" Command="{Binding GoAccomodationViewCommand}" HorizontalAlignment="Left" Margin="50,90,0,0" VerticalAlignment="Stretch" />
+            <Button Content="Refresh page" Command="{Binding RefreshAccomodationCommand}" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Stretch" Width="171" />
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Right" Height="auto" VerticalAlignment="Top" Width="Auto" Margin="200,0,0,0">
+        <StackPanel Name="AdminStack" Visibility="{Binding Visibility}"  HorizontalAlignment="Right" Height="auto" VerticalAlignment="Top" Width="Auto" Margin="200,0,0,0">
             <StackPanel Visibility="Visible" Grid.Row="0" Grid.Column="0" Background="AntiqueWhite">
                 <TextBlock Text="Create a new accomodation  :" FontWeight="Bold" />
                 <StackPanel Orientation="Horizontal">
@@ -70,7 +72,7 @@
                 <TextBlock Margin="30,10,0,0" Text="City" FontSize="20"/>
             </StackPanel>
         </StackPanel>
-        <ListView Name="ListView" VerticalContentAlignment="Stretch" Margin="44,473,63,-6" ItemsSource="{Binding AccomodationList , Mode=TwoWay}"
+        <ListView Name="ListView" VerticalContentAlignment="Stretch" Margin="44,230,63,-6" ItemsSource="{Binding AccomodationList , Mode=TwoWay}"
                   SelectedItem="{Binding SelectedItemAccomodation, Mode=TwoWay}"
                   SelectedIndex="{Binding SelectedIndex}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>

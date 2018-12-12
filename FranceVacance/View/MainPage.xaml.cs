@@ -31,18 +31,15 @@ namespace FranceVacance.View
     public sealed partial class MainPage : Page
     {
         private DataCollectionClass Data;
+        private bool stackVisible = false;
 
 
         public MainPage()
         {
-
             this.InitializeComponent();
         }
 
-
-
-
-
+      
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
