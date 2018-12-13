@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="FranceVacance.View.BookingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FranceVacance.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="1000" VerticalAlignment="Center" Width="1490" Margin="0,0,0,0"/>
+        <StackPanel BorderBrush="Black"
+                    BorderThickness="3" HorizontalAlignment="Left" Height="850" VerticalAlignment="Top" Width="805" Margin="320,85,0,0">
+            <TextBlock Margin="0,0,0,0" Text="         France Vacance    " FontSize="60" TextWrapping="Wrap" HorizontalAlignment="Left" Width="785" Height="155"/>
+            <Grid   Height="807" Margin="-0.2,0,-0.4,0" BorderBrush="Black">
+                <TextBlock HorizontalAlignment="Left" Margin="10,0,0,660" Text="Check in date" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="115" Width="293"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,129,0,540" Text="Departure date" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Stretch" Width="302" RenderTransformOrigin="0.657,-0.807"/>
+                <DatePicker HorizontalAlignment="Left" Margin="460,36,0,0" VerticalAlignment="Top" Height="88" Width="228"/>
+                <DatePicker HorizontalAlignment="Left" Margin="460,129,0,0" VerticalAlignment="Top" Height="116" Width="341"/>
+                <Button Content="Book"  FontSize="40" HorizontalAlignment="Left" Margin="215,300,0,0" VerticalAlignment="Top" Height="137" Width="242" Background="#3330EA0B"/>
+                <Button Content="Return to main page" FontSize="30" HorizontalAlignment="Left" Margin="144,450,0,0" VerticalAlignment="Top" Height="128" Width="464"/>
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Page>
