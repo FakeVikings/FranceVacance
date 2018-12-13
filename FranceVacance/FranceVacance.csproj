@@ -138,6 +138,9 @@
     <Compile Include="View\AccomodationPage.xaml.cs">
       <DependentUpon>AccomodationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BookingPage.xaml.cs">
+      <DependentUpon>BookingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateAccountView.xaml.cs">
       <DependentUpon>CreateAccountView.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\AccomodationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BookingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
