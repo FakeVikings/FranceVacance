@@ -132,6 +132,7 @@
     <Compile Include="Persistency\Session.cs" />
     <Compile Include="Persistency\VerifyAccount.cs" />
     <Compile Include="ViewModel\AccomodationViewModel.cs" />
+    <Compile Include="ViewModel\BookingPageViewModel.cs" />
     <Compile Include="ViewModel\CreateAccountViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
