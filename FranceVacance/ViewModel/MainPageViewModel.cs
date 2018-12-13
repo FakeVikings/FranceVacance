@@ -150,7 +150,7 @@ namespace FranceVacance.ViewModel
 
             AccommodationCatalogSingleton = AccommodationCatalogSingleton.GetInstance();
 
-            AdminStackVisibility = Visibility.Visible;
+            AdminStackVisibility = Visibility.Collapsed;
             
 
         }
@@ -169,6 +169,14 @@ namespace FranceVacance.ViewModel
 
         public void DoUpdateAccomodation()
         {
+            foreach (var lis in AccomodationList)
+            {
+                    lis.City = SelectedItemAccomodation.City;
+                    lis.Country = SelectedItemAccomodation.Country;
+                    lis.Price = SelectedItemAccomodation.Price;
+                    lis.ImageUrl = SelectedItemAccomodation.ImageUrl;
+            }
+
         }
 
         public void DoDeleteAccomodation()
@@ -235,8 +243,7 @@ namespace FranceVacance.ViewModel
         }
 
 
-        // Visibility 
-
+      
 
         public Visibility AdminStackVisibility
         {
@@ -251,4 +258,4 @@ namespace FranceVacance.ViewModel
 
 
     }
-    }
+}

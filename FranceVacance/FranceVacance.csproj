@@ -124,6 +124,7 @@
     <Compile Include="DataCollection\DataCollection.cs" />
     <Compile Include="Model\Accomodation.cs" />
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\JsonFile.cs" />
     <Compile Include="Model\Navigate.cs" />
     <Compile Include="Persistency\AccommodationCatalogSingleton.cs" />
