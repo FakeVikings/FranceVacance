@@ -20,16 +20,11 @@ namespace FranceVacance.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BookingPage : Page
+    public sealed partial class MyBooking : Page
     {
-        public BookingPage()
+        public MyBooking()
         {
             this.InitializeComponent();
-        }
-
-        private void DatePicker_DateChanged(object sender, DatePickerValueChangedEventArgs e)
-        {
-
         }
     }
 }

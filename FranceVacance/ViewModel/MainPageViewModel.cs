@@ -112,6 +112,8 @@ namespace FranceVacance.ViewModel
         public RelayCommand GoLoginViewCommand { get; set; }
         public RelayCommand GoAPCommand { get; set; }
 
+        public RelayCommand GoMyBookingsCommand { get; set; }
+
         public Accomodation SelectedItemAccomodation
         {
             get => _selectedItemAccomodation;
@@ -138,15 +140,18 @@ namespace FranceVacance.ViewModel
 
 
             _filePersistency = new JsonFile<Accomodation>();
+
             AddAccomodationCommand = new RelayCommand(DoAddAccomodation);
             UpdateAccomodationCommand = new RelayCommand(DoUpdateAccomodation);
             DeleteAccomodationCommand = new RelayCommand(DoDeleteAccomodation);
             RefreshAccomodationCommand = new RelayCommand(DoRefreshAccomodation);
-            GoAccomodationViewCommand = new RelayCommand(GoAccomodationView);
-            SearchCommand = new RelayCommandArg(SearchData);
 
-            AddAccomodation = new Accomodation();
+            GoAccomodationViewCommand = new RelayCommand(GoAccomodationView);
+            GoMyBookingsCommand = new RelayCommand(GoMyBookings);
             GoLoginViewCommand = new RelayCommand(GoLoginView);
+
+            SearchCommand = new RelayCommandArg(SearchData);
+            AddAccomodation = new Accomodation();
 
             AccommodationCatalogSingleton = AccommodationCatalogSingleton.GetInstance();
             AdminCheck();
@@ -194,7 +199,12 @@ namespace FranceVacance.ViewModel
             Type type = typeof(LoginView);
             Navigate.ActivateFrameNavigation(typeof(LoginView));
         }
-        
+        public void GoMyBookings()
+        {
+            Type type = typeof(MyBooking);
+            Navigate.ActivateFrameNavigation(typeof(MyBooking));
+        }
+
         public void GoAccomodationView()
         {
             AccommodationCatalogSingleton.SetAccomodation(SelectedItemAccomodation);

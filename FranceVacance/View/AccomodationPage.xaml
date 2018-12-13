@@ -2,16 +2,15 @@
     x:Class="FranceVacance.View.AccomodationPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:FranceVacance.View"
+    xmlns:local="using:FranceVacance.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModel="using:FranceVacance.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <Grid.DataContext>
-            <viewModel:AccomodationViewModel/>
+            <local:AccomodationViewModel/>
         </Grid.DataContext>
         <StackPanel HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="1490">
             <Image Source = "{Binding ImageUrl}"  Height="400" Margin="198,0,198.4,0"/>
@@ -22,7 +21,7 @@
             <TextBlock Margin="0,0,0,20" Text="{Binding Price}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
             <TextBlock Margin="0,0,0,10" Text="" TextWrapping="Wrap" HorizontalAlignment="Center"/>
             <Button Command="{Binding GoMainPageCommand}" Content="Return to Main Page" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="310" Height="75"/>
-            <Button  Content="Book Accomodation" HorizontalAlignment="Center" Margin="20" VerticalAlignment="Center" Width="auto" Height="auto"/>
+            <Button Command="{Binding GoBookingPageCommand}"  Content="Book Accomodation" HorizontalAlignment="Center" Margin="20" VerticalAlignment="Center" Width="auto" Height="auto"/>
         </StackPanel>
     </Grid>
 </Page>

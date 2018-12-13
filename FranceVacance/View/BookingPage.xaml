@@ -2,25 +2,31 @@
     x:Class="FranceVacance.View.BookingPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:FranceVacance.View"
+    xmlns:local="using:FranceVacance.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="1000" VerticalAlignment="Center" Width="1490" Margin="0,0,0,0"/>
+        <Grid.DataContext>
+            <local:BookingPageViewModel/>
+        </Grid.DataContext>
         <StackPanel BorderBrush="Black"
                     BorderThickness="3" HorizontalAlignment="Left" Height="850" VerticalAlignment="Top" Width="805" Margin="320,85,0,0">
-            <TextBlock Margin="0,0,0,0" Text="         France Vacance    " FontSize="60" TextWrapping="Wrap" HorizontalAlignment="Left" Width="785" Height="155"/>
-            <Grid   Height="807" Margin="-0.2,0,-0.4,0" BorderBrush="Black">
-                <TextBlock HorizontalAlignment="Left" Margin="10,0,0,660" Text="Check in date" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="115" Width="293"/>
-                <TextBlock HorizontalAlignment="Left" Margin="10,129,0,540" Text="Departure date" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Stretch" Width="302" RenderTransformOrigin="0.657,-0.807"/>
-                <DatePicker HorizontalAlignment="Left" Margin="460,36,0,0" VerticalAlignment="Top" Height="88" Width="228"/>
-                <DatePicker HorizontalAlignment="Left" Margin="460,129,0,0" VerticalAlignment="Top" Height="116" Width="341"/>
-                <Button Content="Book"  FontSize="40" HorizontalAlignment="Left" Margin="215,300,0,0" VerticalAlignment="Top" Height="137" Width="242" Background="#3330EA0B"/>
-                <Button Content="Return to main page" FontSize="30" HorizontalAlignment="Left" Margin="144,450,0,0" VerticalAlignment="Top" Height="128" Width="464"/>
-            </Grid>
+            <TextBlock Text="FRANCE VACANCE" FontSize="60" TextAlignment="Center" FontWeight="Bold" />
+            <TextBlock Text="Booking" FontSize="40" TextAlignment="Center" />
+            <Image Source ="{Binding ImageUrl}" Height="Auto" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <StackPanel Height="Auto" Width="Auto" Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Left"  Text="Check in date" FontSize="35" TextWrapping="Wrap" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="10" />
+                <DatePicker Date="{Binding Start}" HorizontalAlignment="Left" Margin="195.4,0,0,0" VerticalAlignment="Center" Height="Auto" Width="295"/>
+            </StackPanel>
+            <StackPanel Height="Auto" Width="Auto" Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Left" Margin="10" Text="Departure date" FontSize="35" TextWrapping="Wrap" Width="Auto" />
+                <DatePicker Date="{Binding End}" HorizontalAlignment="Left" Margin="167.8,0,0,0" VerticalAlignment="Center" Height="Auto" Width="295"/>
+            </StackPanel>
+            <Button Command="{Binding BookA}" Content="Book the Accomodation"  FontSize="40" HorizontalAlignment="Center"  Margin="150,120" VerticalAlignment="Center" Height="Auto" Width="Auto" Background="#3330EA0B"/>
+            <Button Command="{Binding GoMainPageCommand}" Content="Return to main page" FontSize="30" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="Auto" Width="Auto"/>
 
         </StackPanel>
     </Grid>

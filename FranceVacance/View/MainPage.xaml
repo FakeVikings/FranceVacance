@@ -22,6 +22,7 @@
         <StackPanel HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="954" Orientation="Horizontal" Margin="0,80,0,0">
             <TextBox Name ="TxtSearch"   Margin="5,0,5,0" Text="Search by country" Width="800" Height="50" TextChanged="TextBox_TextChanged"/>
             <ToggleButton Content="Search" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Center"  Height="50" Width="134" Command="{Binding SearchCommand, Mode=TwoWay}" CommandParameter="{Binding ElementName=TxtSearch, Path=Text}" />
+            <Button Content="My Bookings" Command="{Binding GoMyBookingsCommand}" HorizontalAlignment="Left" Margin="50,90,0,0" VerticalAlignment="Stretch" />
         </StackPanel>
         <StackPanel>
             <Button Content="See the Accomodation" Command="{Binding GoAccomodationViewCommand}" HorizontalAlignment="Left" Margin="50,90,0,0" VerticalAlignment="Stretch" />

@@ -129,6 +129,7 @@
     <Compile Include="Model\Navigate.cs" />
     <Compile Include="Persistency\AccommodationCatalogSingleton.cs" />
     <Compile Include="Persistency\AccountCatalogSingleton.cs" />
+    <Compile Include="Persistency\BookedASingleton.cs" />
     <Compile Include="Persistency\Session.cs" />
     <Compile Include="Persistency\VerifyAccount.cs" />
     <Compile Include="ViewModel\AccomodationViewModel.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\MessageBox.cs" />
+    <Compile Include="ViewModel\MyBookingViewModel.cs" />
     <Compile Include="ViewModel\NotifyViewModel.cs" />
     <Compile Include="View\AccomodationPage.xaml.cs">
       <DependentUpon>AccomodationPage.xaml</DependentUpon>
@@ -154,15 +156,22 @@
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MyBooking.xaml.cs">
+      <DependentUpon>MyBooking.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\chateau.jpg" />
     <Content Include="Assets\Cottage.jpg" />
     <None Include="FranceVacance_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\hut.JPG" />
+    <Content Include="Assets\mobile.jpg" />
+    <Content Include="Assets\vegetation.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -194,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MyBooking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

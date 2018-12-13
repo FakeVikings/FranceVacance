@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="FranceVacance.View.MyBooking"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FranceVacance.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.DataContext>
+            <local:MyBookingViewModel/>
+        </Grid.DataContext>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal" Height="60" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF0083FF">
+                <TextBlock Text="France Vacance" FontWeight="SemiLight" FontStyle="Italic"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" Margin="600,0,0,0" TextAlignment="DetectFromContent" Height="Auto"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="1000" Width="1500">
+                <ListView Name="MyBookingListView" VerticalContentAlignment="Stretch"  ItemsSource="{Binding MyBookedASingleton, Mode=TwoWay}" SelectedItem="{Binding SelectedAccomodation, Mode=TwoWay}" SelectedIndex="{Binding SelectedIndex}" Height="Auto" Width="Auto">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Height="250" Margin="0,30,0,30" VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" BorderBrush="Black" BorderThickness="5">
+                                <StackPanel Height="Auto" Width="Auto" Background="#FF0083FF">
+                                    <Image Source = "{Binding ImageUrl}" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Margin="0,0,10,0"/>
+                                </StackPanel>
+                                <StackPanel  Height="Auto" Width="Auto" Background="AntiqueWhite">
+                                    <TextBlock Text="{Binding City}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="{Binding Country}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+
+                                    <StackPanel HorizontalAlignment="Stretch" Height="5" Margin="0,30,0,0" VerticalAlignment="Stretch" Background="Black"/>
+                                </StackPanel>
+                                <StackPanel Height="300" Width="20" Margin="0,0,0,0" Background="#FF0083FF"/>
+                                <StackPanel Height="Auto" Width="Auto"  Background="AntiqueWhite" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                                    <TextBlock Text="Price" Margin="0,20,0,0" FontSize="40" FontWeight="Light" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Price}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackPanel>
+                
+                 </StackPanel>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

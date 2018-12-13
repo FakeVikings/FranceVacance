@@ -17,7 +17,7 @@ namespace FranceVacance.ViewModel
         public int Price { get; set; }
         public string ImageUrl { get; set; }
         public RelayCommand GoMainPageCommand { get; set; }
-
+        public RelayCommand GoBookingPageCommand { get; set; }
 
         public AccommodationCatalogSingleton Singleton;
 
@@ -30,6 +30,7 @@ namespace FranceVacance.ViewModel
             ImageUrl = Singleton.GetImageUrl();
             Price = Singleton.GetPrice();
             GoMainPageCommand = new RelayCommand(GoMainPage);
+            GoBookingPageCommand = new RelayCommand(GoBP);
 
         }
 
@@ -37,6 +38,11 @@ namespace FranceVacance.ViewModel
         {
             Type type = typeof(MainPage);
             Navigate.ActivateFrameNavigation(typeof(MainPage));
+        }
+        public void GoBP()
+        {
+            Type type = typeof(BookingPage);
+            Navigate.ActivateFrameNavigation(typeof(BookingPage));
         }
     }
 }
