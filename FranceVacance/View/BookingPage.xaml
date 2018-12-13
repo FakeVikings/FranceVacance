@@ -13,10 +13,10 @@
             <local:BookingPageViewModel/>
         </Grid.DataContext>
         <StackPanel BorderBrush="Black"
-                    BorderThickness="3" HorizontalAlignment="Left" Height="850" VerticalAlignment="Top" Width="805" Margin="320,85,0,0">
+                    BorderThickness="3" HorizontalAlignment="Left" Height="805" VerticalAlignment="Top" Width="805" Margin="320,85,0,0">
             <TextBlock Text="FRANCE VACANCE" FontSize="60" TextAlignment="Center" FontWeight="Bold" />
             <TextBlock Text="Booking" FontSize="40" TextAlignment="Center" />
-            <Image Source ="{Binding ImageUrl}" Height="Auto" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image Source ="{Binding ImageUrl}" Height="166" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             <StackPanel Height="Auto" Width="Auto" Orientation="Horizontal" >
                 <TextBlock HorizontalAlignment="Left"  Text="Check in date" FontSize="35" TextWrapping="Wrap" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="10" />
                 <DatePicker Date="{Binding Start}" HorizontalAlignment="Left" Margin="195.4,0,0,0" VerticalAlignment="Center" Height="Auto" Width="295"/>
@@ -25,7 +25,7 @@
                 <TextBlock HorizontalAlignment="Left" Margin="10" Text="Departure date" FontSize="35" TextWrapping="Wrap" Width="Auto" />
                 <DatePicker Date="{Binding End}" HorizontalAlignment="Left" Margin="167.8,0,0,0" VerticalAlignment="Center" Height="Auto" Width="295"/>
             </StackPanel>
-            <Button Command="{Binding BookA}" Content="Book the Accomodation"  FontSize="40" HorizontalAlignment="Center"  Margin="150,120" VerticalAlignment="Center" Height="Auto" Width="Auto" Background="#3330EA0B"/>
+            <Button Command="{Binding BookA}" Content="Book the Accomodation"  FontSize="40" HorizontalAlignment="Center"  Margin="20" VerticalAlignment="Center" Height="Auto" Width="Auto" Background="#3330EA0B"/>
             <Button Command="{Binding GoMainPageCommand}" Content="Return to main page" FontSize="30" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="Auto" Width="Auto"/>
 
         </StackPanel>
