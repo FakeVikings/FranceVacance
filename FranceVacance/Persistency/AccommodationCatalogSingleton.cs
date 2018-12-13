@@ -26,6 +26,7 @@ namespace FranceVacance.Persistency
 
         private AccommodationCatalogSingleton()
         {
+            DataCollectionClass.ReadFiles();
             // create an object instance of your business class
             Accomodation = new Accomodation();
         }

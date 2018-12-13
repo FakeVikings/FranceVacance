@@ -132,7 +132,7 @@ namespace FranceVacance.ViewModel
         public MainPageViewModel()
         {
             // Data Persistency 
-            AccomodationList = DataCollectionClass.AccomodationList();
+            AccomodationList = DataCollectionClass.AccomodationListM();
 
             RunAsyncLoadData();
 
@@ -185,7 +185,7 @@ namespace FranceVacance.ViewModel
 
         public void DoRefreshAccomodation()
         {
-            AccomodationList = DataCollectionClass.AccomodationList();
+            AccomodationList = DataCollectionClass.AccomodationListM();
         }
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.ServiceModel.Security;
 using System.Text;
@@ -19,7 +20,12 @@ namespace FranceVacance.Persistency
 
         private AccountCatalogSingleton()
         {
-            AccountsList = new List<Account>() {new Account (fullname:"Tomas Vemola",email:"tomas@project.com",password:"Verystrongpassword1", admin:true)};
+            //DataCollectionClass.ReadFiles();
+            //AccountsList = new List<Account>() {new Account (fullname:"Tomas Vemola",email:"tomas@project.com",password:"Verystrongpassword1", admin:true)};
+            AccountsList = DataCollectionClass.AccountList;
+            AccountsList = new List<Account>();
+            //AccountsList.Add(new Account(fullname: "Tomas Vemola", email: "tomas@project.com", password: "Verystrongpassword1", admin: true));
+            //DataCollectionClass.SaveFiles();
         }
 
         public static AccountCatalogSingleton Instance
@@ -37,7 +43,10 @@ namespace FranceVacance.Persistency
 
         private void AddAccount(Account account)
         {
+            DataCollectionClass.ReadFiles();
             AccountsList.Add(account);
+            DataCollectionClass.AccountList.Add(account);
+            DataCollectionClass.SaveFiles();
             MessageBox.Success("Account has been created.");
         }
 
