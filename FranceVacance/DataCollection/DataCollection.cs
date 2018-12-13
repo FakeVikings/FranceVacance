@@ -4,12 +4,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 using FranceVacance.Model;
 
 namespace FranceVacance
 {
     class DataCollectionClass
     {
+        
         public static ObservableCollection<Accomodation> AccomodationList()
         {
             return new ObservableCollection<Accomodation>()
@@ -22,6 +24,8 @@ namespace FranceVacance
 
 
             };
+
+          public ObservableCollection<Account> AccountList { get; set; }
         }
     }
 }

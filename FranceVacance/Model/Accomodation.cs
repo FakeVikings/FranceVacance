@@ -13,6 +13,7 @@ namespace FranceVacance.Model
         public string City { get; set; }
         public int Price { get; set; }
         public string ImageUrl { get; set; }
+        public bool IsBooked { get; set; }
 
         public Accomodation(string country, string city, int price, string imageUrl)
         {
@@ -20,7 +21,7 @@ namespace FranceVacance.Model
             City = city;
             Price = price;
             ImageUrl = imageUrl;
-            
+            IsBooked = false;
         }
         public Accomodation() { }
 
@@ -28,5 +29,6 @@ namespace FranceVacance.Model
         {
             return Country;
         }
+       
     }
 }
