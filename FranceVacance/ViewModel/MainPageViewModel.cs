@@ -149,8 +149,7 @@ namespace FranceVacance.ViewModel
             GoLoginViewCommand = new RelayCommand(GoLoginView);
 
             AccommodationCatalogSingleton = AccommodationCatalogSingleton.GetInstance();
-
-            AdminStackVisibility = Visibility.Collapsed;
+            AdminCheck();
             
 
         }
@@ -256,6 +255,18 @@ namespace FranceVacance.ViewModel
             }
         }
 
+
+        public void AdminCheck()
+        {
+            if (Session.LogedInUser.Admin == true)
+            {
+                AdminStackVisibility = Visibility.Visible;
+            }
+            else
+            {
+                AdminStackVisibility = Visibility.Collapsed;
+            }
+        }
 
     }
 }
