@@ -14,11 +14,13 @@ namespace FranceVacance.ViewModel
 {
     class BookingPageViewModel : NotifyViewModel
     {
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
-        public string City { get; set; }public int Price { get; set; }
-        private string _imageUrl{get; set;}
-        public bool BookA(DateTime Start, DateTime End)
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string City { get; set; }
+        public int Price { get; set; }
+        public string Country { get; set; }
+        private string _imageUrl {get; set;}
+        public bool BookAccommodation(DateTime Start, DateTime End)
         {
             if (Start == null || End == null)
             {
@@ -40,6 +42,7 @@ namespace FranceVacance.ViewModel
             City = Singleton.GetCity();
             ImageUrl = Singleton.GetImageUrl();
             Price = Singleton.GetPrice();
+            Country = Singleton.GetCountry();
             GoMainPageCommand = new RelayCommand(GoMainPage);
         }
 
