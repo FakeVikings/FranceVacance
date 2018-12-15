@@ -21,9 +21,9 @@ namespace FranceVacance.Persistency
         private AccountCatalogSingleton()
         {
             //DataCollectionClass.ReadFiles();
-            //AccountsList = new List<Account>() {new Account (fullname:"Tomas Vemola",email:"tomas@project.com",password:"Verystrongpassword1", admin:true)};
-            AccountsList = DataCollectionClass.AccountList;
-            AccountsList = new List<Account>();
+            AccountsList = new List<Account>() {new Account (fullname:"Tomas Vemola",email:"tomas@project.com",password:"Verystrongpassword1", admin:true)};
+           // AccountsList = DataCollectionClass.AccountList;
+            //AccountsList = new List<Account>();
             //AccountsList.Add(new Account(fullname: "Tomas Vemola", email: "tomas@project.com", password: "Verystrongpassword1", admin: true));
             //DataCollectionClass.SaveFiles();
         }

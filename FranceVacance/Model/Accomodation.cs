@@ -11,15 +11,15 @@ namespace FranceVacance.Model
 
         public string Country { get; set; }
         public string City { get; set; }
-        public int Price { get; set; }
+        public int PricePerNight { get; set; }
         public string ImageUrl { get; set; }
         public bool IsBooked { get; set; }
 
-        public Accomodation(string country, string city, int price, string imageUrl)
+        public Accomodation(string country, string city, int pricePerNight, string imageUrl)
         {
             Country = country;
             City = city;
-            Price = price;
+            PricePerNight = pricePerNight;
             ImageUrl = imageUrl;
             IsBooked = false;
         }

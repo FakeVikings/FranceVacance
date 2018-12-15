@@ -60,7 +60,7 @@ namespace FranceVacance.Persistency
         }
         public int GetPrice()
         {
-            return Accomodation.Price;
+            return Accomodation.PricePerNight;
         }
         public string GetImageUrl()
         {

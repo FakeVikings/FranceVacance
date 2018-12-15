@@ -177,7 +177,7 @@ namespace FranceVacance.ViewModel
             {
                     lis.City = SelectedItemAccomodation.City;
                     lis.Country = SelectedItemAccomodation.Country;
-                    lis.Price = SelectedItemAccomodation.Price;
+                    lis.PricePerNight = SelectedItemAccomodation.PricePerNight;
                     lis.ImageUrl = SelectedItemAccomodation.ImageUrl;
             }
 
@@ -242,7 +242,7 @@ namespace FranceVacance.ViewModel
                 {
                     _searchAccomodationList = new ObservableCollection<Accomodation>()
                     {
-                        new Accomodation(se.Country , se.City,se.Price,se.ImageUrl)
+                        new Accomodation(se.Country , se.City,se.PricePerNight,se.ImageUrl)
                     };
                 }
             }
