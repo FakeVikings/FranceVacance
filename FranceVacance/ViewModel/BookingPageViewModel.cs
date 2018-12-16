@@ -14,26 +14,18 @@ namespace FranceVacance.ViewModel
 {
     class BookingPageViewModel : NotifyViewModel
     {
-        public DateTime _startDate;
-        public DateTime _endDate;
+        private DateTimeOffset _startDate;
+        private DateTimeOffset _endDate;
         public string City { get; set; }
         public int Price { get; set; }
         public string Country { get; set; }
         private string _imageUrl {get; set;}
-
-        
-   
-      
-
         public RelayCommand GoMainPageCommand { get; set; }
-
         public RelayCommand GoBookingPageCommand { get; set; }
-
         private BookingCatalogSingleton _bookingCatalogSingleton;
-
         private ObservableCollection<Booking> _bookingsList;
 
-        public Booking AddBooking { get; set; }
+        //       public Booking AddBooking { get; set; }
 
 
         public ObservableCollection<Booking> BookingsList
@@ -52,18 +44,17 @@ namespace FranceVacance.ViewModel
         public BookingPageViewModel()
         {
             BookingsList = DataCollection.BookingsCollection();
-
+            _bookingCatalogSingleton = BookingCatalogSingleton.Instance;
             Singleton = AccommodationCatalogSingleton.GetInstance();
             GoMainPageCommand = new RelayCommand(GoMainPage);
-            GoBookingPageCommand = new RelayCommand(BookAccommodation);
+            GoBookingPageCommand = new RelayCommand(Book);
             //bookingsCollection = new ObservableCollection<Booking>(BookingCatalogSingleton.BookingsList);
 
             Country = Singleton.GetCountry();
             City = Singleton.GetCity();
             ImageUrl = Singleton.GetImageUrl();
             Price = Singleton.GetPrice();
-
-            AddBooking = new Booking(32, new DateTime(2013, 1, 14), new DateTime(2013, 1, 18));
+            //AddBooking = new Booking(32, new DateTime(2013, 1, 14), new DateTime(2013, 1, 18));
 
         }
 
@@ -80,7 +71,7 @@ namespace FranceVacance.ViewModel
             }
         }
 
-        public DateTime StartDate
+        public DateTimeOffset StartDate
         {
             get { return _startDate; }
             set
@@ -89,7 +80,8 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("StartDate");
             }
         }
-        public DateTime EndDate
+
+        public DateTimeOffset EndDate
         {
             get { return _endDate; }
             set
@@ -99,16 +91,9 @@ namespace FranceVacance.ViewModel
             }
         }
 
-        public void BookAccommodation()
+        public void Book()
         {
-            if (StartDate !=null && EndDate !=null)
-            {
-                BookingsList.Add(AddBooking);
-                MessageBox.Success("You have booked accomodation");
-                Type type = typeof(MyBooking);
-                Navigate.ActivateFrameNavigation(typeof(MyBooking));
-            }
-
+            _bookingCatalogSingleton.BookAccommodation(StartDate, EndDate);
         }
 
 

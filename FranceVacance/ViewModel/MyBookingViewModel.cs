@@ -69,7 +69,7 @@ namespace FranceVacance.ViewModel
         public MyBookingViewModel()
         {
             GoMainPageCommand = new RelayCommand(GoMainPage);
-            Singleton = BookingCatalogSingleton.GetInstance();
+            Singleton = BookingCatalogSingleton.Instance;
           //  Country = Singleton.GetCountry();
           //  City = Singleton.GetCity();
            // ImageUrl = Singleton.GetImageUrl();

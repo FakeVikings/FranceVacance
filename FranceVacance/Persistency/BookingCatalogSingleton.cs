@@ -4,42 +4,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FranceVacance.ViewModel;
 
 namespace FranceVacance.Persistency
 {
     class BookingCatalogSingleton
     {
         //public List<Booking> BookingsList { get; set; }
-        public static Booking Booking;
-
-        private static BookingCatalogSingleton Instance { get; set; }
-        DateTime starTime = new DateTime(2008, 3, 9, 16, 5, 7, 123);
-        DateTime enTime = new DateTime(2008, 3, 9, 16, 5, 7, 123);
+        public List<Booking> BookingsList;
+        private static BookingCatalogSingleton _instance { get; set; }
 
         private BookingCatalogSingleton()
         {
             DataCollection.ReadFiles();
-            Booking = new Booking(32, new DateTime(2019, 1, 20), new DateTime(2019, 1, 28));
-
+            //Booking = new Booking(32, new DateTime(2019, 1, 20), new DateTime(2019, 1, 28));
+            BookingsList = new List<Booking>();
 
         }
-        public static BookingCatalogSingleton GetInstance()
+
+        public static BookingCatalogSingleton Instance
         {
-            if (Instance == null)
+            get
             {
-                Instance = new BookingCatalogSingleton();
+                if (_instance == null)
+                {
+                    _instance = new BookingCatalogSingleton();
+                }
+
+                return _instance;
             }
-            return Instance;
         }
 
         public void BookingVerification()
         {
 
         }
-        public void SetAccomodation(Booking booking)
+
+        private void AddBooking(Booking booking)
         {
-            Booking = booking;
+            BookingsList.Add(booking);
         }
+
+        public void BookAccommodation(DateTimeOffset startDate, DateTimeOffset endDate)
+        {
+            Booking booking = new Booking(startDate, endDate);
+            AddBooking(booking);
+            MessageBox.Success("Acc booked.");
+        }
+
+
+        
 
 
 

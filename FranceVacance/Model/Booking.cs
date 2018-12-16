@@ -10,20 +10,20 @@ namespace FranceVacance.Model
     {
         public int Price { get; set; }
         public bool IsPaidFor { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTimeOffset StartDate { get; set; }
+        public DateTimeOffset EndDate { get; set; }
         //public Accomodation Country { get; set; }
-        // public Account Accomodation { get; set; }
+        //public Account Accomodation { get; set; }
 
-        public Booking(int price, DateTime startDate, DateTime endDate)
+        public Booking(/*int price,*/ DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            Price = price;
+            //Price = price;
             IsPaidFor = false;
             StartDate = startDate;  
             EndDate = endDate;
 
-            startDate.ToString();
-            endDate.ToString();
+            //startDate.ToString();
+            //endDate.ToString();
 
         }
 
