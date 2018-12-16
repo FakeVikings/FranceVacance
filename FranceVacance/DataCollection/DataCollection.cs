@@ -23,12 +23,24 @@ namespace FranceVacance
             return new ObservableCollection<Accomodation>()
             {
                 new Accomodation("Paris", "France", 60, "../Assets/cottage.jpg"),
-                new Accomodation("Berlin", "Germany", 90, "../Assets/cottage.jpg"),
-                new Accomodation("Prague", "Czech republic", 40, "../Assets/cottage.jpg"),
-                new Accomodation("Bratislava", "Bratislava", 30, "../Assets/cottage.jpg"),
+                new Accomodation("Berlin", "Germany", 90, "../Assets/chateau.jpg"),
+                new Accomodation("Prague", "Czech republic", 40, "../Assets/hut.jpg"),
+                new Accomodation("Bratislava", "Bratislava", 30, "../Assets/vegetation.jpg"),
 
 
 
+            };
+        }
+
+
+        public static List<Booking> BookingsList { get; set; }
+        public static ObservableCollection<Booking> BookingsCollection()
+
+        {
+            return new ObservableCollection<Booking>()
+            {
+                new Booking(32, new DateTime(2019, 1, 14), new DateTime(2019, 1, 18)),
+                new Booking(32, new DateTime(2019, 1, 20), new DateTime(2019, 1, 28))
             };
         }
 

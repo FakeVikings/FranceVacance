@@ -129,7 +129,7 @@
     <Compile Include="Model\Navigate.cs" />
     <Compile Include="Persistency\AccommodationCatalogSingleton.cs" />
     <Compile Include="Persistency\AccountCatalogSingleton.cs" />
-    <Compile Include="Persistency\BookedASingleton.cs" />
+    <Compile Include="Persistency\BookedAccomodationSingleton.cs" />
     <Compile Include="Persistency\Session.cs" />
     <Compile Include="Persistency\VerifyAccount.cs" />
     <Compile Include="ViewModel\AccomodationViewModel.cs" />

@@ -57,7 +57,7 @@
             </Grid>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <Button Content="Book this accommodation" 
-                        Command="{Binding BookAccommodation}"
+                        Command="{Binding BookingPageCommand}"
                         FontSize="25"
                         Background="LightGreen"
                         BorderBrush="Black" 
