@@ -20,12 +20,12 @@ namespace FranceVacance.Persistency
 
         private AccountCatalogSingleton()
         {
-            //DataCollectionClass.ReadFiles();
+            //DataCollection.ReadFiles();
             AccountsList = new List<Account>() {new Account (fullname:"Tomas Vemola",email:"tomas@project.com",password:"Verystrongpassword1", admin:true)};
-           // AccountsList = DataCollectionClass.AccountList;
+           // AccountsList = DataCollection.AccountList;
             //AccountsList = new List<Account>();
             //AccountsList.Add(new Account(fullname: "Tomas Vemola", email: "tomas@project.com", password: "Verystrongpassword1", admin: true));
-            //DataCollectionClass.SaveFiles();
+            //DataCollection.SaveFiles();
         }
 
         public static AccountCatalogSingleton Instance
@@ -43,10 +43,10 @@ namespace FranceVacance.Persistency
 
         private void AddAccount(Account account)
         {
-            DataCollectionClass.ReadFiles();
+            DataCollection.ReadFiles();
             AccountsList.Add(account);
-            DataCollectionClass.AccountList.Add(account);
-            DataCollectionClass.SaveFiles();
+            DataCollection.AccountList.Add(account);
+            DataCollection.SaveFiles();
             MessageBox.Success("Account has been created.");
         }
 

@@ -11,7 +11,7 @@ using FranceVacance.Model;
 
 namespace FranceVacance
 {
-    class DataCollectionClass
+    class DataCollection
     {
         public static StorageFolder folder = ApplicationData.Current.LocalFolder;
         public static StorageFile accomodationsFile;

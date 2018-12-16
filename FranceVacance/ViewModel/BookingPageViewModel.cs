@@ -27,9 +27,9 @@ namespace FranceVacance.ViewModel
 
         public RelayCommand GoMainPageCommand { get; set; }
 
-        public RelayCommand BookingPageCommand { get; set; }
+        public RelayCommand GoBookingPageCommand { get; set; }
 
-        private BookedAccomodationSingleton _bookedAccomodationSingleton;
+        private BookingCatalogSingleton _bookingCatalogSingleton;
 
         private ObservableCollection<Booking> _bookingsList;
 
@@ -51,12 +51,12 @@ namespace FranceVacance.ViewModel
 
         public BookingPageViewModel()
         {
-            BookingsList = DataCollectionClass.BookingsCollection();
+            BookingsList = DataCollection.BookingsCollection();
 
             Singleton = AccommodationCatalogSingleton.GetInstance();
             GoMainPageCommand = new RelayCommand(GoMainPage);
-            BookingPageCommand = new RelayCommand(BookAccommodation);
-            //bookingsCollection = new ObservableCollection<Booking>(BookedAccomodationSingleton.BookingsList);
+            GoBookingPageCommand = new RelayCommand(BookAccommodation);
+            //bookingsCollection = new ObservableCollection<Booking>(BookingCatalogSingleton.BookingsList);
 
             Country = Singleton.GetCountry();
             City = Singleton.GetCity();

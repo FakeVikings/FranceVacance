@@ -25,7 +25,7 @@ namespace FranceVacance.View
         public CreateAccountView()
         {
             this.InitializeComponent();
-            DataCollectionClass.ReadFiles();
+            DataCollection.ReadFiles();
         }
 
         private void Button_Drop(object sender, DragEventArgs e)

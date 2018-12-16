@@ -20,7 +20,7 @@ namespace FranceVacance.ViewModel
         private ObservableCollection<Accomodation> _myBookedAList;
         public int SelectedIndex { get; } = 0;
         public RelayCommand GoMainPageCommand { get; set; }
-        public BookedAccomodationSingleton Singleton;
+        public BookingCatalogSingleton Singleton;
         public string Country
         {
             get { return _country; }
@@ -69,7 +69,7 @@ namespace FranceVacance.ViewModel
         public MyBookingViewModel()
         {
             GoMainPageCommand = new RelayCommand(GoMainPage);
-            Singleton = BookedAccomodationSingleton.GetInstance();
+            Singleton = BookingCatalogSingleton.GetInstance();
           //  Country = Singleton.GetCountry();
           //  City = Singleton.GetCity();
            // ImageUrl = Singleton.GetImageUrl();

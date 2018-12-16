@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 
 namespace FranceVacance.Persistency
 {
-    class BookedAccomodationSingleton
+    class BookingCatalogSingleton
     {
         //public List<Booking> BookingsList { get; set; }
         public static Booking Booking;
 
-        private static BookedAccomodationSingleton Instance { get; set; }
+        private static BookingCatalogSingleton Instance { get; set; }
         DateTime starTime = new DateTime(2008, 3, 9, 16, 5, 7, 123);
         DateTime enTime = new DateTime(2008, 3, 9, 16, 5, 7, 123);
 
-        private BookedAccomodationSingleton()
+        private BookingCatalogSingleton()
         {
-            DataCollectionClass.ReadFiles();
+            DataCollection.ReadFiles();
             Booking = new Booking(32, new DateTime(2019, 1, 20), new DateTime(2019, 1, 28));
 
 
         }
-        public static BookedAccomodationSingleton GetInstance()
+        public static BookingCatalogSingleton GetInstance()
         {
             if (Instance == null)
             {
-                Instance = new BookedAccomodationSingleton();
+                Instance = new BookingCatalogSingleton();
             }
             return Instance;
         }
