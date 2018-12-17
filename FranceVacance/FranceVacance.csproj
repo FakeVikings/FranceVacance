@@ -141,6 +141,7 @@
     <Compile Include="ViewModel\MessageBox.cs" />
     <Compile Include="ViewModel\MyBookingViewModel.cs" />
     <Compile Include="ViewModel\NotifyViewModel.cs" />
+    <Compile Include="ViewModel\ReceiptPageViewModel.cs" />
     <Compile Include="View\AccomodationPage.xaml.cs">
       <DependentUpon>AccomodationPage.xaml</DependentUpon>
     </Compile>

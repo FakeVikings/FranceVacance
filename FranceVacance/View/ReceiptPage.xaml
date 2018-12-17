@@ -5,10 +5,79 @@
     xmlns:local="using:FranceVacance.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:FranceVacance.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.DataContext>
+        <viewModel:ReceiptPageViewModel/>
+    </Page.DataContext>
     <Grid>
-
+        <StackPanel Orientation="Vertical" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Padding="30,30,30,30"
+                    BorderBrush="Black"
+                    BorderThickness="3">
+            <TextBlock Text="FRANCE VACANCE" FontSize="30" TextAlignment="Center" FontWeight="Bold" />
+            <TextBlock Text="Receipt page" FontSize="20" TextAlignment="Center" />
+            <TextBlock Text="User:"/>
+            <StackPanel Margin="20,0,0,0">
+                <TextBlock Text="{Binding }"/> <!-- fullname binding -->
+                <TextBlock Text="{Binding }"/> <!-- email binding -->
+            </StackPanel>
+            <TextBlock Text="Accommodation: "/>
+            <Grid Margin="20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Country:"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding }"/> <!-- acco country binding -->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="City:"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding }"/> <!-- acco city binding -->
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Price per night:"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding }"/> <!-- acco pricepernight binding -->
+            </Grid>
+            <TextBlock Text="Booking:"/>
+            <Grid Margin="20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Start date:"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding }"/> <!-- booking startdate binding -->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="End date:"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding }"/> <!-- booking enddate binding -->
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Price:"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding }"/> <!-- booking price binding -->
+            </Grid>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 20, 0, 0">
+                <Button Content="Go to main page" 
+                        Command="{Binding }" 
+                        FontSize="25"
+                        Background="LightGreen"
+                        BorderBrush="Black"
+                        Margin="5,5,5,5"/>
+                <!-- go to main page binding -->
+                <Button Content="Go to bookings" 
+                        Command="{Binding }"
+                        FontSize="25"
+                        Background="LightGreen"
+                        BorderBrush="Black" 
+                        Margin="5,5,5,5"/>
+                <!-- go to my bookings binding -->
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
