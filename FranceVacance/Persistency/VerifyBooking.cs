@@ -12,13 +12,10 @@ namespace FranceVacance.Persistency
     {
         public static bool VerifyNewBooking(Accommodation accommodation, DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            if (DateTimeOffset.Compare(startDate, endDate) > 0 )
-            {
-                MessageBox.Fail("The start date has to be earlier than the end date.");
-                return false;
-            }
+            if (DateTimeOffset.Compare(startDate, endDate) < 0) return true;
+            MessageBox.Fail("The start date has to be earlier than the end date.");
+            return false;
 
-            return true;
         }
     }
 }

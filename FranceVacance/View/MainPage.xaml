@@ -27,7 +27,7 @@
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Top"
                     Margin="20,20,20,5" />
-            <Button Content="My Bookings" 
+            <Button Content="My CurrentBookings" 
                     Command="{Binding GoMyBookingsCommand}"
                     FontSize="25" 
                     Background="CornflowerBlue" 

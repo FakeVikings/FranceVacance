@@ -10,7 +10,7 @@ namespace FranceVacance.Persistency
 {
     class BookingCatalogSingleton
     {
-        //public List<Booking> BookingsList { get; set; }
+        public Booking CurrentBooking { get; set; }
         public List<Booking> BookingsList;
         private static BookingCatalogSingleton _instance;
 

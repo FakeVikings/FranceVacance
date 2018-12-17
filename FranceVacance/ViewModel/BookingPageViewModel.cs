@@ -21,7 +21,7 @@ namespace FranceVacance.ViewModel
         public string Country { get; set; }
         private string _imageUrl {get; set;}
         public RelayCommand GoMainPageCommand { get; set; }
-        public RelayCommand GoBookingPageCommand { get; set; }
+        public RelayCommand BookAccommodationCommand { get; set; }
         private BookingCatalogSingleton _bookingCatalogSingleton;
         private ObservableCollection<Booking> _bookingsList;
 
@@ -47,7 +47,7 @@ namespace FranceVacance.ViewModel
             _bookingCatalogSingleton = BookingCatalogSingleton.Instance;
             Singleton = AccommodationCatalogSingleton.GetInstance();
             GoMainPageCommand = new RelayCommand(GoMainPage);
-            GoBookingPageCommand = new RelayCommand(Book);
+            BookAccommodationCommand = new RelayCommand(Book);
             //bookingsCollection = new ObservableCollection<Booking>(BookingCatalogSingleton.BookingsList);
 
             Country = Singleton.GetCountry();
@@ -96,9 +96,14 @@ namespace FranceVacance.ViewModel
         public void Book()
         {
             _bookingCatalogSingleton.BookAccommodation(Singleton.Accommodation, StartDate, EndDate);
+            _bookingCatalogSingleton.CurrentBooking = _bookingCatalogSingleton.BookingsList.Find(x => x.Accommodation == Singleton.Accommodation);
+            GoReceiptPage();
         }
 
-
+        public void GoReceiptPage()
+        {
+            Navigate.ActivateFrameNavigation(typeof(ReceiptPage));
+        }
 
         public void GoMainPage()
         {

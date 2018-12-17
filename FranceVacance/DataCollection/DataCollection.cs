@@ -39,8 +39,8 @@ namespace FranceVacance
         {
             return new ObservableCollection<Booking>()
             {
-               // new Booking(32, new DateTime(2019, 1, 14), new DateTime(2019, 1, 18)),
-               // new Booking(32, new DateTime(2019, 1, 20), new DateTime(2019, 1, 28))
+               // new CurrentBooking(32, new DateTime(2019, 1, 14), new DateTime(2019, 1, 18)),
+               // new CurrentBooking(32, new DateTime(2019, 1, 20), new DateTime(2019, 1, 28))
             };
         }
 
