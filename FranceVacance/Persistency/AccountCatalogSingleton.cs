@@ -63,14 +63,9 @@ namespace FranceVacance.Persistency
         {
             if (VerifyAccount.VerifyExistingAccount(email, password, AccountsList) != null)
             {
-                Session.LogedInUser = AccountsList.FirstOrDefault(x => x.Email == email);
-
-               // MessageBox.Success("You have logged in successfully.");
+                Session.LoggedInUser = VerifyAccount.VerifyExistingAccount(email, password, AccountsList);
+                MessageBox.Success("You have logged in successfully.");
                 Navigate.ActivateFrameNavigation(typeof(MainPage));
-            }
-            else
-            {
-              //  MessageBox.Fail("Login failed.");
             }
         }
     }

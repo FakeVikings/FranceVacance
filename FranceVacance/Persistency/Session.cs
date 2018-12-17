@@ -9,6 +9,6 @@ namespace FranceVacance.Persistency
 {
     static class Session
     {
-        public static Account LogedInUser { get; set; }
+        public static Account LoggedInUser { get; set; }
     }
 }
