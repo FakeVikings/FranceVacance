@@ -79,7 +79,6 @@ namespace FranceVacance.Persistency
                 var accountToLogIn = accountsList.Find(a => a.Email == email);
                 if (accountToLogIn.Password == password)
                 {
-                    MessageBox.Success("You have logged in successfully.");
                     return accountToLogIn;
                 }
                 MessageBox.Fail("The password is incorrect.");

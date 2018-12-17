@@ -15,6 +15,7 @@ namespace FranceVacance.Model
         public DateTimeOffset StartDate { get; set; }
         public DateTimeOffset EndDate { get; set; }
         public Account User { get; set; }
+        public Accommodation Accommodation { get; set; }
         //public Accommodation Country { get; set; }
         //public Account Accommodation { get; set; }
 
@@ -26,6 +27,7 @@ namespace FranceVacance.Model
             StartDate = startDate;  
             EndDate = endDate;
             User = Session.LoggedInUser;
+            Accommodation = accommodation;
             ID = 1;
             ID++;
 
