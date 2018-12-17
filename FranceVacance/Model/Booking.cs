@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FranceVacance.Persistency;
 
 namespace FranceVacance.Model
 {
@@ -13,6 +14,7 @@ namespace FranceVacance.Model
         public bool IsPaidFor { get; set; }
         public DateTimeOffset StartDate { get; set; }
         public DateTimeOffset EndDate { get; set; }
+        public Account User { get; set; }
         //public Accommodation Country { get; set; }
         //public Account Accommodation { get; set; }
 
@@ -23,6 +25,7 @@ namespace FranceVacance.Model
             IsPaidFor = false;
             StartDate = startDate;  
             EndDate = endDate;
+            User = Session.LoggedInUser;
             ID = 1;
             ID++;
 
