@@ -14,51 +14,110 @@ namespace FranceVacance.ViewModel
 {
     class MyBookingViewModel : NotifyViewModel
     {
+        private BookingCatalogSingleton _bookingCatalogSingleton;
+        private ObservableCollection<Booking> _bookingsObservableCollection;
         private string _country;
         private string _city;
+        private int _pricePerNight;
+        private DateTimeOffset _startDate;
+        private DateTimeOffset _endDate;
         private int _price;
-        private string _imageUrl;
-        private ObservableCollection<Accommodation> _myBookedAList;
-        public int SelectedIndex { get; } = 0;
         public RelayCommand GoMainPageCommand { get; set; }
-        public BookingCatalogSingleton _bookingCatalogSingleton;
-        private Accommodation _MyAccommodation;
+        public RelayCommand PayCommand { get; set; }
+        public RelayCommand GoLoginViewCommand { get; set; }
 
-        public Accommodation MyAccommodation
+    public MyBookingViewModel()
         {
-            get { return _MyAccommodation; }
+            _bookingCatalogSingleton = BookingCatalogSingleton.Instance;
+            _bookingsObservableCollection = new ObservableCollection<Booking>(_bookingCatalogSingleton.BookingsList);
+            GoMainPageCommand = new RelayCommand(GoMainPage);
+            PayCommand = new RelayCommand(Pay);
+            GoLoginViewCommand = new RelayCommand(GoLoginView);
+        }
+
+        public ObservableCollection<Booking> BookingsObservableCollection
+        {
+            get => _bookingsObservableCollection;
             set
             {
-                _MyAccommodation = value;
-                OnPropertyChanged("MyAccommodation");
+                _bookingsObservableCollection = value;
+                OnPropertyChanged("BookingsObservableCollection");
+            }
+        }
+        /*
+        public string Country
+        {
+            get => _country;
+            set
+            {
+                _country = value;
+                OnPropertyChanged("Country");
             }
         }
 
-        public MyBookingViewModel()
+        public string City
         {
-            GoMainPageCommand = new RelayCommand(GoMainPage);
-            _bookingCatalogSingleton = BookingCatalogSingleton.Instance;
-            MyAccommodation = _bookingCatalogSingleton.CurrentBooking.Accommodation;
-
-
-            //  City = Singleton.GetCity();
-            // ImageUrl = Singleton.GetImageUrl();
-            // Price = Singleton.GetPrice();
+            get => _city;
+            set
+            {
+                _city = value;
+                OnPropertyChanged("City");
+            }
         }
 
+        public int PricePerNight
+        {
+            get => _pricePerNight;
+            set
+            {
+                _pricePerNight = value;
+                OnPropertyChanged("PricePerNight");
+            }
+        }
+
+        public DateTimeOffset StartDate
+        {
+            get => _startDate;
+            set
+            {
+                _startDate = value;
+                OnPropertyChanged("StartDate");
+            }
+        }
+
+        public DateTimeOffset EndDate
+        {
+            get => _endDate;
+            set
+            {
+                _endDate = value;
+                OnPropertyChanged("EndDate");
+            }
+        }
+
+        public int Price
+        {
+            get => _price;
+            set
+            {
+                _price = value;
+                OnPropertyChanged("Price");
+            }
+        }
+        */
         public void GoMainPage()
         {
-            Type type = typeof(MainPage);
             Navigate.ActivateFrameNavigation(typeof(MainPage));
         }
-        public ObservableCollection<Accommodation> MyBookedAList
+
+        public void GoLoginView()
         {
-            get { return _myBookedAList; }
-            set
-            {
-                _myBookedAList = value;
-                OnPropertyChanged(nameof(MyBookedAList));
-            }
+            Navigate.ActivateFrameNavigation(typeof(LoginView));
+        }
+
+        public void Pay()
+        {
+            
         }
     }
 }
