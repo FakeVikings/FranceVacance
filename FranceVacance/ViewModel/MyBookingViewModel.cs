@@ -29,7 +29,7 @@ namespace FranceVacance.ViewModel
     public MyBookingViewModel()
         {
             _bookingCatalogSingleton = BookingCatalogSingleton.Instance;
-            _bookingsObservableCollection = new ObservableCollection<Booking>(_bookingCatalogSingleton.BookingsList);
+            _bookingsObservableCollection = new ObservableCollection<Booking>(_bookingCatalogSingleton.BookingsList.FindAll(x => x.User == Session.LoggedInUser));
             GoMainPageCommand = new RelayCommand(GoMainPage);
             GoLoginViewCommand = new RelayCommand(GoLoginView);
             PayCommand = new RelayCommand(Pay);

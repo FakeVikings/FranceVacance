@@ -39,9 +39,9 @@ namespace FranceVacance.Persistency
                 MessageBox.Fail("Fullname must have more than 3 characters.");
                 return false;
             }
-            if ( (fullname.Any(char.IsSeparator)) || (fullname.Any(char.IsWhiteSpace)))
+            if (fullname.Count(char.IsLetter) < 3)
             {
-                MessageBox.Fail("Your Fullname is not valid");
+                MessageBox.Fail("Please use at least three letters.");
                 return false;
             }
 
