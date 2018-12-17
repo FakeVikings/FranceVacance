@@ -95,9 +95,13 @@ namespace FranceVacance.ViewModel
 
         public void Book()
         {
-            _bookingCatalogSingleton.BookAccommodation(Singleton.Accommodation, StartDate, EndDate);
-            _bookingCatalogSingleton.CurrentBooking = _bookingCatalogSingleton.BookingsList.Find(x => x.Accommodation == Singleton.Accommodation);
-            GoReceiptPage();
+            if (VerifyBooking.VerifyNewBooking(Singleton.Accommodation, StartDate, EndDate))
+            {
+                _bookingCatalogSingleton.BookAccommodation(Singleton.Accommodation, StartDate, EndDate);
+                _bookingCatalogSingleton.CurrentBooking = _bookingCatalogSingleton.BookingsList.Find(x => x.Accommodation == Singleton.Accommodation);
+                GoReceiptPage();
+            }
+            
         }
 
         public void GoReceiptPage()

@@ -43,12 +43,8 @@ namespace FranceVacance.Persistency
 
         public void BookAccommodation(Accommodation accommodation, DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            if (VerifyBooking.VerifyNewBooking(accommodation, startDate, endDate))
-            {
                 Booking booking = new Booking(accommodation, startDate, endDate);
                 AddBooking(booking);
-            }
-            
         }
     }
 }
