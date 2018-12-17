@@ -268,7 +268,7 @@ namespace FranceVacance.ViewModel
 
         public void AdminCheck()
         {
-            if (Session.LoggedInUser.Admin == true)
+            if (Session.LoggedInUser.Admin)
             {
                 AdminStackVisibility = Visibility.Visible;
             }
