@@ -19,7 +19,7 @@ namespace FranceVacance.Persistency
     public class AccommodationCatalogSingleton
     {
      
-        public static Accomodation Accomodation;
+        public Accommodation Accommodation { get; set; }
 
         // step 1 : declare the object instance of class Singleton 
         private static AccommodationCatalogSingleton Instance { get; set; }
@@ -28,7 +28,7 @@ namespace FranceVacance.Persistency
         {
             DataCollection.ReadFiles();
             // create an object instance of your business class
-            Accomodation = new Accomodation();
+            Accommodation = new Accommodation();
         }
 
         // step 2:  this instance property check first if instance is not null ,
@@ -44,27 +44,27 @@ namespace FranceVacance.Persistency
         }
         // Create method based upon your business logic 
 
-        public void SetAccomodation(Accomodation accomodation)
+        public void SetAccomodation(Accommodation accommodation)
         {
-            Accomodation = accomodation;
+            Accommodation = accommodation;
         }
 
       
         public string GetCity()
         {
-            return Accomodation.City;
+            return Accommodation.City;
         }
         public string GetCountry()
         {
-            return Accomodation.Country;
+            return Accommodation.Country;
         }
         public int GetPrice()
         {
-            return Accomodation.PricePerNight;
+            return Accommodation.PricePerNight;
         }
         public string GetImageUrl()
         {
-            return Accomodation.ImageUrl;
+            return Accommodation.ImageUrl;
         }
 
     }

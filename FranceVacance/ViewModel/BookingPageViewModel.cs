@@ -93,7 +93,7 @@ namespace FranceVacance.ViewModel
 
         public void Book()
         {
-            _bookingCatalogSingleton.BookAccommodation(StartDate, EndDate);
+            _bookingCatalogSingleton.BookAccommodation(Singleton.Accommodation, StartDate, EndDate);
         }
 
 

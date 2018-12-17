@@ -17,15 +17,15 @@ namespace FranceVacance
         public static StorageFile accomodationsFile;
         public static StorageFile accountfile;
 
-        public static List<Accomodation> AccomodationList { get; set; }
-        public static ObservableCollection<Accomodation> AccomodationListM()
+        public static List<Accommodation> AccomodationList { get; set; }
+        public static ObservableCollection<Accommodation> AccomodationListM()
         {
-            return new ObservableCollection<Accomodation>()
+            return new ObservableCollection<Accommodation>()
             {
-                new Accomodation("Paris", "France", 60, "../Assets/cottage.jpg"),
-                new Accomodation("Berlin", "Germany", 90, "../Assets/chateau.jpg"),
-                new Accomodation("Prague", "Czech republic", 40, "../Assets/hut.jpg"),
-                new Accomodation("Bratislava", "Bratislava", 30, "../Assets/vegetation.jpg"),
+                new Accommodation("Paris", "France", 60, "../Assets/cottage.jpg") {ID = 1},
+                new Accommodation("Berlin", "Germany", 90, "../Assets/chateau.jpg") {ID = 2},
+                new Accommodation("Prague", "Czech republic", 40, "../Assets/hut.jpg") {ID = 3},
+                new Accommodation("Bratislava", "Bratislava", 30, "../Assets/vegetation.jpg") {ID = 4},
 
 
 
@@ -60,7 +60,7 @@ namespace FranceVacance
         public static async void ReadFiles()
         {
             AccountList = new List<Account>();
-            AccomodationList = new List<Accomodation>();
+            AccomodationList = new List<Accommodation>();
             accountfile = await folder.CreateFileAsync("accounts.json", CreationCollisionOption.OpenIfExists);
             accomodationsFile =
                 await folder.CreateFileAsync("accomodations.json", CreationCollisionOption.OpenIfExists);
@@ -68,7 +68,7 @@ namespace FranceVacance
             {
 
                 string jsontemp = await FileIO.ReadTextAsync(accomodationsFile);
-                AccomodationList = JsonConvert.DeserializeObject<List<Accomodation>>(jsontemp);
+                AccomodationList = JsonConvert.DeserializeObject<List<Accommodation>>(jsontemp);
                 jsontemp = await FileIO.ReadTextAsync(accountfile);
                 AccountList = JsonConvert.DeserializeObject<List<Account>>(jsontemp);
             }

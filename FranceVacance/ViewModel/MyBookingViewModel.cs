@@ -17,7 +17,7 @@ namespace FranceVacance.ViewModel
         private string _city;
         private int _price;
         private string _imageUrl;
-        private ObservableCollection<Accomodation> _myBookedAList;
+        private ObservableCollection<Accommodation> _myBookedAList;
         public int SelectedIndex { get; } = 0;
         public RelayCommand GoMainPageCommand { get; set; }
         public BookingCatalogSingleton Singleton;
@@ -57,7 +57,7 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("ImageUrl");
             }
         }
-        public ObservableCollection<Accomodation> MyBookedAList
+        public ObservableCollection<Accommodation> MyBookedAList
         {
             get { return _myBookedAList; }
             set

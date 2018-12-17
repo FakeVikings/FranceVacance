@@ -32,10 +32,10 @@ namespace FranceVacance.ViewModel
 
 
         public int SelectedIndex { get; } = 0; // 0 index
-        private ObservableCollection<Accomodation> _accomodationsList;
+        private ObservableCollection<Accommodation> _accomodationsList;
 
 
-        public ObservableCollection<Accomodation> AccomodationList
+        public ObservableCollection<Accommodation> AccomodationList
         {
             get { return _accomodationsList; }
             set
@@ -53,8 +53,8 @@ namespace FranceVacance.ViewModel
         public ICommand SearchCommand { get; set; }
         
 
-        // Add Accomodation
-        public Accomodation AddAccomodation { get; set; }
+        // Add Accommodation
+        public Accommodation AddAccommodation { get; set; }
 
 
         public string Country
@@ -108,24 +108,24 @@ namespace FranceVacance.ViewModel
 
 
         public readonly AccommodationCatalogSingleton AccommodationCatalogSingleton;
-        private Accomodation _selectedItemAccomodation;
+        private Accommodation _selectedItemAccommodation;
         public RelayCommand GoLoginViewCommand { get; set; }
         public RelayCommand GoAPCommand { get; set; }
 
         public RelayCommand GoMyBookingsCommand { get; set; }
 
-        public Accomodation SelectedItemAccomodation
+        public Accommodation SelectedItemAccommodation
         {
-            get => _selectedItemAccomodation;
+            get => _selectedItemAccommodation;
             set
             {
-                _selectedItemAccomodation = value;
-                OnPropertyChanged(nameof(SelectedItemAccomodation));
+                _selectedItemAccommodation = value;
+                OnPropertyChanged(nameof(SelectedItemAccommodation));
             }
         }
         // public readonly Navigate FrameNavigate;
 
-        private JsonFile<Accomodation> _filePersistency;
+        private JsonFile<Accommodation> _filePersistency;
 
 
 
@@ -139,7 +139,7 @@ namespace FranceVacance.ViewModel
             RunAsyncLoadData();
 
 
-            _filePersistency = new JsonFile<Accomodation>();
+            _filePersistency = new JsonFile<Accommodation>();
 
             AddAccomodationCommand = new RelayCommand(DoAddAccomodation);
             UpdateAccomodationCommand = new RelayCommand(DoUpdateAccomodation);
@@ -151,7 +151,7 @@ namespace FranceVacance.ViewModel
             GoLoginViewCommand = new RelayCommand(GoLoginView);
 
             SearchCommand = new RelayCommandArg(SearchData);
-            AddAccomodation = new Accomodation();
+            AddAccommodation = new Accommodation();
 
             AccommodationCatalogSingleton = AccommodationCatalogSingleton.GetInstance();
             AdminCheck();
@@ -162,9 +162,9 @@ namespace FranceVacance.ViewModel
         public async void DoAddAccomodation()
         {
           
-                string img = "../Assets/" + AddAccomodation.ImageUrl + ".jpg";
-                AddAccomodation.ImageUrl = img;
-                AccomodationList.Add(AddAccomodation);
+                string img = "../Assets/" + AddAccommodation.ImageUrl + ".jpg";
+                AddAccommodation.ImageUrl = img;
+                AccomodationList.Add(AddAccommodation);
                 await SaveAsyncMethod(AccomodationList);
             
            
@@ -175,17 +175,17 @@ namespace FranceVacance.ViewModel
         {
             foreach (var lis in AccomodationList)
             {
-                    lis.City = SelectedItemAccomodation.City;
-                    lis.Country = SelectedItemAccomodation.Country;
-                    lis.PricePerNight = SelectedItemAccomodation.PricePerNight;
-                    lis.ImageUrl = SelectedItemAccomodation.ImageUrl;
+                    lis.City = SelectedItemAccommodation.City;
+                    lis.Country = SelectedItemAccommodation.Country;
+                    lis.PricePerNight = SelectedItemAccommodation.PricePerNight;
+                    lis.ImageUrl = SelectedItemAccommodation.ImageUrl;
             }
 
         }
 
         public void DoDeleteAccomodation()
         {
-            AccomodationList.Remove(SelectedItemAccomodation);
+            AccomodationList.Remove(SelectedItemAccommodation);
         }
 
         public void DoRefreshAccomodation()
@@ -207,7 +207,7 @@ namespace FranceVacance.ViewModel
 
         public void GoAccomodationView()
         {
-            AccommodationCatalogSingleton.SetAccomodation(SelectedItemAccomodation);
+            AccommodationCatalogSingleton.SetAccomodation(SelectedItemAccommodation);
 
             Type type = typeof(AccomodationPage);
             Navigate.ActivateFrameNavigation(typeof(AccomodationPage));
@@ -218,20 +218,20 @@ namespace FranceVacance.ViewModel
             // AccomodationList = await _filePersistency.LoadAsync();
         }
         //Load data from file
-        public async Task<ObservableCollection<Accomodation>> LoadAsyncMethod()
+        public async Task<ObservableCollection<Accommodation>> LoadAsyncMethod()
         {
             return await _filePersistency.LoadAsync();
         }
 
         // Save data into file 
-        public async Task SaveAsyncMethod(ObservableCollection<Accomodation> accomodations)
+        public async Task SaveAsyncMethod(ObservableCollection<Accommodation> accomodations)
         {
             await _filePersistency.SaveAsync(accomodations);
         }
 
         // Handling problems
 
-        private ObservableCollection<Accomodation> _searchAccomodationList;
+        private ObservableCollection<Accommodation> _searchAccomodationList;
         // search system 
         public void SearchData(object city)
         {
@@ -240,9 +240,9 @@ namespace FranceVacance.ViewModel
             {
                 if (se.City == searchCity)
                 {
-                    _searchAccomodationList = new ObservableCollection<Accomodation>()
+                    _searchAccomodationList = new ObservableCollection<Accommodation>()
                     {
-                        new Accomodation(se.Country , se.City,se.PricePerNight,se.ImageUrl)
+                        new Accommodation(se.Country , se.City,se.PricePerNight,se.ImageUrl)
                     };
                 }
             }

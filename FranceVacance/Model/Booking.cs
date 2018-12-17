@@ -8,19 +8,23 @@ namespace FranceVacance.Model
 {
     class Booking
     {
+        public int ID { get; set; }
         public int Price { get; set; }
         public bool IsPaidFor { get; set; }
         public DateTimeOffset StartDate { get; set; }
         public DateTimeOffset EndDate { get; set; }
-        //public Accomodation Country { get; set; }
-        //public Account Accomodation { get; set; }
+        //public Accommodation Country { get; set; }
+        //public Account Accommodation { get; set; }
 
-        public Booking(/*int price,*/ DateTimeOffset startDate, DateTimeOffset endDate)
+        public Booking(Accommodation accommodation, DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            //Price = price;
+            Price = (endDate - startDate).Days * accommodation.PricePerNight;
+            accommodation.IsBooked = true;
             IsPaidFor = false;
             StartDate = startDate;  
             EndDate = endDate;
+            ID = 1;
+            ID++;
 
             //startDate.ToString();
             //endDate.ToString();

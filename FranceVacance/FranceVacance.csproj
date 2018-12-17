@@ -122,7 +122,7 @@
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Command\RelayCommandArg.cs" />
     <Compile Include="DataCollection\DataCollection.cs" />
-    <Compile Include="Model\Accomodation.cs" />
+    <Compile Include="Model\Accommodation.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\JsonFile.cs" />

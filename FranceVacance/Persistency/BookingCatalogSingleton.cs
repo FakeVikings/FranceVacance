@@ -12,7 +12,7 @@ namespace FranceVacance.Persistency
     {
         //public List<Booking> BookingsList { get; set; }
         public List<Booking> BookingsList;
-        private static BookingCatalogSingleton _instance { get; set; }
+        private static BookingCatalogSingleton _instance;
 
         private BookingCatalogSingleton()
         {
@@ -45,9 +45,9 @@ namespace FranceVacance.Persistency
             BookingsList.Add(booking);
         }
 
-        public void BookAccommodation(DateTimeOffset startDate, DateTimeOffset endDate)
+        public void BookAccommodation(Accommodation accommodation, DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            Booking booking = new Booking(startDate, endDate);
+            Booking booking = new Booking(accommodation, startDate, endDate);
             AddBooking(booking);
             MessageBox.Success("Acc booked.");
         }
@@ -65,15 +65,15 @@ namespace FranceVacance.Persistency
         }
         public string GetCountry()
         {
-            return Accomodation.City;
+            return Accommodation.City;
         }
         public int GetPrice()
         {
-            return Accomodation.PricePerNight;
+            return Accommodation.PricePerNight;
         }
         public string GetImageUrl()
         {
-            return Accomodation.ImageUrl;
+            return Accommodation.ImageUrl;
         }
         */
     }

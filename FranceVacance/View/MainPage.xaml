@@ -59,22 +59,22 @@
 
         <StackPanel Name="AdminStack" Visibility="{Binding AdminStackVisibility, Mode=TwoWay}"  HorizontalAlignment="Right" Height="auto" VerticalAlignment="Top" Width="Auto" Margin="0,0,1292,0">
             <StackPanel Visibility="Visible" Grid.Row="0" Grid.Column="0" Background="AntiqueWhite">
-                <TextBlock Text="Create a new accomodation  :" FontWeight="Bold" />
+                <TextBlock Text="Create a new accommodation  :" FontWeight="Bold" />
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="City:"/>
-                    <TextBox    Text="{Binding AddAccomodation.City, Mode=TwoWay}" />
+                    <TextBox    Text="{Binding AddAccommodation.City, Mode=TwoWay}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="Country:"/>
-                    <TextBox    Text="{Binding AddAccomodation.Country, Mode=TwoWay}" />
+                    <TextBox    Text="{Binding AddAccommodation.Country, Mode=TwoWay}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="Image:"/>
-                    <TextBox    Text="{Binding AddAccomodation.ImageUrl, Mode=TwoWay}" />
+                    <TextBox    Text="{Binding AddAccommodation.ImageUrl, Mode=TwoWay}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="Price:"/>
-                    <TextBox    Text="{Binding AddAccomodation.PricePerNight, Mode=TwoWay}" />
+                    <TextBox    Text="{Binding AddAccommodation.PricePerNight, Mode=TwoWay}" />
                 </StackPanel>
             </StackPanel>
 
@@ -127,7 +127,7 @@
                   Name="GridView" 
                   Margin="40,40,40,40"
                   ItemsSource="{Binding AccomodationList , Mode=TwoWay}"
-                  SelectedItem="{Binding SelectedItemAccomodation, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedItemAccommodation, Mode=TwoWay}"
                   SelectedIndex="{Binding SelectedIndex}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <GridView.ItemTemplate>
                 <DataTemplate>
