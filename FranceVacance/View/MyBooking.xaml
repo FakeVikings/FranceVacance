@@ -40,7 +40,8 @@
         <ListView Grid.Row="1" 
                   Name="GridView" 
                   Margin="40,40,40,40"
-                  ItemsSource="{Binding BookingsObservableCollection, Mode=TwoWay}"> 
+                  ItemsSource="{Binding BookingsObservableCollection, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedBooking, Mode=TwoWay}"> 
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Booking">
                     <StackPanel Orientation="Horizontal" BorderBrush="Black"  BorderThickness="1" VerticalAlignment="Stretch">
@@ -73,9 +74,13 @@
                             <TextBlock Text="{Binding StartDate}" Grid.Column="3" Grid.Row="0"/>
                             <TextBlock Text="End date:" Grid.Column="2" Grid.Row="1" Margin="10,0,10,0" FontWeight="Bold"/>
                             <TextBlock Text="{Binding EndDate}" Grid.Column="3" Grid.Row="1"/>
-                            <TextBlock Text="Total price :" Grid.Column="2" Grid.Row="2" Margin="10,0,10,0" FontWeight="Bold"/>
+                            <TextBlock Text="Total price:" Grid.Column="2" Grid.Row="2" Margin="10,0,10,0" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Price}" Grid.Column="3" Grid.Row="2"/>
                         </Grid>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="Payment received:" Margin="10,0,10,0" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding IsPaidFor}"/>
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -85,15 +90,15 @@
             <Button Content="Return to main page" 
                     Command="{Binding GoMainPageCommand}" 
                     FontSize="25"
-                    Background="LightGreen"
+                    Background="CornflowerBlue"
                     BorderBrush="Black"
-                    Margin="5,5,5,5"/> <!-- binding gomainpage -->
+                    Margin="5,5,5,5"/>
             <Button Content="Pay for selected booking" 
                     Command="{Binding PayCommand}"
                     FontSize="25"
                     Background="LightGreen"
                     BorderBrush="Black"
-                    Margin="5,5,5,5"/> <!-- binding payment -->
+                    Margin="5,5,5,5"/>
         </StackPanel>
     </Grid>
 </Page>

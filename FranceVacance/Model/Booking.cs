@@ -35,7 +35,5 @@ namespace FranceVacance.Model
             //endDate.ToString();
 
         }
-
-
     }
 }

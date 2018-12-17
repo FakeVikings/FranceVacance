@@ -16,12 +16,7 @@ namespace FranceVacance.ViewModel
     {
         private BookingCatalogSingleton _bookingCatalogSingleton;
         private ObservableCollection<Booking> _bookingsObservableCollection;
-        private string _country;
-        private string _city;
-        private int _pricePerNight;
-        private DateTimeOffset _startDate;
-        private DateTimeOffset _endDate;
-        private int _price;
+        private Booking _selectedBooking;
         public RelayCommand GoMainPageCommand { get; set; }
         public RelayCommand PayCommand { get; set; }
         public RelayCommand GoLoginViewCommand { get; set; }
@@ -45,6 +40,16 @@ namespace FranceVacance.ViewModel
             }
         }
 
+        public Booking SelectedBooking
+        {
+            get => _selectedBooking;
+            set
+            {
+                _selectedBooking = value;
+                OnPropertyChanged("SelectedBooking");
+            }
+        }
+
         public void GoMainPage()
         {
             Navigate.ActivateFrameNavigation(typeof(MainPage));
@@ -57,6 +62,15 @@ namespace FranceVacance.ViewModel
 
         public void Pay()
         {
+            if (SelectedBooking.IsPaidFor)
+            {
+                MessageBox.Fail("You have already payed for this booking.");
+            }
+            else
+            {
+                SelectedBooking.IsPaidFor = true;
+                MessageBox.Success("Your payment has been registered.");
+            }
             
         }
     }
