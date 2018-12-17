@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FranceVacance.ViewModel
 {
     class MyBookingViewModel : NotifyViewModel
@@ -20,42 +21,35 @@ namespace FranceVacance.ViewModel
         private ObservableCollection<Accommodation> _myBookedAList;
         public int SelectedIndex { get; } = 0;
         public RelayCommand GoMainPageCommand { get; set; }
-        public BookingCatalogSingleton Singleton;
-        public string Country
+        public BookingCatalogSingleton _bookingCatalogSingleton;
+        private Accommodation _MyAccommodation;
+
+        public Accommodation MyAccommodation
         {
-            get { return _country; }
+            get { return _MyAccommodation; }
             set
             {
-                _country = value;
-                OnPropertyChanged("Country");
+                _MyAccommodation = value;
+                OnPropertyChanged("MyAccommodation");
             }
         }
-        public string City
+
+        public MyBookingViewModel()
         {
-            get { return _city; }
-            set
-            {
-                _city = value;
-                OnPropertyChanged("City");
-            }
+            GoMainPageCommand = new RelayCommand(GoMainPage);
+            _bookingCatalogSingleton = BookingCatalogSingleton.Instance;
+            MyAccommodation = _bookingCatalogSingleton.CurrentBooking.Accommodation;
+
+
+            //  City = Singleton.GetCity();
+            // ImageUrl = Singleton.GetImageUrl();
+            // Price = Singleton.GetPrice();
         }
-        public int Price
+
+        public void GoMainPage()
         {
-            get { return _price; }
-            set
-            {
-                _price = value;
-                OnPropertyChanged("Price");
-            }
-        }
-        public string ImageUrl
-        {
-            get { return _imageUrl; }
-            set
-            {
-                _imageUrl = value;
-                OnPropertyChanged("ImageUrl");
-            }
+            Type type = typeof(MainPage);
+            Navigate.ActivateFrameNavigation(typeof(MainPage));
         }
         public ObservableCollection<Accommodation> MyBookedAList
         {
@@ -65,20 +59,6 @@ namespace FranceVacance.ViewModel
                 _myBookedAList = value;
                 OnPropertyChanged(nameof(MyBookedAList));
             }
-        }
-        public MyBookingViewModel()
-        {
-            GoMainPageCommand = new RelayCommand(GoMainPage);
-            Singleton = BookingCatalogSingleton.Instance;
-          //  Country = Singleton.GetCountry();
-          //  City = Singleton.GetCity();
-           // ImageUrl = Singleton.GetImageUrl();
-           // Price = Singleton.GetPrice();
-        }
-        public void GoMainPage()
-        {
-            Type type = typeof(MainPage);
-            Navigate.ActivateFrameNavigation(typeof(MainPage));
         }
     }
 }
