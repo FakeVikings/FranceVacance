@@ -35,47 +35,20 @@ namespace FranceVacance.Persistency
             }
         }
 
-        public void BookingVerification()
-        {
-
-        }
-
         private void AddBooking(Booking booking)
         {
             BookingsList.Add(booking);
+            MessageBox.Success("Accommodation has been booked.");
         }
 
         public void BookAccommodation(Accommodation accommodation, DateTimeOffset startDate, DateTimeOffset endDate)
         {
-            Booking booking = new Booking(accommodation, startDate, endDate);
-            AddBooking(booking);
-            MessageBox.Success("Acc booked.");
+            if (VerifyBooking.VerifyNewBooking(accommodation, startDate, endDate))
+            {
+                Booking booking = new Booking(accommodation, startDate, endDate);
+                AddBooking(booking);
+            }
+            
         }
-
-
-        
-
-
-
-
-        /*
-        public string GetCity()
-        {
-            return Booking.Country;
-        }
-        public string GetCountry()
-        {
-            return Accommodation.City;
-        }
-        public int GetPrice()
-        {
-            return Accommodation.PricePerNight;
-        }
-        public string GetImageUrl()
-        {
-            return Accommodation.ImageUrl;
-        }
-        */
     }
-    
 }

@@ -55,6 +55,8 @@ namespace FranceVacance.ViewModel
             ImageUrl = Singleton.GetImageUrl();
             Price = Singleton.GetPrice();
             //AddBooking = new Booking(32, new DateTime(2013, 1, 14), new DateTime(2013, 1, 18));
+            _startDate = new DateTimeOffset(DateTime.Today);
+            _endDate = new DateTimeOffset(DateTime.Today);
 
         }
 

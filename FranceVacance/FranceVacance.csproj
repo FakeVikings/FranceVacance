@@ -132,6 +132,7 @@
     <Compile Include="Persistency\BookingCatalogSingleton.cs" />
     <Compile Include="Persistency\Session.cs" />
     <Compile Include="Persistency\VerifyAccount.cs" />
+    <Compile Include="Persistency\VerifyBooking.cs" />
     <Compile Include="ViewModel\AccomodationViewModel.cs" />
     <Compile Include="ViewModel\BookingPageViewModel.cs" />
     <Compile Include="ViewModel\CreateAccountViewModel.cs" />
