@@ -27,7 +27,7 @@
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Top"
                     Margin="20,20,20,5" />
-            <Button Content="My CurrentBookings" 
+            <Button Content="My Bookings" 
                     Command="{Binding GoMyBookingsCommand}"
                     FontSize="25" 
                     Background="CornflowerBlue" 
@@ -89,40 +89,6 @@
             </StackPanel>
         </StackPanel>
 
-
-
-        <!--
-        <ListView Grid.Row="1" 
-                  Name="ListView" 
-                  Margin="40,40,40,40"
-                  ItemsSource="{Binding AccomodationList , Mode=TwoWay}"
-                  SelectedItem="{Binding SelectedItemAccomodation, Mode=TwoWay}"
-                  SelectedIndex="{Binding SelectedIndex}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Height="250" Margin="0,30,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" BorderBrush="Black"  BorderThickness="1">
-                        <Image Source="{Binding ImageUrl}"
-                               Height="240" 
-                               HorizontalAlignment="Center" 
-                               VerticalAlignment="Center" 
-                               Width="378" 
-                               Margin="0,0,0,0"/>
-                        <StackPanel  Height="250" Width="560" Background="AntiqueWhite">
-                            <TextBlock Text="{Binding City}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
-                            <TextBlock Text="{Binding Country}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
-
-                            <StackPanel HorizontalAlignment="Stretch" Height="5" Margin="0,30,0,0" VerticalAlignment="Stretch" Background="Black"/>
-                        </StackPanel>
-                        <StackPanel Height="292" Width="20" Margin="0,0,0,0" Background="#FF0083FF"/>
-                        <StackPanel Height="292" Width="375" Margin="0,0,0,0" Background="AntiqueWhite" Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                            <TextBlock Text="Price" Margin="0,20,0,0" FontSize="40" FontWeight="Light" HorizontalAlignment="Center"/>
-                            <TextBlock Text="{Binding Price}" Margin="0,20,0,0" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
-                        </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        -->
         <GridView Grid.Row="1" 
                   Name="GridView" 
                   Margin="40,40,40,40"
@@ -135,6 +101,7 @@
                         <Image Source="{Binding ImageUrl}"
                                HorizontalAlignment="Center" 
                                VerticalAlignment="Center" 
+                               Height="200"
                                Margin="10,10,10,10"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -146,11 +113,11 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Text="City:" Grid.Column="0" Grid.Row="0" Margin="10,0,10,0"/>
+                            <TextBlock Text="City:" Grid.Column="0" Grid.Row="0" Margin="10,0,10,0" FontWeight="Bold"/>
                             <TextBlock Text="{Binding City}" Grid.Column="1" Grid.Row="0"/>
-                            <TextBlock Text="Country:" Grid.Column="0" Grid.Row="1" Margin="10,0,10,0"/>
+                            <TextBlock Text="Country:" Grid.Column="0" Grid.Row="1" Margin="10,0,10,0" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Country}" Grid.Column="1" Grid.Row="1"/>
-                            <TextBlock Text="Price per night:" Grid.Column="0" Grid.Row="2" Margin="10,0,10,0"/>
+                            <TextBlock Text="Price per night:" Grid.Column="0" Grid.Row="2" Margin="10,0,10,0" FontWeight="Bold"/>
                             <TextBlock Text="{Binding PricePerNight}" Grid.Column="1" Grid.Row="2"/>
                         </Grid>
                     </StackPanel>

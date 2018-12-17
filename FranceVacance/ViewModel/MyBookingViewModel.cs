@@ -31,8 +31,8 @@ namespace FranceVacance.ViewModel
             _bookingCatalogSingleton = BookingCatalogSingleton.Instance;
             _bookingsObservableCollection = new ObservableCollection<Booking>(_bookingCatalogSingleton.BookingsList);
             GoMainPageCommand = new RelayCommand(GoMainPage);
-            PayCommand = new RelayCommand(Pay);
             GoLoginViewCommand = new RelayCommand(GoLoginView);
+            PayCommand = new RelayCommand(Pay);
         }
 
         public ObservableCollection<Booking> BookingsObservableCollection
@@ -44,67 +44,7 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("BookingsObservableCollection");
             }
         }
-        /*
-        public string Country
-        {
-            get => _country;
-            set
-            {
-                _country = value;
-                OnPropertyChanged("Country");
-            }
-        }
 
-        public string City
-        {
-            get => _city;
-            set
-            {
-                _city = value;
-                OnPropertyChanged("City");
-            }
-        }
-
-        public int PricePerNight
-        {
-            get => _pricePerNight;
-            set
-            {
-                _pricePerNight = value;
-                OnPropertyChanged("PricePerNight");
-            }
-        }
-
-        public DateTimeOffset StartDate
-        {
-            get => _startDate;
-            set
-            {
-                _startDate = value;
-                OnPropertyChanged("StartDate");
-            }
-        }
-
-        public DateTimeOffset EndDate
-        {
-            get => _endDate;
-            set
-            {
-                _endDate = value;
-                OnPropertyChanged("EndDate");
-            }
-        }
-
-        public int Price
-        {
-            get => _price;
-            set
-            {
-                _price = value;
-                OnPropertyChanged("Price");
-            }
-        }
-        */
         public void GoMainPage()
         {
             Navigate.ActivateFrameNavigation(typeof(MainPage));

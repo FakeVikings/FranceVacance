@@ -21,12 +21,12 @@
                     BorderThickness="3">
             <TextBlock Text="FRANCE VACANCE" FontSize="30" TextAlignment="Center" FontWeight="Bold" />
             <TextBlock Text="Receipt page" FontSize="20" TextAlignment="Center" />
-            <TextBlock Text="User:"/>
+            <TextBlock Text="User:" FontWeight="Bold" FontSize="16"/>
             <StackPanel Margin="20,0,0,0">
                 <TextBlock Text="{Binding Fullname}"/>
                 <TextBlock Text="{Binding Email}"/>
             </StackPanel>
-            <TextBlock Text="Accommodation: "/>
+            <TextBlock Text="Accommodation: " FontWeight="Bold" FontSize="16"/>
             <Grid Margin="20,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -37,14 +37,14 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Country:"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Country}"/> 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="City:"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding City}"/> 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Price per night:"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Country:" FontWeight="Bold"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Country}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="City:" FontWeight="Bold"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding City}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Price per night:" FontWeight="Bold"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding PricePerNight}"/> 
             </Grid>
-            <TextBlock Text="Booking:"/>
+            <TextBlock Text="Booking:" FontWeight="Bold" FontSize="16"/>
             <Grid Margin="20,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -55,11 +55,11 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Start date:"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding StartDate}"/> 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="End date:"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding EndDate}"/> 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Price:"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Start date:" FontWeight="Bold"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding StartDate}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="End date:" FontWeight="Bold"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding EndDate}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Price:" FontWeight="Bold"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Price}"/> 
             </Grid>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 20, 0, 0">
