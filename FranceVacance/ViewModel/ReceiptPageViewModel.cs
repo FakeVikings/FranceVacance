@@ -14,14 +14,6 @@ namespace FranceVacance.ViewModel
     {
         private BookingCatalogSingleton _bookingCatalogSingleton;
         private Booking _currentBooking;
-        /*private string _fullname;
-        private string _email;
-        private string _country;
-        private string _city;
-        private int _pricePerNight;
-        private DateTimeOffset _startDate;
-        private DateTimeOffset _endDate;
-        private int _price;*/
         public RelayCommand GoMainPageCommand { get; set; }
         public RelayCommand GoMyBookingPageCommand { get; set; }
 

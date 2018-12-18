@@ -62,7 +62,7 @@
                         Background="LightGreen"
                         BorderBrush="Black" 
                         Margin="5,5,5,5"/>
-                <Button Content="Return to accommodations" 
+                <Button Content="Return to main page" 
                         Command="{Binding GoMainPageCommand}"
                         FontSize="25"
                         Background="CornflowerBlue"

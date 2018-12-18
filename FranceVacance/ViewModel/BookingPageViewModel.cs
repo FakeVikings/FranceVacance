@@ -25,9 +25,6 @@ namespace FranceVacance.ViewModel
         private BookingCatalogSingleton _bookingCatalogSingleton;
         private ObservableCollection<Booking> _bookingsList;
 
-        //       public Booking AddBooking { get; set; }
-
-
         public ObservableCollection<Booking> BookingsList
         {
             get { return _bookingsList; }

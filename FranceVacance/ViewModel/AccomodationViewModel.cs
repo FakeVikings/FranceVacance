@@ -30,18 +30,16 @@ namespace FranceVacance.ViewModel
             ImageUrl = Singleton.GetImageUrl();
             Price = Singleton.GetPrice();
             GoMainPageCommand = new RelayCommand(GoMainPage);
-            GoBookingPageCommand = new RelayCommand(GoBP);
+            GoBookingPageCommand = new RelayCommand(GoBookingPage);
 
         }
 
         public void GoMainPage()
         {
-            Type type = typeof(MainPage);
             Navigate.ActivateFrameNavigation(typeof(MainPage));
         }
-        public void GoBP()
+        public void GoBookingPage()
         {
-            Type type = typeof(BookingPage);
             Navigate.ActivateFrameNavigation(typeof(BookingPage));
         }
     }
