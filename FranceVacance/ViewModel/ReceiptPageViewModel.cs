@@ -13,23 +13,25 @@ namespace FranceVacance.ViewModel
     public class ReceiptPageViewModel : NotifyViewModel
     {
         private BookingCatalogSingleton _bookingCatalogSingleton;
-        private string _fullname;
+        private Booking _currentBooking;
+        /*private string _fullname;
         private string _email;
         private string _country;
         private string _city;
         private int _pricePerNight;
         private DateTimeOffset _startDate;
         private DateTimeOffset _endDate;
-        private int _price;
+        private int _price;*/
         public RelayCommand GoMainPageCommand { get; set; }
         public RelayCommand GoMyBookingPageCommand { get; set; }
 
         public ReceiptPageViewModel()
         {
             _bookingCatalogSingleton = BookingCatalogSingleton.Instance;
+            _currentBooking = _bookingCatalogSingleton.CurrentBooking;
             GoMainPageCommand = new RelayCommand(GoMainPage);
             GoMyBookingPageCommand = new RelayCommand(GoMyBookingPage);
-
+            /*
             Fullname = _bookingCatalogSingleton.CurrentBooking.User.Fullname;
             Email = _bookingCatalogSingleton.CurrentBooking.User.Email;
             Country = _bookingCatalogSingleton.CurrentBooking.Accommodation.Country;
@@ -38,8 +40,20 @@ namespace FranceVacance.ViewModel
             StartDate = _bookingCatalogSingleton.CurrentBooking.StartDate;
             EndDate = _bookingCatalogSingleton.CurrentBooking.EndDate;
             Price = _bookingCatalogSingleton.CurrentBooking.Price;
+            */
         }
 
+        public Booking CurrentBooking
+        {
+            get { return _currentBooking; }
+            set
+            {
+                _currentBooking = value;
+                OnPropertyChanged("CurrentBooking");
+            }
+        }
+
+        /*
         public string Fullname
         {
             get { return _fullname; }
@@ -119,7 +133,7 @@ namespace FranceVacance.ViewModel
                 OnPropertyChanged("Price");
             }
         }
-
+        */
         public void GoMainPage()
         {
             Navigate.ActivateFrameNavigation(typeof(MainPage));

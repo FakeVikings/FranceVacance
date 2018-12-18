@@ -23,8 +23,8 @@
             <TextBlock Text="Receipt page" FontSize="20" TextAlignment="Center" />
             <TextBlock Text="User:" FontWeight="Bold" FontSize="16"/>
             <StackPanel Margin="20,0,0,0">
-                <TextBlock Text="{Binding Fullname}"/>
-                <TextBlock Text="{Binding Email}"/>
+                <TextBlock Text="{Binding CurrentBooking.User.Fullname}"/>
+                <TextBlock Text="{Binding CurrentBooking.User.Email}"/>
             </StackPanel>
             <TextBlock Text="Accommodation: " FontWeight="Bold" FontSize="16"/>
             <Grid Margin="20,0,0,0">
@@ -38,11 +38,11 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Country:" FontWeight="Bold"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Country}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CurrentBooking.Accommodation.Country}"/>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="City:" FontWeight="Bold"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding City}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentBooking.Accommodation.City}"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Price per night:" FontWeight="Bold"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding PricePerNight}"/> 
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CurrentBooking.Accommodation.PricePerNight}"/> 
             </Grid>
             <TextBlock Text="Booking:" FontWeight="Bold" FontSize="16"/>
             <Grid Margin="20,0,0,0">
@@ -56,11 +56,11 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Start date:" FontWeight="Bold"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding StartDate}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CurrentBooking.StartDate}"/>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="End date:" FontWeight="Bold"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding EndDate}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentBooking.EndDate}"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Price:" FontWeight="Bold"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Price}"/> 
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CurrentBooking.Price}"/> 
             </Grid>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 20, 0, 0">
                 <Button Content="Go to main page" 

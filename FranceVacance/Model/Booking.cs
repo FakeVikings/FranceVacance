@@ -7,7 +7,7 @@ using FranceVacance.Persistency;
 
 namespace FranceVacance.Model
 {
-    class Booking
+    public class Booking
     {
         public int ID { get; set; }
         public int Price { get; set; }
